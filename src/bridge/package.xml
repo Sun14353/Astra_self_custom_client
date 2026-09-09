@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<?xml-model
+  href="http://download.ros.org/schema/package_format3.xsd"
+  schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>bridge</name>
+  <version>0.1.0</version>
+  <description>
+    通信/图传链路端 (bridge):
+    - bridge_client: 独立可执行文件,封装 MyMqttClient + UDP 3334 HEVC 视频接收
+    - bridge_node  : ROS 2 节点, 负责启动并管理 bridge_client 子进程
+  </description>
+  <maintainer email="dev@example.com">astra</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+
+  <!-- 桥接的原生依赖: protobuf 25.1 (用户自定义安装) + paho-mqtt-cpp -->
+  <depend>protobuf</depend>
+  <!-- paho-mqtt-cpp 通过 ament_cmake 链接, 见 CMakeLists -->
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

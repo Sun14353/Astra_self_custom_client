@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package custom_client;
+
+// ============================================================
+// 自定义客户端与机器人之间通信的 Protobuf 消息定义
+// protobuf 版本要求: 3.15 以上
+// 传输方式: MQTT (publish/subscribe), payload 为本 proto 序列化后的二进制
+// ============================================================
+
+// ---------- 通用消息头 ----------
+// 任何 topic 都可以在 payload 前面加上 Header,用于追踪来源 / 时间戳 / 序列号
+message Header {
+    uint32 robot_id    = 1;   // 机器人 ID(填入所连接机器人的编号)
+    uint64 timestamp_ms = 2;  // 消息产生时间(毫秒,UTC)
+    uint32 sequence    = 3;   // 消息序列号(发送方单调递增)
+}
+
+// ---------- 自定义客户端 -> 机器人: 控制指令 ----------
+// Topic: cmd/control
+message ControlCmd {
+    Header header = 1;
+
+    enum CmdType {
+        UNKNOWN = 0;
+        START_VIDEO = 1;   // 开启图传
+        STOP_VIDEO  = 2;   // 关闭图传
+        SET_BITRATE = 3;   // 设置目标码率
+        PING        = 4;   // 心跳
+    }
+
+    CmdType cmd = 2;
+
+    // SET_BITRATE 时生效: 目标码率 kbps
+    uint32 target_bitrate_kbps = 3;
+}
+
+// ---------- 机器人 -> 自定义客户端: 状态上报 ----------
+// Topic: status/robot
+message RobotStatus {
+    Header header = 1;
+
+    enum Mode {
+        IDLE = 0;
+        RUNNING = 1;
+        ERROR = 2;
+    }
+
+    Mode  mode            = 2;
+    uint32 current_bitrate = 3;  // 当前实际码率 kbps
+    uint32 fps             = 4;  // 当前帧率
+    string error_message   = 5;  // 当 mode == ERROR 时填写
+}
+
+// ---------- 自定义客户端 -> 机器人: 通用指令(参数化) ----------
+// Topic: cmd/generic
+message GenericCmd {
+    Header header = 1;
+    string name   = 2;          // 指令名(自定义客户端自行约定)
+    repeated string args = 3;   // 指令参数
+    bytes  raw     = 4;         // 透传数据(可选)
+}

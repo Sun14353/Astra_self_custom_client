@@ -1,0 +1,29 @@
+# ROS 2 / colcon build artifacts
+build/
+install/
+log/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE / editor
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Debug output
+sniper_debug_imgs/
+*.png.bak
+
+
+#AI thinking
+README.md.bak
+colcon_defaults.yaml
+
+#大恒
+Galaxy_camera/

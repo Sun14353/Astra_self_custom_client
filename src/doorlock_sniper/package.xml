@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>doorlock_sniper</name>
+  <version>0.1.0</version>
+  <description>
+    Doorlock sniper system - Video encoding node with H264 compression and chunking.
+    Composable node for zero-copy intra-process communication with camera driver.
+    ROS 2 Humble version of Pacific_doorlock_sniper's encoder.
+  </description>
+  <maintainer email="dev@example.com">developer</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>rosidl_default_generators</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>rclcpp_components</depend>
+  <depend>sensor_msgs</depend>
+  <depend>cv_bridge</depend>
+  <depend>std_msgs</depend>
+  <depend>libopencv-dev</depend>
+
+  <!-- GStreamer apt runtime dependencies (system packages, not rosdep keys for Humble) -->
+  <depend>libgstreamer1.0-dev</depend>
+  <depend>libgstreamer-plugins-base1.0-dev</depend>
+
+  <!-- Required for downstream Python decoder -->
+  <exec_depend>rosidl_default_runtime</exec_depend>
+
+  <!-- Message interface package declaration -->
+  <member_of_group>rosidl_interface_packages</member_of_group>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
