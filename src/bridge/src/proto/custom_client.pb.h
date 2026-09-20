@@ -57,15 +57,39 @@ struct TableStruct_custom_5fclient_2eproto {
 extern const ::google::protobuf::internal::DescriptorTable
     descriptor_table_custom_5fclient_2eproto;
 namespace custom_client {
+class Buff;
+struct BuffDefaultTypeInternal;
+extern BuffDefaultTypeInternal _Buff_default_instance_;
 class ControlCmd;
 struct ControlCmdDefaultTypeInternal;
 extern ControlCmdDefaultTypeInternal _ControlCmd_default_instance_;
+class Event;
+struct EventDefaultTypeInternal;
+extern EventDefaultTypeInternal _Event_default_instance_;
+class GameStatus;
+struct GameStatusDefaultTypeInternal;
+extern GameStatusDefaultTypeInternal _GameStatus_default_instance_;
 class GenericCmd;
 struct GenericCmdDefaultTypeInternal;
 extern GenericCmdDefaultTypeInternal _GenericCmd_default_instance_;
+class GlobalUnitStatus;
+struct GlobalUnitStatusDefaultTypeInternal;
+extern GlobalUnitStatusDefaultTypeInternal _GlobalUnitStatus_default_instance_;
 class Header;
 struct HeaderDefaultTypeInternal;
 extern HeaderDefaultTypeInternal _Header_default_instance_;
+class PenaltyInfo;
+struct PenaltyInfoDefaultTypeInternal;
+extern PenaltyInfoDefaultTypeInternal _PenaltyInfo_default_instance_;
+class RobotDynamicStatus;
+struct RobotDynamicStatusDefaultTypeInternal;
+extern RobotDynamicStatusDefaultTypeInternal _RobotDynamicStatus_default_instance_;
+class RobotPosition;
+struct RobotPositionDefaultTypeInternal;
+extern RobotPositionDefaultTypeInternal _RobotPosition_default_instance_;
+class RobotStaticStatus;
+struct RobotStaticStatusDefaultTypeInternal;
+extern RobotStaticStatusDefaultTypeInternal _RobotStaticStatus_default_instance_;
 class RobotStatus;
 struct RobotStatusDefaultTypeInternal;
 extern RobotStatusDefaultTypeInternal _RobotStatus_default_instance_;
@@ -151,6 +175,1078 @@ inline bool RobotStatus_Mode_Parse(absl::string_view name, RobotStatus_Mode* val
 
 
 // -------------------------------------------------------------------
+
+class RobotStaticStatus final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:custom_client.RobotStaticStatus) */ {
+ public:
+  inline RobotStaticStatus() : RobotStaticStatus(nullptr) {}
+  ~RobotStaticStatus() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR RobotStaticStatus(::google::protobuf::internal::ConstantInitialized);
+
+  inline RobotStaticStatus(const RobotStaticStatus& from)
+      : RobotStaticStatus(nullptr, from) {}
+  RobotStaticStatus(RobotStaticStatus&& from) noexcept
+    : RobotStaticStatus() {
+    *this = ::std::move(from);
+  }
+
+  inline RobotStaticStatus& operator=(const RobotStaticStatus& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline RobotStaticStatus& operator=(RobotStaticStatus&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const RobotStaticStatus& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const RobotStaticStatus* internal_default_instance() {
+    return reinterpret_cast<const RobotStaticStatus*>(
+               &_RobotStaticStatus_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  friend void swap(RobotStaticStatus& a, RobotStaticStatus& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(RobotStaticStatus* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr &&
+        GetArena() == other->GetArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(RobotStaticStatus* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  RobotStaticStatus* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<RobotStaticStatus>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const RobotStaticStatus& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom( const RobotStaticStatus& from) {
+    RobotStaticStatus::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(RobotStaticStatus* other);
+
+  private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "custom_client.RobotStaticStatus";
+  }
+  protected:
+  explicit RobotStaticStatus(::google::protobuf::Arena* arena);
+  RobotStaticStatus(::google::protobuf::Arena* arena, const RobotStaticStatus& from);
+  public:
+
+  static const ClassData _class_data_;
+  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kConnectionStateFieldNumber = 1,
+    kFieldStateFieldNumber = 2,
+    kAliveStateFieldNumber = 3,
+    kRobotIdFieldNumber = 4,
+    kRobotTypeFieldNumber = 5,
+    kPerformanceSystemShooterFieldNumber = 6,
+    kPerformanceSystemChassisFieldNumber = 7,
+    kLevelFieldNumber = 8,
+    kMaxHealthFieldNumber = 9,
+    kMaxHeatFieldNumber = 10,
+    kHeatCooldownRateFieldNumber = 11,
+    kMaxPowerFieldNumber = 12,
+    kMaxBufferEnergyFieldNumber = 13,
+    kMaxChassisEnergyFieldNumber = 14,
+  };
+  // uint32 connection_state = 1;
+  void clear_connection_state() ;
+  ::uint32_t connection_state() const;
+  void set_connection_state(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_connection_state() const;
+  void _internal_set_connection_state(::uint32_t value);
+
+  public:
+  // uint32 field_state = 2;
+  void clear_field_state() ;
+  ::uint32_t field_state() const;
+  void set_field_state(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_field_state() const;
+  void _internal_set_field_state(::uint32_t value);
+
+  public:
+  // uint32 alive_state = 3;
+  void clear_alive_state() ;
+  ::uint32_t alive_state() const;
+  void set_alive_state(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_alive_state() const;
+  void _internal_set_alive_state(::uint32_t value);
+
+  public:
+  // uint32 robot_id = 4;
+  void clear_robot_id() ;
+  ::uint32_t robot_id() const;
+  void set_robot_id(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_robot_id() const;
+  void _internal_set_robot_id(::uint32_t value);
+
+  public:
+  // uint32 robot_type = 5;
+  void clear_robot_type() ;
+  ::uint32_t robot_type() const;
+  void set_robot_type(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_robot_type() const;
+  void _internal_set_robot_type(::uint32_t value);
+
+  public:
+  // uint32 performance_system_shooter = 6;
+  void clear_performance_system_shooter() ;
+  ::uint32_t performance_system_shooter() const;
+  void set_performance_system_shooter(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_performance_system_shooter() const;
+  void _internal_set_performance_system_shooter(::uint32_t value);
+
+  public:
+  // uint32 performance_system_chassis = 7;
+  void clear_performance_system_chassis() ;
+  ::uint32_t performance_system_chassis() const;
+  void set_performance_system_chassis(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_performance_system_chassis() const;
+  void _internal_set_performance_system_chassis(::uint32_t value);
+
+  public:
+  // uint32 level = 8;
+  void clear_level() ;
+  ::uint32_t level() const;
+  void set_level(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_level() const;
+  void _internal_set_level(::uint32_t value);
+
+  public:
+  // uint32 max_health = 9;
+  void clear_max_health() ;
+  ::uint32_t max_health() const;
+  void set_max_health(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_max_health() const;
+  void _internal_set_max_health(::uint32_t value);
+
+  public:
+  // uint32 max_heat = 10;
+  void clear_max_heat() ;
+  ::uint32_t max_heat() const;
+  void set_max_heat(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_max_heat() const;
+  void _internal_set_max_heat(::uint32_t value);
+
+  public:
+  // float heat_cooldown_rate = 11;
+  void clear_heat_cooldown_rate() ;
+  float heat_cooldown_rate() const;
+  void set_heat_cooldown_rate(float value);
+
+  private:
+  float _internal_heat_cooldown_rate() const;
+  void _internal_set_heat_cooldown_rate(float value);
+
+  public:
+  // uint32 max_power = 12;
+  void clear_max_power() ;
+  ::uint32_t max_power() const;
+  void set_max_power(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_max_power() const;
+  void _internal_set_max_power(::uint32_t value);
+
+  public:
+  // uint32 max_buffer_energy = 13;
+  void clear_max_buffer_energy() ;
+  ::uint32_t max_buffer_energy() const;
+  void set_max_buffer_energy(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_max_buffer_energy() const;
+  void _internal_set_max_buffer_energy(::uint32_t value);
+
+  public:
+  // uint32 max_chassis_energy = 14;
+  void clear_max_chassis_energy() ;
+  ::uint32_t max_chassis_energy() const;
+  void set_max_chassis_energy(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_max_chassis_energy() const;
+  void _internal_set_max_chassis_energy(::uint32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:custom_client.RobotStaticStatus)
+ private:
+  class _Internal;
+
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      4, 14, 0,
+      0, 2>
+      _table_;
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+
+        inline explicit constexpr Impl_(
+            ::google::protobuf::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena);
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena, const Impl_& from);
+    ::uint32_t connection_state_;
+    ::uint32_t field_state_;
+    ::uint32_t alive_state_;
+    ::uint32_t robot_id_;
+    ::uint32_t robot_type_;
+    ::uint32_t performance_system_shooter_;
+    ::uint32_t performance_system_chassis_;
+    ::uint32_t level_;
+    ::uint32_t max_health_;
+    ::uint32_t max_heat_;
+    float heat_cooldown_rate_;
+    ::uint32_t max_power_;
+    ::uint32_t max_buffer_energy_;
+    ::uint32_t max_chassis_energy_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_custom_5fclient_2eproto;
+};// -------------------------------------------------------------------
+
+class RobotPosition final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:custom_client.RobotPosition) */ {
+ public:
+  inline RobotPosition() : RobotPosition(nullptr) {}
+  ~RobotPosition() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR RobotPosition(::google::protobuf::internal::ConstantInitialized);
+
+  inline RobotPosition(const RobotPosition& from)
+      : RobotPosition(nullptr, from) {}
+  RobotPosition(RobotPosition&& from) noexcept
+    : RobotPosition() {
+    *this = ::std::move(from);
+  }
+
+  inline RobotPosition& operator=(const RobotPosition& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline RobotPosition& operator=(RobotPosition&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const RobotPosition& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const RobotPosition* internal_default_instance() {
+    return reinterpret_cast<const RobotPosition*>(
+               &_RobotPosition_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  friend void swap(RobotPosition& a, RobotPosition& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(RobotPosition* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr &&
+        GetArena() == other->GetArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(RobotPosition* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  RobotPosition* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<RobotPosition>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const RobotPosition& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom( const RobotPosition& from) {
+    RobotPosition::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(RobotPosition* other);
+
+  private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "custom_client.RobotPosition";
+  }
+  protected:
+  explicit RobotPosition(::google::protobuf::Arena* arena);
+  RobotPosition(::google::protobuf::Arena* arena, const RobotPosition& from);
+  public:
+
+  static const ClassData _class_data_;
+  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kXFieldNumber = 1,
+    kYFieldNumber = 2,
+    kZFieldNumber = 3,
+    kYawFieldNumber = 4,
+    kRobotIdFieldNumber = 5,
+  };
+  // float x = 1;
+  void clear_x() ;
+  float x() const;
+  void set_x(float value);
+
+  private:
+  float _internal_x() const;
+  void _internal_set_x(float value);
+
+  public:
+  // float y = 2;
+  void clear_y() ;
+  float y() const;
+  void set_y(float value);
+
+  private:
+  float _internal_y() const;
+  void _internal_set_y(float value);
+
+  public:
+  // float z = 3;
+  void clear_z() ;
+  float z() const;
+  void set_z(float value);
+
+  private:
+  float _internal_z() const;
+  void _internal_set_z(float value);
+
+  public:
+  // float yaw = 4;
+  void clear_yaw() ;
+  float yaw() const;
+  void set_yaw(float value);
+
+  private:
+  float _internal_yaw() const;
+  void _internal_set_yaw(float value);
+
+  public:
+  // uint32 robot_id = 5;
+  void clear_robot_id() ;
+  ::uint32_t robot_id() const;
+  void set_robot_id(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_robot_id() const;
+  void _internal_set_robot_id(::uint32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:custom_client.RobotPosition)
+ private:
+  class _Internal;
+
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      3, 5, 0,
+      0, 2>
+      _table_;
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+
+        inline explicit constexpr Impl_(
+            ::google::protobuf::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena);
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena, const Impl_& from);
+    float x_;
+    float y_;
+    float z_;
+    float yaw_;
+    ::uint32_t robot_id_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_custom_5fclient_2eproto;
+};// -------------------------------------------------------------------
+
+class RobotDynamicStatus final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:custom_client.RobotDynamicStatus) */ {
+ public:
+  inline RobotDynamicStatus() : RobotDynamicStatus(nullptr) {}
+  ~RobotDynamicStatus() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR RobotDynamicStatus(::google::protobuf::internal::ConstantInitialized);
+
+  inline RobotDynamicStatus(const RobotDynamicStatus& from)
+      : RobotDynamicStatus(nullptr, from) {}
+  RobotDynamicStatus(RobotDynamicStatus&& from) noexcept
+    : RobotDynamicStatus() {
+    *this = ::std::move(from);
+  }
+
+  inline RobotDynamicStatus& operator=(const RobotDynamicStatus& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline RobotDynamicStatus& operator=(RobotDynamicStatus&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const RobotDynamicStatus& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const RobotDynamicStatus* internal_default_instance() {
+    return reinterpret_cast<const RobotDynamicStatus*>(
+               &_RobotDynamicStatus_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  friend void swap(RobotDynamicStatus& a, RobotDynamicStatus& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(RobotDynamicStatus* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr &&
+        GetArena() == other->GetArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(RobotDynamicStatus* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  RobotDynamicStatus* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<RobotDynamicStatus>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const RobotDynamicStatus& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom( const RobotDynamicStatus& from) {
+    RobotDynamicStatus::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(RobotDynamicStatus* other);
+
+  private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "custom_client.RobotDynamicStatus";
+  }
+  protected:
+  explicit RobotDynamicStatus(::google::protobuf::Arena* arena);
+  RobotDynamicStatus(::google::protobuf::Arena* arena, const RobotDynamicStatus& from);
+  public:
+
+  static const ClassData _class_data_;
+  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kCurrentHealthFieldNumber = 1,
+    kCurrentHeatFieldNumber = 2,
+    kLastProjectileFireRateFieldNumber = 3,
+    kCurrentChassisEnergyFieldNumber = 4,
+    kCurrentBufferEnergyFieldNumber = 5,
+    kCurrentExperienceFieldNumber = 6,
+    kExperienceForUpgradeFieldNumber = 7,
+    kTotalProjectilesFiredFieldNumber = 8,
+    kRemainingAmmoFieldNumber = 9,
+    kOutOfCombatCountdownFieldNumber = 11,
+    kIsOutOfCombatFieldNumber = 10,
+    kCanRemoteHealFieldNumber = 12,
+    kCanRemoteAmmoFieldNumber = 13,
+  };
+  // uint32 current_health = 1;
+  void clear_current_health() ;
+  ::uint32_t current_health() const;
+  void set_current_health(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_current_health() const;
+  void _internal_set_current_health(::uint32_t value);
+
+  public:
+  // float current_heat = 2;
+  void clear_current_heat() ;
+  float current_heat() const;
+  void set_current_heat(float value);
+
+  private:
+  float _internal_current_heat() const;
+  void _internal_set_current_heat(float value);
+
+  public:
+  // float last_projectile_fire_rate = 3;
+  void clear_last_projectile_fire_rate() ;
+  float last_projectile_fire_rate() const;
+  void set_last_projectile_fire_rate(float value);
+
+  private:
+  float _internal_last_projectile_fire_rate() const;
+  void _internal_set_last_projectile_fire_rate(float value);
+
+  public:
+  // uint32 current_chassis_energy = 4;
+  void clear_current_chassis_energy() ;
+  ::uint32_t current_chassis_energy() const;
+  void set_current_chassis_energy(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_current_chassis_energy() const;
+  void _internal_set_current_chassis_energy(::uint32_t value);
+
+  public:
+  // uint32 current_buffer_energy = 5;
+  void clear_current_buffer_energy() ;
+  ::uint32_t current_buffer_energy() const;
+  void set_current_buffer_energy(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_current_buffer_energy() const;
+  void _internal_set_current_buffer_energy(::uint32_t value);
+
+  public:
+  // uint32 current_experience = 6;
+  void clear_current_experience() ;
+  ::uint32_t current_experience() const;
+  void set_current_experience(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_current_experience() const;
+  void _internal_set_current_experience(::uint32_t value);
+
+  public:
+  // uint32 experience_for_upgrade = 7;
+  void clear_experience_for_upgrade() ;
+  ::uint32_t experience_for_upgrade() const;
+  void set_experience_for_upgrade(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_experience_for_upgrade() const;
+  void _internal_set_experience_for_upgrade(::uint32_t value);
+
+  public:
+  // uint32 total_projectiles_fired = 8;
+  void clear_total_projectiles_fired() ;
+  ::uint32_t total_projectiles_fired() const;
+  void set_total_projectiles_fired(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_total_projectiles_fired() const;
+  void _internal_set_total_projectiles_fired(::uint32_t value);
+
+  public:
+  // uint32 remaining_ammo = 9;
+  void clear_remaining_ammo() ;
+  ::uint32_t remaining_ammo() const;
+  void set_remaining_ammo(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_remaining_ammo() const;
+  void _internal_set_remaining_ammo(::uint32_t value);
+
+  public:
+  // uint32 out_of_combat_countdown = 11;
+  void clear_out_of_combat_countdown() ;
+  ::uint32_t out_of_combat_countdown() const;
+  void set_out_of_combat_countdown(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_out_of_combat_countdown() const;
+  void _internal_set_out_of_combat_countdown(::uint32_t value);
+
+  public:
+  // bool is_out_of_combat = 10;
+  void clear_is_out_of_combat() ;
+  bool is_out_of_combat() const;
+  void set_is_out_of_combat(bool value);
+
+  private:
+  bool _internal_is_out_of_combat() const;
+  void _internal_set_is_out_of_combat(bool value);
+
+  public:
+  // bool can_remote_heal = 12;
+  void clear_can_remote_heal() ;
+  bool can_remote_heal() const;
+  void set_can_remote_heal(bool value);
+
+  private:
+  bool _internal_can_remote_heal() const;
+  void _internal_set_can_remote_heal(bool value);
+
+  public:
+  // bool can_remote_ammo = 13;
+  void clear_can_remote_ammo() ;
+  bool can_remote_ammo() const;
+  void set_can_remote_ammo(bool value);
+
+  private:
+  bool _internal_can_remote_ammo() const;
+  void _internal_set_can_remote_ammo(bool value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:custom_client.RobotDynamicStatus)
+ private:
+  class _Internal;
+
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      4, 13, 0,
+      0, 2>
+      _table_;
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+
+        inline explicit constexpr Impl_(
+            ::google::protobuf::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena);
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena, const Impl_& from);
+    ::uint32_t current_health_;
+    float current_heat_;
+    float last_projectile_fire_rate_;
+    ::uint32_t current_chassis_energy_;
+    ::uint32_t current_buffer_energy_;
+    ::uint32_t current_experience_;
+    ::uint32_t experience_for_upgrade_;
+    ::uint32_t total_projectiles_fired_;
+    ::uint32_t remaining_ammo_;
+    ::uint32_t out_of_combat_countdown_;
+    bool is_out_of_combat_;
+    bool can_remote_heal_;
+    bool can_remote_ammo_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_custom_5fclient_2eproto;
+};// -------------------------------------------------------------------
+
+class PenaltyInfo final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:custom_client.PenaltyInfo) */ {
+ public:
+  inline PenaltyInfo() : PenaltyInfo(nullptr) {}
+  ~PenaltyInfo() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR PenaltyInfo(::google::protobuf::internal::ConstantInitialized);
+
+  inline PenaltyInfo(const PenaltyInfo& from)
+      : PenaltyInfo(nullptr, from) {}
+  PenaltyInfo(PenaltyInfo&& from) noexcept
+    : PenaltyInfo() {
+    *this = ::std::move(from);
+  }
+
+  inline PenaltyInfo& operator=(const PenaltyInfo& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline PenaltyInfo& operator=(PenaltyInfo&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const PenaltyInfo& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const PenaltyInfo* internal_default_instance() {
+    return reinterpret_cast<const PenaltyInfo*>(
+               &_PenaltyInfo_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  friend void swap(PenaltyInfo& a, PenaltyInfo& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(PenaltyInfo* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr &&
+        GetArena() == other->GetArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(PenaltyInfo* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  PenaltyInfo* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<PenaltyInfo>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const PenaltyInfo& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom( const PenaltyInfo& from) {
+    PenaltyInfo::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(PenaltyInfo* other);
+
+  private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "custom_client.PenaltyInfo";
+  }
+  protected:
+  explicit PenaltyInfo(::google::protobuf::Arena* arena);
+  PenaltyInfo(::google::protobuf::Arena* arena, const PenaltyInfo& from);
+  public:
+
+  static const ClassData _class_data_;
+  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPenaltyTypeFieldNumber = 1,
+    kPenaltyEffectSecFieldNumber = 2,
+    kTotalPenaltyNumFieldNumber = 3,
+  };
+  // uint32 penalty_type = 1;
+  void clear_penalty_type() ;
+  ::uint32_t penalty_type() const;
+  void set_penalty_type(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_penalty_type() const;
+  void _internal_set_penalty_type(::uint32_t value);
+
+  public:
+  // uint32 penalty_effect_sec = 2;
+  void clear_penalty_effect_sec() ;
+  ::uint32_t penalty_effect_sec() const;
+  void set_penalty_effect_sec(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_penalty_effect_sec() const;
+  void _internal_set_penalty_effect_sec(::uint32_t value);
+
+  public:
+  // uint32 total_penalty_num = 3;
+  void clear_total_penalty_num() ;
+  ::uint32_t total_penalty_num() const;
+  void set_total_penalty_num(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_total_penalty_num() const;
+  void _internal_set_total_penalty_num(::uint32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:custom_client.PenaltyInfo)
+ private:
+  class _Internal;
+
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      2, 3, 0,
+      0, 2>
+      _table_;
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+
+        inline explicit constexpr Impl_(
+            ::google::protobuf::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena);
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena, const Impl_& from);
+    ::uint32_t penalty_type_;
+    ::uint32_t penalty_effect_sec_;
+    ::uint32_t total_penalty_num_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_custom_5fclient_2eproto;
+};// -------------------------------------------------------------------
 
 class Header final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:custom_client.Header) */ {
@@ -345,6 +1441,1071 @@ class Header final :
     ::uint32_t robot_id_;
     ::uint32_t sequence_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_custom_5fclient_2eproto;
+};// -------------------------------------------------------------------
+
+class GlobalUnitStatus final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:custom_client.GlobalUnitStatus) */ {
+ public:
+  inline GlobalUnitStatus() : GlobalUnitStatus(nullptr) {}
+  ~GlobalUnitStatus() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR GlobalUnitStatus(::google::protobuf::internal::ConstantInitialized);
+
+  inline GlobalUnitStatus(const GlobalUnitStatus& from)
+      : GlobalUnitStatus(nullptr, from) {}
+  GlobalUnitStatus(GlobalUnitStatus&& from) noexcept
+    : GlobalUnitStatus() {
+    *this = ::std::move(from);
+  }
+
+  inline GlobalUnitStatus& operator=(const GlobalUnitStatus& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GlobalUnitStatus& operator=(GlobalUnitStatus&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GlobalUnitStatus& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GlobalUnitStatus* internal_default_instance() {
+    return reinterpret_cast<const GlobalUnitStatus*>(
+               &_GlobalUnitStatus_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(GlobalUnitStatus& a, GlobalUnitStatus& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GlobalUnitStatus* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr &&
+        GetArena() == other->GetArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GlobalUnitStatus* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GlobalUnitStatus* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GlobalUnitStatus>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const GlobalUnitStatus& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom( const GlobalUnitStatus& from) {
+    GlobalUnitStatus::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(GlobalUnitStatus* other);
+
+  private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "custom_client.GlobalUnitStatus";
+  }
+  protected:
+  explicit GlobalUnitStatus(::google::protobuf::Arena* arena);
+  GlobalUnitStatus(::google::protobuf::Arena* arena, const GlobalUnitStatus& from);
+  public:
+
+  static const ClassData _class_data_;
+  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRobotHealthFieldNumber = 11,
+    kRobotBulletsFieldNumber = 12,
+    kBaseHealthFieldNumber = 1,
+    kBaseStatusFieldNumber = 2,
+    kBaseShieldFieldNumber = 3,
+    kOutpostHealthFieldNumber = 4,
+    kOutpostStatusFieldNumber = 5,
+    kEnemyBaseHealthFieldNumber = 6,
+    kEnemyBaseStatusFieldNumber = 7,
+    kEnemyBaseShieldFieldNumber = 8,
+    kEnemyOutpostHealthFieldNumber = 9,
+    kEnemyOutpostStatusFieldNumber = 10,
+    kTotalDamageAllyFieldNumber = 13,
+    kTotalDamageEnemyFieldNumber = 14,
+  };
+  // repeated uint32 robot_health = 11;
+  int robot_health_size() const;
+  private:
+  int _internal_robot_health_size() const;
+
+  public:
+  void clear_robot_health() ;
+  ::uint32_t robot_health(int index) const;
+  void set_robot_health(int index, ::uint32_t value);
+  void add_robot_health(::uint32_t value);
+  const ::google::protobuf::RepeatedField<::uint32_t>& robot_health() const;
+  ::google::protobuf::RepeatedField<::uint32_t>* mutable_robot_health();
+
+  private:
+  const ::google::protobuf::RepeatedField<::uint32_t>& _internal_robot_health() const;
+  ::google::protobuf::RepeatedField<::uint32_t>* _internal_mutable_robot_health();
+
+  public:
+  // repeated int32 robot_bullets = 12;
+  int robot_bullets_size() const;
+  private:
+  int _internal_robot_bullets_size() const;
+
+  public:
+  void clear_robot_bullets() ;
+  ::int32_t robot_bullets(int index) const;
+  void set_robot_bullets(int index, ::int32_t value);
+  void add_robot_bullets(::int32_t value);
+  const ::google::protobuf::RepeatedField<::int32_t>& robot_bullets() const;
+  ::google::protobuf::RepeatedField<::int32_t>* mutable_robot_bullets();
+
+  private:
+  const ::google::protobuf::RepeatedField<::int32_t>& _internal_robot_bullets() const;
+  ::google::protobuf::RepeatedField<::int32_t>* _internal_mutable_robot_bullets();
+
+  public:
+  // uint32 base_health = 1;
+  void clear_base_health() ;
+  ::uint32_t base_health() const;
+  void set_base_health(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_base_health() const;
+  void _internal_set_base_health(::uint32_t value);
+
+  public:
+  // uint32 base_status = 2;
+  void clear_base_status() ;
+  ::uint32_t base_status() const;
+  void set_base_status(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_base_status() const;
+  void _internal_set_base_status(::uint32_t value);
+
+  public:
+  // uint32 base_shield = 3;
+  void clear_base_shield() ;
+  ::uint32_t base_shield() const;
+  void set_base_shield(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_base_shield() const;
+  void _internal_set_base_shield(::uint32_t value);
+
+  public:
+  // uint32 outpost_health = 4;
+  void clear_outpost_health() ;
+  ::uint32_t outpost_health() const;
+  void set_outpost_health(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_outpost_health() const;
+  void _internal_set_outpost_health(::uint32_t value);
+
+  public:
+  // uint32 outpost_status = 5;
+  void clear_outpost_status() ;
+  ::uint32_t outpost_status() const;
+  void set_outpost_status(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_outpost_status() const;
+  void _internal_set_outpost_status(::uint32_t value);
+
+  public:
+  // uint32 enemy_base_health = 6;
+  void clear_enemy_base_health() ;
+  ::uint32_t enemy_base_health() const;
+  void set_enemy_base_health(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_enemy_base_health() const;
+  void _internal_set_enemy_base_health(::uint32_t value);
+
+  public:
+  // uint32 enemy_base_status = 7;
+  void clear_enemy_base_status() ;
+  ::uint32_t enemy_base_status() const;
+  void set_enemy_base_status(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_enemy_base_status() const;
+  void _internal_set_enemy_base_status(::uint32_t value);
+
+  public:
+  // uint32 enemy_base_shield = 8;
+  void clear_enemy_base_shield() ;
+  ::uint32_t enemy_base_shield() const;
+  void set_enemy_base_shield(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_enemy_base_shield() const;
+  void _internal_set_enemy_base_shield(::uint32_t value);
+
+  public:
+  // uint32 enemy_outpost_health = 9;
+  void clear_enemy_outpost_health() ;
+  ::uint32_t enemy_outpost_health() const;
+  void set_enemy_outpost_health(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_enemy_outpost_health() const;
+  void _internal_set_enemy_outpost_health(::uint32_t value);
+
+  public:
+  // uint32 enemy_outpost_status = 10;
+  void clear_enemy_outpost_status() ;
+  ::uint32_t enemy_outpost_status() const;
+  void set_enemy_outpost_status(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_enemy_outpost_status() const;
+  void _internal_set_enemy_outpost_status(::uint32_t value);
+
+  public:
+  // uint32 total_damage_ally = 13;
+  void clear_total_damage_ally() ;
+  ::uint32_t total_damage_ally() const;
+  void set_total_damage_ally(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_total_damage_ally() const;
+  void _internal_set_total_damage_ally(::uint32_t value);
+
+  public:
+  // uint32 total_damage_enemy = 14;
+  void clear_total_damage_enemy() ;
+  ::uint32_t total_damage_enemy() const;
+  void set_total_damage_enemy(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_total_damage_enemy() const;
+  void _internal_set_total_damage_enemy(::uint32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:custom_client.GlobalUnitStatus)
+ private:
+  class _Internal;
+
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      4, 14, 0,
+      0, 2>
+      _table_;
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+
+        inline explicit constexpr Impl_(
+            ::google::protobuf::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena);
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena, const Impl_& from);
+    ::google::protobuf::RepeatedField<::uint32_t> robot_health_;
+    mutable ::google::protobuf::internal::CachedSize _robot_health_cached_byte_size_;
+    ::google::protobuf::RepeatedField<::int32_t> robot_bullets_;
+    mutable ::google::protobuf::internal::CachedSize _robot_bullets_cached_byte_size_;
+    ::uint32_t base_health_;
+    ::uint32_t base_status_;
+    ::uint32_t base_shield_;
+    ::uint32_t outpost_health_;
+    ::uint32_t outpost_status_;
+    ::uint32_t enemy_base_health_;
+    ::uint32_t enemy_base_status_;
+    ::uint32_t enemy_base_shield_;
+    ::uint32_t enemy_outpost_health_;
+    ::uint32_t enemy_outpost_status_;
+    ::uint32_t total_damage_ally_;
+    ::uint32_t total_damage_enemy_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_custom_5fclient_2eproto;
+};// -------------------------------------------------------------------
+
+class GameStatus final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:custom_client.GameStatus) */ {
+ public:
+  inline GameStatus() : GameStatus(nullptr) {}
+  ~GameStatus() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR GameStatus(::google::protobuf::internal::ConstantInitialized);
+
+  inline GameStatus(const GameStatus& from)
+      : GameStatus(nullptr, from) {}
+  GameStatus(GameStatus&& from) noexcept
+    : GameStatus() {
+    *this = ::std::move(from);
+  }
+
+  inline GameStatus& operator=(const GameStatus& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GameStatus& operator=(GameStatus&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GameStatus& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GameStatus* internal_default_instance() {
+    return reinterpret_cast<const GameStatus*>(
+               &_GameStatus_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  friend void swap(GameStatus& a, GameStatus& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GameStatus* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr &&
+        GetArena() == other->GetArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GameStatus* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GameStatus* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GameStatus>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const GameStatus& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom( const GameStatus& from) {
+    GameStatus::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(GameStatus* other);
+
+  private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "custom_client.GameStatus";
+  }
+  protected:
+  explicit GameStatus(::google::protobuf::Arena* arena);
+  GameStatus(::google::protobuf::Arena* arena, const GameStatus& from);
+  public:
+
+  static const ClassData _class_data_;
+  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kCurrentRoundFieldNumber = 1,
+    kTotalRoundsFieldNumber = 2,
+    kRedScoreFieldNumber = 3,
+    kBlueScoreFieldNumber = 4,
+    kCurrentStageFieldNumber = 5,
+    kStageCountdownSecFieldNumber = 6,
+    kStageElapsedSecFieldNumber = 7,
+    kIsPausedFieldNumber = 8,
+    kGameResultFieldNumber = 9,
+    kEndReasonFieldNumber = 10,
+  };
+  // optional uint32 current_round = 1;
+  bool has_current_round() const;
+  void clear_current_round() ;
+  ::uint32_t current_round() const;
+  void set_current_round(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_current_round() const;
+  void _internal_set_current_round(::uint32_t value);
+
+  public:
+  // optional uint32 total_rounds = 2;
+  bool has_total_rounds() const;
+  void clear_total_rounds() ;
+  ::uint32_t total_rounds() const;
+  void set_total_rounds(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_total_rounds() const;
+  void _internal_set_total_rounds(::uint32_t value);
+
+  public:
+  // optional uint32 red_score = 3;
+  bool has_red_score() const;
+  void clear_red_score() ;
+  ::uint32_t red_score() const;
+  void set_red_score(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_red_score() const;
+  void _internal_set_red_score(::uint32_t value);
+
+  public:
+  // optional uint32 blue_score = 4;
+  bool has_blue_score() const;
+  void clear_blue_score() ;
+  ::uint32_t blue_score() const;
+  void set_blue_score(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_blue_score() const;
+  void _internal_set_blue_score(::uint32_t value);
+
+  public:
+  // optional uint32 current_stage = 5;
+  bool has_current_stage() const;
+  void clear_current_stage() ;
+  ::uint32_t current_stage() const;
+  void set_current_stage(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_current_stage() const;
+  void _internal_set_current_stage(::uint32_t value);
+
+  public:
+  // optional int32 stage_countdown_sec = 6;
+  bool has_stage_countdown_sec() const;
+  void clear_stage_countdown_sec() ;
+  ::int32_t stage_countdown_sec() const;
+  void set_stage_countdown_sec(::int32_t value);
+
+  private:
+  ::int32_t _internal_stage_countdown_sec() const;
+  void _internal_set_stage_countdown_sec(::int32_t value);
+
+  public:
+  // optional int32 stage_elapsed_sec = 7;
+  bool has_stage_elapsed_sec() const;
+  void clear_stage_elapsed_sec() ;
+  ::int32_t stage_elapsed_sec() const;
+  void set_stage_elapsed_sec(::int32_t value);
+
+  private:
+  ::int32_t _internal_stage_elapsed_sec() const;
+  void _internal_set_stage_elapsed_sec(::int32_t value);
+
+  public:
+  // optional bool is_paused = 8;
+  bool has_is_paused() const;
+  void clear_is_paused() ;
+  bool is_paused() const;
+  void set_is_paused(bool value);
+
+  private:
+  bool _internal_is_paused() const;
+  void _internal_set_is_paused(bool value);
+
+  public:
+  // optional uint32 game_result = 9;
+  bool has_game_result() const;
+  void clear_game_result() ;
+  ::uint32_t game_result() const;
+  void set_game_result(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_game_result() const;
+  void _internal_set_game_result(::uint32_t value);
+
+  public:
+  // optional uint32 end_reason = 10;
+  bool has_end_reason() const;
+  void clear_end_reason() ;
+  ::uint32_t end_reason() const;
+  void set_end_reason(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_end_reason() const;
+  void _internal_set_end_reason(::uint32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:custom_client.GameStatus)
+ private:
+  class _Internal;
+
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      4, 10, 0,
+      0, 2>
+      _table_;
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+
+        inline explicit constexpr Impl_(
+            ::google::protobuf::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena);
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena, const Impl_& from);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    ::uint32_t current_round_;
+    ::uint32_t total_rounds_;
+    ::uint32_t red_score_;
+    ::uint32_t blue_score_;
+    ::uint32_t current_stage_;
+    ::int32_t stage_countdown_sec_;
+    ::int32_t stage_elapsed_sec_;
+    bool is_paused_;
+    ::uint32_t game_result_;
+    ::uint32_t end_reason_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_custom_5fclient_2eproto;
+};// -------------------------------------------------------------------
+
+class Event final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:custom_client.Event) */ {
+ public:
+  inline Event() : Event(nullptr) {}
+  ~Event() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR Event(::google::protobuf::internal::ConstantInitialized);
+
+  inline Event(const Event& from)
+      : Event(nullptr, from) {}
+  Event(Event&& from) noexcept
+    : Event() {
+    *this = ::std::move(from);
+  }
+
+  inline Event& operator=(const Event& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Event& operator=(Event&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const Event& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const Event* internal_default_instance() {
+    return reinterpret_cast<const Event*>(
+               &_Event_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  friend void swap(Event& a, Event& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Event* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr &&
+        GetArena() == other->GetArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(Event* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  Event* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<Event>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const Event& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom( const Event& from) {
+    Event::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(Event* other);
+
+  private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "custom_client.Event";
+  }
+  protected:
+  explicit Event(::google::protobuf::Arena* arena);
+  Event(::google::protobuf::Arena* arena, const Event& from);
+  public:
+
+  static const ClassData _class_data_;
+  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kParamFieldNumber = 2,
+    kEventIdFieldNumber = 1,
+  };
+  // string param = 2;
+  void clear_param() ;
+  const std::string& param() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_param(Arg_&& arg, Args_... args);
+  std::string* mutable_param();
+  PROTOBUF_NODISCARD std::string* release_param();
+  void set_allocated_param(std::string* value);
+
+  private:
+  const std::string& _internal_param() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_param(
+      const std::string& value);
+  std::string* _internal_mutable_param();
+
+  public:
+  // int32 event_id = 1;
+  void clear_event_id() ;
+  ::int32_t event_id() const;
+  void set_event_id(::int32_t value);
+
+  private:
+  ::int32_t _internal_event_id() const;
+  void _internal_set_event_id(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:custom_client.Event)
+ private:
+  class _Internal;
+
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      1, 2, 0,
+      33, 2>
+      _table_;
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+
+        inline explicit constexpr Impl_(
+            ::google::protobuf::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena);
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena, const Impl_& from);
+    ::google::protobuf::internal::ArenaStringPtr param_;
+    ::int32_t event_id_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_custom_5fclient_2eproto;
+};// -------------------------------------------------------------------
+
+class Buff final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:custom_client.Buff) */ {
+ public:
+  inline Buff() : Buff(nullptr) {}
+  ~Buff() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR Buff(::google::protobuf::internal::ConstantInitialized);
+
+  inline Buff(const Buff& from)
+      : Buff(nullptr, from) {}
+  Buff(Buff&& from) noexcept
+    : Buff() {
+    *this = ::std::move(from);
+  }
+
+  inline Buff& operator=(const Buff& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Buff& operator=(Buff&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const Buff& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const Buff* internal_default_instance() {
+    return reinterpret_cast<const Buff*>(
+               &_Buff_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  friend void swap(Buff& a, Buff& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Buff* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr &&
+        GetArena() == other->GetArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(Buff* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  Buff* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<Buff>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const Buff& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom( const Buff& from) {
+    Buff::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(Buff* other);
+
+  private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "custom_client.Buff";
+  }
+  protected:
+  explicit Buff(::google::protobuf::Arena* arena);
+  Buff(::google::protobuf::Arena* arena, const Buff& from);
+  public:
+
+  static const ClassData _class_data_;
+  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRobotIdFieldNumber = 1,
+    kBuffTypeFieldNumber = 2,
+    kBuffLevelFieldNumber = 3,
+    kBuffMaxTimeFieldNumber = 4,
+    kBuffLeftTimeFieldNumber = 5,
+  };
+  // optional uint32 robot_id = 1;
+  bool has_robot_id() const;
+  void clear_robot_id() ;
+  ::uint32_t robot_id() const;
+  void set_robot_id(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_robot_id() const;
+  void _internal_set_robot_id(::uint32_t value);
+
+  public:
+  // optional uint32 buff_type = 2;
+  bool has_buff_type() const;
+  void clear_buff_type() ;
+  ::uint32_t buff_type() const;
+  void set_buff_type(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_buff_type() const;
+  void _internal_set_buff_type(::uint32_t value);
+
+  public:
+  // optional int32 buff_level = 3;
+  bool has_buff_level() const;
+  void clear_buff_level() ;
+  ::int32_t buff_level() const;
+  void set_buff_level(::int32_t value);
+
+  private:
+  ::int32_t _internal_buff_level() const;
+  void _internal_set_buff_level(::int32_t value);
+
+  public:
+  // optional uint32 buff_max_time = 4;
+  bool has_buff_max_time() const;
+  void clear_buff_max_time() ;
+  ::uint32_t buff_max_time() const;
+  void set_buff_max_time(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_buff_max_time() const;
+  void _internal_set_buff_max_time(::uint32_t value);
+
+  public:
+  // optional uint32 buff_left_time = 5;
+  bool has_buff_left_time() const;
+  void clear_buff_left_time() ;
+  ::uint32_t buff_left_time() const;
+  void set_buff_left_time(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_buff_left_time() const;
+  void _internal_set_buff_left_time(::uint32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:custom_client.Buff)
+ private:
+  class _Internal;
+
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      3, 5, 0,
+      0, 2>
+      _table_;
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+
+        inline explicit constexpr Impl_(
+            ::google::protobuf::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena);
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena, const Impl_& from);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    ::uint32_t robot_id_;
+    ::uint32_t buff_type_;
+    ::int32_t buff_level_;
+    ::uint32_t buff_max_time_;
+    ::uint32_t buff_left_time_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -1840,6 +4001,1705 @@ inline void GenericCmd::set_allocated_raw(std::string* value) {
         }
   #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:custom_client.GenericCmd.raw)
+}
+
+// -------------------------------------------------------------------
+
+// GameStatus
+
+// optional uint32 current_round = 1;
+inline bool GameStatus::has_current_round() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline void GameStatus::clear_current_round() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.current_round_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline ::uint32_t GameStatus::current_round() const {
+  // @@protoc_insertion_point(field_get:custom_client.GameStatus.current_round)
+  return _internal_current_round();
+}
+inline void GameStatus::set_current_round(::uint32_t value) {
+  _internal_set_current_round(value);
+  // @@protoc_insertion_point(field_set:custom_client.GameStatus.current_round)
+}
+inline ::uint32_t GameStatus::_internal_current_round() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.current_round_;
+}
+inline void GameStatus::_internal_set_current_round(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.current_round_ = value;
+}
+
+// optional uint32 total_rounds = 2;
+inline bool GameStatus::has_total_rounds() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline void GameStatus::clear_total_rounds() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.total_rounds_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline ::uint32_t GameStatus::total_rounds() const {
+  // @@protoc_insertion_point(field_get:custom_client.GameStatus.total_rounds)
+  return _internal_total_rounds();
+}
+inline void GameStatus::set_total_rounds(::uint32_t value) {
+  _internal_set_total_rounds(value);
+  // @@protoc_insertion_point(field_set:custom_client.GameStatus.total_rounds)
+}
+inline ::uint32_t GameStatus::_internal_total_rounds() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.total_rounds_;
+}
+inline void GameStatus::_internal_set_total_rounds(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.total_rounds_ = value;
+}
+
+// optional uint32 red_score = 3;
+inline bool GameStatus::has_red_score() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline void GameStatus::clear_red_score() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.red_score_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline ::uint32_t GameStatus::red_score() const {
+  // @@protoc_insertion_point(field_get:custom_client.GameStatus.red_score)
+  return _internal_red_score();
+}
+inline void GameStatus::set_red_score(::uint32_t value) {
+  _internal_set_red_score(value);
+  // @@protoc_insertion_point(field_set:custom_client.GameStatus.red_score)
+}
+inline ::uint32_t GameStatus::_internal_red_score() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.red_score_;
+}
+inline void GameStatus::_internal_set_red_score(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.red_score_ = value;
+}
+
+// optional uint32 blue_score = 4;
+inline bool GameStatus::has_blue_score() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  return value;
+}
+inline void GameStatus::clear_blue_score() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.blue_score_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000008u;
+}
+inline ::uint32_t GameStatus::blue_score() const {
+  // @@protoc_insertion_point(field_get:custom_client.GameStatus.blue_score)
+  return _internal_blue_score();
+}
+inline void GameStatus::set_blue_score(::uint32_t value) {
+  _internal_set_blue_score(value);
+  // @@protoc_insertion_point(field_set:custom_client.GameStatus.blue_score)
+}
+inline ::uint32_t GameStatus::_internal_blue_score() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.blue_score_;
+}
+inline void GameStatus::_internal_set_blue_score(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.blue_score_ = value;
+}
+
+// optional uint32 current_stage = 5;
+inline bool GameStatus::has_current_stage() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  return value;
+}
+inline void GameStatus::clear_current_stage() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.current_stage_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000010u;
+}
+inline ::uint32_t GameStatus::current_stage() const {
+  // @@protoc_insertion_point(field_get:custom_client.GameStatus.current_stage)
+  return _internal_current_stage();
+}
+inline void GameStatus::set_current_stage(::uint32_t value) {
+  _internal_set_current_stage(value);
+  // @@protoc_insertion_point(field_set:custom_client.GameStatus.current_stage)
+}
+inline ::uint32_t GameStatus::_internal_current_stage() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.current_stage_;
+}
+inline void GameStatus::_internal_set_current_stage(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_.current_stage_ = value;
+}
+
+// optional int32 stage_countdown_sec = 6;
+inline bool GameStatus::has_stage_countdown_sec() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
+  return value;
+}
+inline void GameStatus::clear_stage_countdown_sec() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.stage_countdown_sec_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000020u;
+}
+inline ::int32_t GameStatus::stage_countdown_sec() const {
+  // @@protoc_insertion_point(field_get:custom_client.GameStatus.stage_countdown_sec)
+  return _internal_stage_countdown_sec();
+}
+inline void GameStatus::set_stage_countdown_sec(::int32_t value) {
+  _internal_set_stage_countdown_sec(value);
+  // @@protoc_insertion_point(field_set:custom_client.GameStatus.stage_countdown_sec)
+}
+inline ::int32_t GameStatus::_internal_stage_countdown_sec() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.stage_countdown_sec_;
+}
+inline void GameStatus::_internal_set_stage_countdown_sec(::int32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_.stage_countdown_sec_ = value;
+}
+
+// optional int32 stage_elapsed_sec = 7;
+inline bool GameStatus::has_stage_elapsed_sec() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
+  return value;
+}
+inline void GameStatus::clear_stage_elapsed_sec() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.stage_elapsed_sec_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000040u;
+}
+inline ::int32_t GameStatus::stage_elapsed_sec() const {
+  // @@protoc_insertion_point(field_get:custom_client.GameStatus.stage_elapsed_sec)
+  return _internal_stage_elapsed_sec();
+}
+inline void GameStatus::set_stage_elapsed_sec(::int32_t value) {
+  _internal_set_stage_elapsed_sec(value);
+  // @@protoc_insertion_point(field_set:custom_client.GameStatus.stage_elapsed_sec)
+}
+inline ::int32_t GameStatus::_internal_stage_elapsed_sec() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.stage_elapsed_sec_;
+}
+inline void GameStatus::_internal_set_stage_elapsed_sec(::int32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_._has_bits_[0] |= 0x00000040u;
+  _impl_.stage_elapsed_sec_ = value;
+}
+
+// optional bool is_paused = 8;
+inline bool GameStatus::has_is_paused() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000080u) != 0;
+  return value;
+}
+inline void GameStatus::clear_is_paused() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.is_paused_ = false;
+  _impl_._has_bits_[0] &= ~0x00000080u;
+}
+inline bool GameStatus::is_paused() const {
+  // @@protoc_insertion_point(field_get:custom_client.GameStatus.is_paused)
+  return _internal_is_paused();
+}
+inline void GameStatus::set_is_paused(bool value) {
+  _internal_set_is_paused(value);
+  // @@protoc_insertion_point(field_set:custom_client.GameStatus.is_paused)
+}
+inline bool GameStatus::_internal_is_paused() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.is_paused_;
+}
+inline void GameStatus::_internal_set_is_paused(bool value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_._has_bits_[0] |= 0x00000080u;
+  _impl_.is_paused_ = value;
+}
+
+// optional uint32 game_result = 9;
+inline bool GameStatus::has_game_result() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000100u) != 0;
+  return value;
+}
+inline void GameStatus::clear_game_result() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.game_result_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000100u;
+}
+inline ::uint32_t GameStatus::game_result() const {
+  // @@protoc_insertion_point(field_get:custom_client.GameStatus.game_result)
+  return _internal_game_result();
+}
+inline void GameStatus::set_game_result(::uint32_t value) {
+  _internal_set_game_result(value);
+  // @@protoc_insertion_point(field_set:custom_client.GameStatus.game_result)
+}
+inline ::uint32_t GameStatus::_internal_game_result() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.game_result_;
+}
+inline void GameStatus::_internal_set_game_result(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_._has_bits_[0] |= 0x00000100u;
+  _impl_.game_result_ = value;
+}
+
+// optional uint32 end_reason = 10;
+inline bool GameStatus::has_end_reason() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000200u) != 0;
+  return value;
+}
+inline void GameStatus::clear_end_reason() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.end_reason_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000200u;
+}
+inline ::uint32_t GameStatus::end_reason() const {
+  // @@protoc_insertion_point(field_get:custom_client.GameStatus.end_reason)
+  return _internal_end_reason();
+}
+inline void GameStatus::set_end_reason(::uint32_t value) {
+  _internal_set_end_reason(value);
+  // @@protoc_insertion_point(field_set:custom_client.GameStatus.end_reason)
+}
+inline ::uint32_t GameStatus::_internal_end_reason() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.end_reason_;
+}
+inline void GameStatus::_internal_set_end_reason(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_._has_bits_[0] |= 0x00000200u;
+  _impl_.end_reason_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// GlobalUnitStatus
+
+// uint32 base_health = 1;
+inline void GlobalUnitStatus::clear_base_health() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.base_health_ = 0u;
+}
+inline ::uint32_t GlobalUnitStatus::base_health() const {
+  // @@protoc_insertion_point(field_get:custom_client.GlobalUnitStatus.base_health)
+  return _internal_base_health();
+}
+inline void GlobalUnitStatus::set_base_health(::uint32_t value) {
+  _internal_set_base_health(value);
+  // @@protoc_insertion_point(field_set:custom_client.GlobalUnitStatus.base_health)
+}
+inline ::uint32_t GlobalUnitStatus::_internal_base_health() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.base_health_;
+}
+inline void GlobalUnitStatus::_internal_set_base_health(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.base_health_ = value;
+}
+
+// uint32 base_status = 2;
+inline void GlobalUnitStatus::clear_base_status() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.base_status_ = 0u;
+}
+inline ::uint32_t GlobalUnitStatus::base_status() const {
+  // @@protoc_insertion_point(field_get:custom_client.GlobalUnitStatus.base_status)
+  return _internal_base_status();
+}
+inline void GlobalUnitStatus::set_base_status(::uint32_t value) {
+  _internal_set_base_status(value);
+  // @@protoc_insertion_point(field_set:custom_client.GlobalUnitStatus.base_status)
+}
+inline ::uint32_t GlobalUnitStatus::_internal_base_status() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.base_status_;
+}
+inline void GlobalUnitStatus::_internal_set_base_status(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.base_status_ = value;
+}
+
+// uint32 base_shield = 3;
+inline void GlobalUnitStatus::clear_base_shield() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.base_shield_ = 0u;
+}
+inline ::uint32_t GlobalUnitStatus::base_shield() const {
+  // @@protoc_insertion_point(field_get:custom_client.GlobalUnitStatus.base_shield)
+  return _internal_base_shield();
+}
+inline void GlobalUnitStatus::set_base_shield(::uint32_t value) {
+  _internal_set_base_shield(value);
+  // @@protoc_insertion_point(field_set:custom_client.GlobalUnitStatus.base_shield)
+}
+inline ::uint32_t GlobalUnitStatus::_internal_base_shield() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.base_shield_;
+}
+inline void GlobalUnitStatus::_internal_set_base_shield(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.base_shield_ = value;
+}
+
+// uint32 outpost_health = 4;
+inline void GlobalUnitStatus::clear_outpost_health() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.outpost_health_ = 0u;
+}
+inline ::uint32_t GlobalUnitStatus::outpost_health() const {
+  // @@protoc_insertion_point(field_get:custom_client.GlobalUnitStatus.outpost_health)
+  return _internal_outpost_health();
+}
+inline void GlobalUnitStatus::set_outpost_health(::uint32_t value) {
+  _internal_set_outpost_health(value);
+  // @@protoc_insertion_point(field_set:custom_client.GlobalUnitStatus.outpost_health)
+}
+inline ::uint32_t GlobalUnitStatus::_internal_outpost_health() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.outpost_health_;
+}
+inline void GlobalUnitStatus::_internal_set_outpost_health(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.outpost_health_ = value;
+}
+
+// uint32 outpost_status = 5;
+inline void GlobalUnitStatus::clear_outpost_status() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.outpost_status_ = 0u;
+}
+inline ::uint32_t GlobalUnitStatus::outpost_status() const {
+  // @@protoc_insertion_point(field_get:custom_client.GlobalUnitStatus.outpost_status)
+  return _internal_outpost_status();
+}
+inline void GlobalUnitStatus::set_outpost_status(::uint32_t value) {
+  _internal_set_outpost_status(value);
+  // @@protoc_insertion_point(field_set:custom_client.GlobalUnitStatus.outpost_status)
+}
+inline ::uint32_t GlobalUnitStatus::_internal_outpost_status() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.outpost_status_;
+}
+inline void GlobalUnitStatus::_internal_set_outpost_status(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.outpost_status_ = value;
+}
+
+// uint32 enemy_base_health = 6;
+inline void GlobalUnitStatus::clear_enemy_base_health() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.enemy_base_health_ = 0u;
+}
+inline ::uint32_t GlobalUnitStatus::enemy_base_health() const {
+  // @@protoc_insertion_point(field_get:custom_client.GlobalUnitStatus.enemy_base_health)
+  return _internal_enemy_base_health();
+}
+inline void GlobalUnitStatus::set_enemy_base_health(::uint32_t value) {
+  _internal_set_enemy_base_health(value);
+  // @@protoc_insertion_point(field_set:custom_client.GlobalUnitStatus.enemy_base_health)
+}
+inline ::uint32_t GlobalUnitStatus::_internal_enemy_base_health() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.enemy_base_health_;
+}
+inline void GlobalUnitStatus::_internal_set_enemy_base_health(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.enemy_base_health_ = value;
+}
+
+// uint32 enemy_base_status = 7;
+inline void GlobalUnitStatus::clear_enemy_base_status() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.enemy_base_status_ = 0u;
+}
+inline ::uint32_t GlobalUnitStatus::enemy_base_status() const {
+  // @@protoc_insertion_point(field_get:custom_client.GlobalUnitStatus.enemy_base_status)
+  return _internal_enemy_base_status();
+}
+inline void GlobalUnitStatus::set_enemy_base_status(::uint32_t value) {
+  _internal_set_enemy_base_status(value);
+  // @@protoc_insertion_point(field_set:custom_client.GlobalUnitStatus.enemy_base_status)
+}
+inline ::uint32_t GlobalUnitStatus::_internal_enemy_base_status() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.enemy_base_status_;
+}
+inline void GlobalUnitStatus::_internal_set_enemy_base_status(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.enemy_base_status_ = value;
+}
+
+// uint32 enemy_base_shield = 8;
+inline void GlobalUnitStatus::clear_enemy_base_shield() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.enemy_base_shield_ = 0u;
+}
+inline ::uint32_t GlobalUnitStatus::enemy_base_shield() const {
+  // @@protoc_insertion_point(field_get:custom_client.GlobalUnitStatus.enemy_base_shield)
+  return _internal_enemy_base_shield();
+}
+inline void GlobalUnitStatus::set_enemy_base_shield(::uint32_t value) {
+  _internal_set_enemy_base_shield(value);
+  // @@protoc_insertion_point(field_set:custom_client.GlobalUnitStatus.enemy_base_shield)
+}
+inline ::uint32_t GlobalUnitStatus::_internal_enemy_base_shield() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.enemy_base_shield_;
+}
+inline void GlobalUnitStatus::_internal_set_enemy_base_shield(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.enemy_base_shield_ = value;
+}
+
+// uint32 enemy_outpost_health = 9;
+inline void GlobalUnitStatus::clear_enemy_outpost_health() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.enemy_outpost_health_ = 0u;
+}
+inline ::uint32_t GlobalUnitStatus::enemy_outpost_health() const {
+  // @@protoc_insertion_point(field_get:custom_client.GlobalUnitStatus.enemy_outpost_health)
+  return _internal_enemy_outpost_health();
+}
+inline void GlobalUnitStatus::set_enemy_outpost_health(::uint32_t value) {
+  _internal_set_enemy_outpost_health(value);
+  // @@protoc_insertion_point(field_set:custom_client.GlobalUnitStatus.enemy_outpost_health)
+}
+inline ::uint32_t GlobalUnitStatus::_internal_enemy_outpost_health() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.enemy_outpost_health_;
+}
+inline void GlobalUnitStatus::_internal_set_enemy_outpost_health(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.enemy_outpost_health_ = value;
+}
+
+// uint32 enemy_outpost_status = 10;
+inline void GlobalUnitStatus::clear_enemy_outpost_status() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.enemy_outpost_status_ = 0u;
+}
+inline ::uint32_t GlobalUnitStatus::enemy_outpost_status() const {
+  // @@protoc_insertion_point(field_get:custom_client.GlobalUnitStatus.enemy_outpost_status)
+  return _internal_enemy_outpost_status();
+}
+inline void GlobalUnitStatus::set_enemy_outpost_status(::uint32_t value) {
+  _internal_set_enemy_outpost_status(value);
+  // @@protoc_insertion_point(field_set:custom_client.GlobalUnitStatus.enemy_outpost_status)
+}
+inline ::uint32_t GlobalUnitStatus::_internal_enemy_outpost_status() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.enemy_outpost_status_;
+}
+inline void GlobalUnitStatus::_internal_set_enemy_outpost_status(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.enemy_outpost_status_ = value;
+}
+
+// repeated uint32 robot_health = 11;
+inline int GlobalUnitStatus::_internal_robot_health_size() const {
+  return _internal_robot_health().size();
+}
+inline int GlobalUnitStatus::robot_health_size() const {
+  return _internal_robot_health_size();
+}
+inline void GlobalUnitStatus::clear_robot_health() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.robot_health_.Clear();
+}
+inline ::uint32_t GlobalUnitStatus::robot_health(int index) const {
+  // @@protoc_insertion_point(field_get:custom_client.GlobalUnitStatus.robot_health)
+  return _internal_robot_health().Get(index);
+}
+inline void GlobalUnitStatus::set_robot_health(int index, ::uint32_t value) {
+  _internal_mutable_robot_health()->Set(index, value);
+  // @@protoc_insertion_point(field_set:custom_client.GlobalUnitStatus.robot_health)
+}
+inline void GlobalUnitStatus::add_robot_health(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _internal_mutable_robot_health()->Add(value);
+  // @@protoc_insertion_point(field_add:custom_client.GlobalUnitStatus.robot_health)
+}
+inline const ::google::protobuf::RepeatedField<::uint32_t>& GlobalUnitStatus::robot_health() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_list:custom_client.GlobalUnitStatus.robot_health)
+  return _internal_robot_health();
+}
+inline ::google::protobuf::RepeatedField<::uint32_t>* GlobalUnitStatus::mutable_robot_health()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable_list:custom_client.GlobalUnitStatus.robot_health)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  return _internal_mutable_robot_health();
+}
+inline const ::google::protobuf::RepeatedField<::uint32_t>& GlobalUnitStatus::_internal_robot_health()
+    const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.robot_health_;
+}
+inline ::google::protobuf::RepeatedField<::uint32_t>* GlobalUnitStatus::_internal_mutable_robot_health() {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return &_impl_.robot_health_;
+}
+
+// repeated int32 robot_bullets = 12;
+inline int GlobalUnitStatus::_internal_robot_bullets_size() const {
+  return _internal_robot_bullets().size();
+}
+inline int GlobalUnitStatus::robot_bullets_size() const {
+  return _internal_robot_bullets_size();
+}
+inline void GlobalUnitStatus::clear_robot_bullets() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.robot_bullets_.Clear();
+}
+inline ::int32_t GlobalUnitStatus::robot_bullets(int index) const {
+  // @@protoc_insertion_point(field_get:custom_client.GlobalUnitStatus.robot_bullets)
+  return _internal_robot_bullets().Get(index);
+}
+inline void GlobalUnitStatus::set_robot_bullets(int index, ::int32_t value) {
+  _internal_mutable_robot_bullets()->Set(index, value);
+  // @@protoc_insertion_point(field_set:custom_client.GlobalUnitStatus.robot_bullets)
+}
+inline void GlobalUnitStatus::add_robot_bullets(::int32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _internal_mutable_robot_bullets()->Add(value);
+  // @@protoc_insertion_point(field_add:custom_client.GlobalUnitStatus.robot_bullets)
+}
+inline const ::google::protobuf::RepeatedField<::int32_t>& GlobalUnitStatus::robot_bullets() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_list:custom_client.GlobalUnitStatus.robot_bullets)
+  return _internal_robot_bullets();
+}
+inline ::google::protobuf::RepeatedField<::int32_t>* GlobalUnitStatus::mutable_robot_bullets()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable_list:custom_client.GlobalUnitStatus.robot_bullets)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  return _internal_mutable_robot_bullets();
+}
+inline const ::google::protobuf::RepeatedField<::int32_t>& GlobalUnitStatus::_internal_robot_bullets()
+    const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.robot_bullets_;
+}
+inline ::google::protobuf::RepeatedField<::int32_t>* GlobalUnitStatus::_internal_mutable_robot_bullets() {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return &_impl_.robot_bullets_;
+}
+
+// uint32 total_damage_ally = 13;
+inline void GlobalUnitStatus::clear_total_damage_ally() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.total_damage_ally_ = 0u;
+}
+inline ::uint32_t GlobalUnitStatus::total_damage_ally() const {
+  // @@protoc_insertion_point(field_get:custom_client.GlobalUnitStatus.total_damage_ally)
+  return _internal_total_damage_ally();
+}
+inline void GlobalUnitStatus::set_total_damage_ally(::uint32_t value) {
+  _internal_set_total_damage_ally(value);
+  // @@protoc_insertion_point(field_set:custom_client.GlobalUnitStatus.total_damage_ally)
+}
+inline ::uint32_t GlobalUnitStatus::_internal_total_damage_ally() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.total_damage_ally_;
+}
+inline void GlobalUnitStatus::_internal_set_total_damage_ally(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.total_damage_ally_ = value;
+}
+
+// uint32 total_damage_enemy = 14;
+inline void GlobalUnitStatus::clear_total_damage_enemy() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.total_damage_enemy_ = 0u;
+}
+inline ::uint32_t GlobalUnitStatus::total_damage_enemy() const {
+  // @@protoc_insertion_point(field_get:custom_client.GlobalUnitStatus.total_damage_enemy)
+  return _internal_total_damage_enemy();
+}
+inline void GlobalUnitStatus::set_total_damage_enemy(::uint32_t value) {
+  _internal_set_total_damage_enemy(value);
+  // @@protoc_insertion_point(field_set:custom_client.GlobalUnitStatus.total_damage_enemy)
+}
+inline ::uint32_t GlobalUnitStatus::_internal_total_damage_enemy() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.total_damage_enemy_;
+}
+inline void GlobalUnitStatus::_internal_set_total_damage_enemy(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.total_damage_enemy_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// RobotStaticStatus
+
+// uint32 connection_state = 1;
+inline void RobotStaticStatus::clear_connection_state() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.connection_state_ = 0u;
+}
+inline ::uint32_t RobotStaticStatus::connection_state() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotStaticStatus.connection_state)
+  return _internal_connection_state();
+}
+inline void RobotStaticStatus::set_connection_state(::uint32_t value) {
+  _internal_set_connection_state(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotStaticStatus.connection_state)
+}
+inline ::uint32_t RobotStaticStatus::_internal_connection_state() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.connection_state_;
+}
+inline void RobotStaticStatus::_internal_set_connection_state(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.connection_state_ = value;
+}
+
+// uint32 field_state = 2;
+inline void RobotStaticStatus::clear_field_state() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.field_state_ = 0u;
+}
+inline ::uint32_t RobotStaticStatus::field_state() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotStaticStatus.field_state)
+  return _internal_field_state();
+}
+inline void RobotStaticStatus::set_field_state(::uint32_t value) {
+  _internal_set_field_state(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotStaticStatus.field_state)
+}
+inline ::uint32_t RobotStaticStatus::_internal_field_state() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.field_state_;
+}
+inline void RobotStaticStatus::_internal_set_field_state(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.field_state_ = value;
+}
+
+// uint32 alive_state = 3;
+inline void RobotStaticStatus::clear_alive_state() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.alive_state_ = 0u;
+}
+inline ::uint32_t RobotStaticStatus::alive_state() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotStaticStatus.alive_state)
+  return _internal_alive_state();
+}
+inline void RobotStaticStatus::set_alive_state(::uint32_t value) {
+  _internal_set_alive_state(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotStaticStatus.alive_state)
+}
+inline ::uint32_t RobotStaticStatus::_internal_alive_state() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.alive_state_;
+}
+inline void RobotStaticStatus::_internal_set_alive_state(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.alive_state_ = value;
+}
+
+// uint32 robot_id = 4;
+inline void RobotStaticStatus::clear_robot_id() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.robot_id_ = 0u;
+}
+inline ::uint32_t RobotStaticStatus::robot_id() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotStaticStatus.robot_id)
+  return _internal_robot_id();
+}
+inline void RobotStaticStatus::set_robot_id(::uint32_t value) {
+  _internal_set_robot_id(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotStaticStatus.robot_id)
+}
+inline ::uint32_t RobotStaticStatus::_internal_robot_id() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.robot_id_;
+}
+inline void RobotStaticStatus::_internal_set_robot_id(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.robot_id_ = value;
+}
+
+// uint32 robot_type = 5;
+inline void RobotStaticStatus::clear_robot_type() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.robot_type_ = 0u;
+}
+inline ::uint32_t RobotStaticStatus::robot_type() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotStaticStatus.robot_type)
+  return _internal_robot_type();
+}
+inline void RobotStaticStatus::set_robot_type(::uint32_t value) {
+  _internal_set_robot_type(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotStaticStatus.robot_type)
+}
+inline ::uint32_t RobotStaticStatus::_internal_robot_type() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.robot_type_;
+}
+inline void RobotStaticStatus::_internal_set_robot_type(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.robot_type_ = value;
+}
+
+// uint32 performance_system_shooter = 6;
+inline void RobotStaticStatus::clear_performance_system_shooter() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.performance_system_shooter_ = 0u;
+}
+inline ::uint32_t RobotStaticStatus::performance_system_shooter() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotStaticStatus.performance_system_shooter)
+  return _internal_performance_system_shooter();
+}
+inline void RobotStaticStatus::set_performance_system_shooter(::uint32_t value) {
+  _internal_set_performance_system_shooter(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotStaticStatus.performance_system_shooter)
+}
+inline ::uint32_t RobotStaticStatus::_internal_performance_system_shooter() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.performance_system_shooter_;
+}
+inline void RobotStaticStatus::_internal_set_performance_system_shooter(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.performance_system_shooter_ = value;
+}
+
+// uint32 performance_system_chassis = 7;
+inline void RobotStaticStatus::clear_performance_system_chassis() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.performance_system_chassis_ = 0u;
+}
+inline ::uint32_t RobotStaticStatus::performance_system_chassis() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotStaticStatus.performance_system_chassis)
+  return _internal_performance_system_chassis();
+}
+inline void RobotStaticStatus::set_performance_system_chassis(::uint32_t value) {
+  _internal_set_performance_system_chassis(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotStaticStatus.performance_system_chassis)
+}
+inline ::uint32_t RobotStaticStatus::_internal_performance_system_chassis() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.performance_system_chassis_;
+}
+inline void RobotStaticStatus::_internal_set_performance_system_chassis(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.performance_system_chassis_ = value;
+}
+
+// uint32 level = 8;
+inline void RobotStaticStatus::clear_level() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.level_ = 0u;
+}
+inline ::uint32_t RobotStaticStatus::level() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotStaticStatus.level)
+  return _internal_level();
+}
+inline void RobotStaticStatus::set_level(::uint32_t value) {
+  _internal_set_level(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotStaticStatus.level)
+}
+inline ::uint32_t RobotStaticStatus::_internal_level() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.level_;
+}
+inline void RobotStaticStatus::_internal_set_level(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.level_ = value;
+}
+
+// uint32 max_health = 9;
+inline void RobotStaticStatus::clear_max_health() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.max_health_ = 0u;
+}
+inline ::uint32_t RobotStaticStatus::max_health() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotStaticStatus.max_health)
+  return _internal_max_health();
+}
+inline void RobotStaticStatus::set_max_health(::uint32_t value) {
+  _internal_set_max_health(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotStaticStatus.max_health)
+}
+inline ::uint32_t RobotStaticStatus::_internal_max_health() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.max_health_;
+}
+inline void RobotStaticStatus::_internal_set_max_health(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.max_health_ = value;
+}
+
+// uint32 max_heat = 10;
+inline void RobotStaticStatus::clear_max_heat() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.max_heat_ = 0u;
+}
+inline ::uint32_t RobotStaticStatus::max_heat() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotStaticStatus.max_heat)
+  return _internal_max_heat();
+}
+inline void RobotStaticStatus::set_max_heat(::uint32_t value) {
+  _internal_set_max_heat(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotStaticStatus.max_heat)
+}
+inline ::uint32_t RobotStaticStatus::_internal_max_heat() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.max_heat_;
+}
+inline void RobotStaticStatus::_internal_set_max_heat(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.max_heat_ = value;
+}
+
+// float heat_cooldown_rate = 11;
+inline void RobotStaticStatus::clear_heat_cooldown_rate() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.heat_cooldown_rate_ = 0;
+}
+inline float RobotStaticStatus::heat_cooldown_rate() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotStaticStatus.heat_cooldown_rate)
+  return _internal_heat_cooldown_rate();
+}
+inline void RobotStaticStatus::set_heat_cooldown_rate(float value) {
+  _internal_set_heat_cooldown_rate(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotStaticStatus.heat_cooldown_rate)
+}
+inline float RobotStaticStatus::_internal_heat_cooldown_rate() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.heat_cooldown_rate_;
+}
+inline void RobotStaticStatus::_internal_set_heat_cooldown_rate(float value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.heat_cooldown_rate_ = value;
+}
+
+// uint32 max_power = 12;
+inline void RobotStaticStatus::clear_max_power() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.max_power_ = 0u;
+}
+inline ::uint32_t RobotStaticStatus::max_power() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotStaticStatus.max_power)
+  return _internal_max_power();
+}
+inline void RobotStaticStatus::set_max_power(::uint32_t value) {
+  _internal_set_max_power(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotStaticStatus.max_power)
+}
+inline ::uint32_t RobotStaticStatus::_internal_max_power() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.max_power_;
+}
+inline void RobotStaticStatus::_internal_set_max_power(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.max_power_ = value;
+}
+
+// uint32 max_buffer_energy = 13;
+inline void RobotStaticStatus::clear_max_buffer_energy() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.max_buffer_energy_ = 0u;
+}
+inline ::uint32_t RobotStaticStatus::max_buffer_energy() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotStaticStatus.max_buffer_energy)
+  return _internal_max_buffer_energy();
+}
+inline void RobotStaticStatus::set_max_buffer_energy(::uint32_t value) {
+  _internal_set_max_buffer_energy(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotStaticStatus.max_buffer_energy)
+}
+inline ::uint32_t RobotStaticStatus::_internal_max_buffer_energy() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.max_buffer_energy_;
+}
+inline void RobotStaticStatus::_internal_set_max_buffer_energy(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.max_buffer_energy_ = value;
+}
+
+// uint32 max_chassis_energy = 14;
+inline void RobotStaticStatus::clear_max_chassis_energy() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.max_chassis_energy_ = 0u;
+}
+inline ::uint32_t RobotStaticStatus::max_chassis_energy() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotStaticStatus.max_chassis_energy)
+  return _internal_max_chassis_energy();
+}
+inline void RobotStaticStatus::set_max_chassis_energy(::uint32_t value) {
+  _internal_set_max_chassis_energy(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotStaticStatus.max_chassis_energy)
+}
+inline ::uint32_t RobotStaticStatus::_internal_max_chassis_energy() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.max_chassis_energy_;
+}
+inline void RobotStaticStatus::_internal_set_max_chassis_energy(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.max_chassis_energy_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// RobotDynamicStatus
+
+// uint32 current_health = 1;
+inline void RobotDynamicStatus::clear_current_health() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.current_health_ = 0u;
+}
+inline ::uint32_t RobotDynamicStatus::current_health() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotDynamicStatus.current_health)
+  return _internal_current_health();
+}
+inline void RobotDynamicStatus::set_current_health(::uint32_t value) {
+  _internal_set_current_health(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotDynamicStatus.current_health)
+}
+inline ::uint32_t RobotDynamicStatus::_internal_current_health() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.current_health_;
+}
+inline void RobotDynamicStatus::_internal_set_current_health(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.current_health_ = value;
+}
+
+// float current_heat = 2;
+inline void RobotDynamicStatus::clear_current_heat() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.current_heat_ = 0;
+}
+inline float RobotDynamicStatus::current_heat() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotDynamicStatus.current_heat)
+  return _internal_current_heat();
+}
+inline void RobotDynamicStatus::set_current_heat(float value) {
+  _internal_set_current_heat(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotDynamicStatus.current_heat)
+}
+inline float RobotDynamicStatus::_internal_current_heat() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.current_heat_;
+}
+inline void RobotDynamicStatus::_internal_set_current_heat(float value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.current_heat_ = value;
+}
+
+// float last_projectile_fire_rate = 3;
+inline void RobotDynamicStatus::clear_last_projectile_fire_rate() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.last_projectile_fire_rate_ = 0;
+}
+inline float RobotDynamicStatus::last_projectile_fire_rate() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotDynamicStatus.last_projectile_fire_rate)
+  return _internal_last_projectile_fire_rate();
+}
+inline void RobotDynamicStatus::set_last_projectile_fire_rate(float value) {
+  _internal_set_last_projectile_fire_rate(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotDynamicStatus.last_projectile_fire_rate)
+}
+inline float RobotDynamicStatus::_internal_last_projectile_fire_rate() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.last_projectile_fire_rate_;
+}
+inline void RobotDynamicStatus::_internal_set_last_projectile_fire_rate(float value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.last_projectile_fire_rate_ = value;
+}
+
+// uint32 current_chassis_energy = 4;
+inline void RobotDynamicStatus::clear_current_chassis_energy() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.current_chassis_energy_ = 0u;
+}
+inline ::uint32_t RobotDynamicStatus::current_chassis_energy() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotDynamicStatus.current_chassis_energy)
+  return _internal_current_chassis_energy();
+}
+inline void RobotDynamicStatus::set_current_chassis_energy(::uint32_t value) {
+  _internal_set_current_chassis_energy(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotDynamicStatus.current_chassis_energy)
+}
+inline ::uint32_t RobotDynamicStatus::_internal_current_chassis_energy() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.current_chassis_energy_;
+}
+inline void RobotDynamicStatus::_internal_set_current_chassis_energy(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.current_chassis_energy_ = value;
+}
+
+// uint32 current_buffer_energy = 5;
+inline void RobotDynamicStatus::clear_current_buffer_energy() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.current_buffer_energy_ = 0u;
+}
+inline ::uint32_t RobotDynamicStatus::current_buffer_energy() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotDynamicStatus.current_buffer_energy)
+  return _internal_current_buffer_energy();
+}
+inline void RobotDynamicStatus::set_current_buffer_energy(::uint32_t value) {
+  _internal_set_current_buffer_energy(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotDynamicStatus.current_buffer_energy)
+}
+inline ::uint32_t RobotDynamicStatus::_internal_current_buffer_energy() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.current_buffer_energy_;
+}
+inline void RobotDynamicStatus::_internal_set_current_buffer_energy(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.current_buffer_energy_ = value;
+}
+
+// uint32 current_experience = 6;
+inline void RobotDynamicStatus::clear_current_experience() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.current_experience_ = 0u;
+}
+inline ::uint32_t RobotDynamicStatus::current_experience() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotDynamicStatus.current_experience)
+  return _internal_current_experience();
+}
+inline void RobotDynamicStatus::set_current_experience(::uint32_t value) {
+  _internal_set_current_experience(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotDynamicStatus.current_experience)
+}
+inline ::uint32_t RobotDynamicStatus::_internal_current_experience() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.current_experience_;
+}
+inline void RobotDynamicStatus::_internal_set_current_experience(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.current_experience_ = value;
+}
+
+// uint32 experience_for_upgrade = 7;
+inline void RobotDynamicStatus::clear_experience_for_upgrade() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.experience_for_upgrade_ = 0u;
+}
+inline ::uint32_t RobotDynamicStatus::experience_for_upgrade() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotDynamicStatus.experience_for_upgrade)
+  return _internal_experience_for_upgrade();
+}
+inline void RobotDynamicStatus::set_experience_for_upgrade(::uint32_t value) {
+  _internal_set_experience_for_upgrade(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotDynamicStatus.experience_for_upgrade)
+}
+inline ::uint32_t RobotDynamicStatus::_internal_experience_for_upgrade() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.experience_for_upgrade_;
+}
+inline void RobotDynamicStatus::_internal_set_experience_for_upgrade(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.experience_for_upgrade_ = value;
+}
+
+// uint32 total_projectiles_fired = 8;
+inline void RobotDynamicStatus::clear_total_projectiles_fired() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.total_projectiles_fired_ = 0u;
+}
+inline ::uint32_t RobotDynamicStatus::total_projectiles_fired() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotDynamicStatus.total_projectiles_fired)
+  return _internal_total_projectiles_fired();
+}
+inline void RobotDynamicStatus::set_total_projectiles_fired(::uint32_t value) {
+  _internal_set_total_projectiles_fired(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotDynamicStatus.total_projectiles_fired)
+}
+inline ::uint32_t RobotDynamicStatus::_internal_total_projectiles_fired() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.total_projectiles_fired_;
+}
+inline void RobotDynamicStatus::_internal_set_total_projectiles_fired(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.total_projectiles_fired_ = value;
+}
+
+// uint32 remaining_ammo = 9;
+inline void RobotDynamicStatus::clear_remaining_ammo() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.remaining_ammo_ = 0u;
+}
+inline ::uint32_t RobotDynamicStatus::remaining_ammo() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotDynamicStatus.remaining_ammo)
+  return _internal_remaining_ammo();
+}
+inline void RobotDynamicStatus::set_remaining_ammo(::uint32_t value) {
+  _internal_set_remaining_ammo(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotDynamicStatus.remaining_ammo)
+}
+inline ::uint32_t RobotDynamicStatus::_internal_remaining_ammo() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.remaining_ammo_;
+}
+inline void RobotDynamicStatus::_internal_set_remaining_ammo(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.remaining_ammo_ = value;
+}
+
+// bool is_out_of_combat = 10;
+inline void RobotDynamicStatus::clear_is_out_of_combat() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.is_out_of_combat_ = false;
+}
+inline bool RobotDynamicStatus::is_out_of_combat() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotDynamicStatus.is_out_of_combat)
+  return _internal_is_out_of_combat();
+}
+inline void RobotDynamicStatus::set_is_out_of_combat(bool value) {
+  _internal_set_is_out_of_combat(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotDynamicStatus.is_out_of_combat)
+}
+inline bool RobotDynamicStatus::_internal_is_out_of_combat() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.is_out_of_combat_;
+}
+inline void RobotDynamicStatus::_internal_set_is_out_of_combat(bool value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.is_out_of_combat_ = value;
+}
+
+// uint32 out_of_combat_countdown = 11;
+inline void RobotDynamicStatus::clear_out_of_combat_countdown() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.out_of_combat_countdown_ = 0u;
+}
+inline ::uint32_t RobotDynamicStatus::out_of_combat_countdown() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotDynamicStatus.out_of_combat_countdown)
+  return _internal_out_of_combat_countdown();
+}
+inline void RobotDynamicStatus::set_out_of_combat_countdown(::uint32_t value) {
+  _internal_set_out_of_combat_countdown(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotDynamicStatus.out_of_combat_countdown)
+}
+inline ::uint32_t RobotDynamicStatus::_internal_out_of_combat_countdown() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.out_of_combat_countdown_;
+}
+inline void RobotDynamicStatus::_internal_set_out_of_combat_countdown(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.out_of_combat_countdown_ = value;
+}
+
+// bool can_remote_heal = 12;
+inline void RobotDynamicStatus::clear_can_remote_heal() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.can_remote_heal_ = false;
+}
+inline bool RobotDynamicStatus::can_remote_heal() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotDynamicStatus.can_remote_heal)
+  return _internal_can_remote_heal();
+}
+inline void RobotDynamicStatus::set_can_remote_heal(bool value) {
+  _internal_set_can_remote_heal(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotDynamicStatus.can_remote_heal)
+}
+inline bool RobotDynamicStatus::_internal_can_remote_heal() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.can_remote_heal_;
+}
+inline void RobotDynamicStatus::_internal_set_can_remote_heal(bool value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.can_remote_heal_ = value;
+}
+
+// bool can_remote_ammo = 13;
+inline void RobotDynamicStatus::clear_can_remote_ammo() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.can_remote_ammo_ = false;
+}
+inline bool RobotDynamicStatus::can_remote_ammo() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotDynamicStatus.can_remote_ammo)
+  return _internal_can_remote_ammo();
+}
+inline void RobotDynamicStatus::set_can_remote_ammo(bool value) {
+  _internal_set_can_remote_ammo(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotDynamicStatus.can_remote_ammo)
+}
+inline bool RobotDynamicStatus::_internal_can_remote_ammo() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.can_remote_ammo_;
+}
+inline void RobotDynamicStatus::_internal_set_can_remote_ammo(bool value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.can_remote_ammo_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// RobotPosition
+
+// float x = 1;
+inline void RobotPosition::clear_x() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.x_ = 0;
+}
+inline float RobotPosition::x() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotPosition.x)
+  return _internal_x();
+}
+inline void RobotPosition::set_x(float value) {
+  _internal_set_x(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotPosition.x)
+}
+inline float RobotPosition::_internal_x() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.x_;
+}
+inline void RobotPosition::_internal_set_x(float value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.x_ = value;
+}
+
+// float y = 2;
+inline void RobotPosition::clear_y() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.y_ = 0;
+}
+inline float RobotPosition::y() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotPosition.y)
+  return _internal_y();
+}
+inline void RobotPosition::set_y(float value) {
+  _internal_set_y(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotPosition.y)
+}
+inline float RobotPosition::_internal_y() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.y_;
+}
+inline void RobotPosition::_internal_set_y(float value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.y_ = value;
+}
+
+// float z = 3;
+inline void RobotPosition::clear_z() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.z_ = 0;
+}
+inline float RobotPosition::z() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotPosition.z)
+  return _internal_z();
+}
+inline void RobotPosition::set_z(float value) {
+  _internal_set_z(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotPosition.z)
+}
+inline float RobotPosition::_internal_z() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.z_;
+}
+inline void RobotPosition::_internal_set_z(float value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.z_ = value;
+}
+
+// float yaw = 4;
+inline void RobotPosition::clear_yaw() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.yaw_ = 0;
+}
+inline float RobotPosition::yaw() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotPosition.yaw)
+  return _internal_yaw();
+}
+inline void RobotPosition::set_yaw(float value) {
+  _internal_set_yaw(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotPosition.yaw)
+}
+inline float RobotPosition::_internal_yaw() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.yaw_;
+}
+inline void RobotPosition::_internal_set_yaw(float value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.yaw_ = value;
+}
+
+// uint32 robot_id = 5;
+inline void RobotPosition::clear_robot_id() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.robot_id_ = 0u;
+}
+inline ::uint32_t RobotPosition::robot_id() const {
+  // @@protoc_insertion_point(field_get:custom_client.RobotPosition.robot_id)
+  return _internal_robot_id();
+}
+inline void RobotPosition::set_robot_id(::uint32_t value) {
+  _internal_set_robot_id(value);
+  // @@protoc_insertion_point(field_set:custom_client.RobotPosition.robot_id)
+}
+inline ::uint32_t RobotPosition::_internal_robot_id() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.robot_id_;
+}
+inline void RobotPosition::_internal_set_robot_id(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.robot_id_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// Event
+
+// int32 event_id = 1;
+inline void Event::clear_event_id() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.event_id_ = 0;
+}
+inline ::int32_t Event::event_id() const {
+  // @@protoc_insertion_point(field_get:custom_client.Event.event_id)
+  return _internal_event_id();
+}
+inline void Event::set_event_id(::int32_t value) {
+  _internal_set_event_id(value);
+  // @@protoc_insertion_point(field_set:custom_client.Event.event_id)
+}
+inline ::int32_t Event::_internal_event_id() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.event_id_;
+}
+inline void Event::_internal_set_event_id(::int32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.event_id_ = value;
+}
+
+// string param = 2;
+inline void Event::clear_param() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.param_.ClearToEmpty();
+}
+inline const std::string& Event::param() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:custom_client.Event.param)
+  return _internal_param();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void Event::set_param(Arg_&& arg,
+                                                     Args_... args) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.param_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:custom_client.Event.param)
+}
+inline std::string* Event::mutable_param() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_param();
+  // @@protoc_insertion_point(field_mutable:custom_client.Event.param)
+  return _s;
+}
+inline const std::string& Event::_internal_param() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.param_.Get();
+}
+inline void Event::_internal_set_param(const std::string& value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.param_.Set(value, GetArena());
+}
+inline std::string* Event::_internal_mutable_param() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  return _impl_.param_.Mutable( GetArena());
+}
+inline std::string* Event::release_param() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  // @@protoc_insertion_point(field_release:custom_client.Event.param)
+  return _impl_.param_.Release();
+}
+inline void Event::set_allocated_param(std::string* value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.param_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.param_.IsDefault()) {
+          _impl_.param_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:custom_client.Event.param)
+}
+
+// -------------------------------------------------------------------
+
+// PenaltyInfo
+
+// uint32 penalty_type = 1;
+inline void PenaltyInfo::clear_penalty_type() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.penalty_type_ = 0u;
+}
+inline ::uint32_t PenaltyInfo::penalty_type() const {
+  // @@protoc_insertion_point(field_get:custom_client.PenaltyInfo.penalty_type)
+  return _internal_penalty_type();
+}
+inline void PenaltyInfo::set_penalty_type(::uint32_t value) {
+  _internal_set_penalty_type(value);
+  // @@protoc_insertion_point(field_set:custom_client.PenaltyInfo.penalty_type)
+}
+inline ::uint32_t PenaltyInfo::_internal_penalty_type() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.penalty_type_;
+}
+inline void PenaltyInfo::_internal_set_penalty_type(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.penalty_type_ = value;
+}
+
+// uint32 penalty_effect_sec = 2;
+inline void PenaltyInfo::clear_penalty_effect_sec() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.penalty_effect_sec_ = 0u;
+}
+inline ::uint32_t PenaltyInfo::penalty_effect_sec() const {
+  // @@protoc_insertion_point(field_get:custom_client.PenaltyInfo.penalty_effect_sec)
+  return _internal_penalty_effect_sec();
+}
+inline void PenaltyInfo::set_penalty_effect_sec(::uint32_t value) {
+  _internal_set_penalty_effect_sec(value);
+  // @@protoc_insertion_point(field_set:custom_client.PenaltyInfo.penalty_effect_sec)
+}
+inline ::uint32_t PenaltyInfo::_internal_penalty_effect_sec() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.penalty_effect_sec_;
+}
+inline void PenaltyInfo::_internal_set_penalty_effect_sec(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.penalty_effect_sec_ = value;
+}
+
+// uint32 total_penalty_num = 3;
+inline void PenaltyInfo::clear_total_penalty_num() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.total_penalty_num_ = 0u;
+}
+inline ::uint32_t PenaltyInfo::total_penalty_num() const {
+  // @@protoc_insertion_point(field_get:custom_client.PenaltyInfo.total_penalty_num)
+  return _internal_total_penalty_num();
+}
+inline void PenaltyInfo::set_total_penalty_num(::uint32_t value) {
+  _internal_set_total_penalty_num(value);
+  // @@protoc_insertion_point(field_set:custom_client.PenaltyInfo.total_penalty_num)
+}
+inline ::uint32_t PenaltyInfo::_internal_total_penalty_num() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.total_penalty_num_;
+}
+inline void PenaltyInfo::_internal_set_total_penalty_num(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.total_penalty_num_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// Buff
+
+// optional uint32 robot_id = 1;
+inline bool Buff::has_robot_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline void Buff::clear_robot_id() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.robot_id_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline ::uint32_t Buff::robot_id() const {
+  // @@protoc_insertion_point(field_get:custom_client.Buff.robot_id)
+  return _internal_robot_id();
+}
+inline void Buff::set_robot_id(::uint32_t value) {
+  _internal_set_robot_id(value);
+  // @@protoc_insertion_point(field_set:custom_client.Buff.robot_id)
+}
+inline ::uint32_t Buff::_internal_robot_id() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.robot_id_;
+}
+inline void Buff::_internal_set_robot_id(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.robot_id_ = value;
+}
+
+// optional uint32 buff_type = 2;
+inline bool Buff::has_buff_type() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline void Buff::clear_buff_type() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.buff_type_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline ::uint32_t Buff::buff_type() const {
+  // @@protoc_insertion_point(field_get:custom_client.Buff.buff_type)
+  return _internal_buff_type();
+}
+inline void Buff::set_buff_type(::uint32_t value) {
+  _internal_set_buff_type(value);
+  // @@protoc_insertion_point(field_set:custom_client.Buff.buff_type)
+}
+inline ::uint32_t Buff::_internal_buff_type() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.buff_type_;
+}
+inline void Buff::_internal_set_buff_type(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.buff_type_ = value;
+}
+
+// optional int32 buff_level = 3;
+inline bool Buff::has_buff_level() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline void Buff::clear_buff_level() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.buff_level_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline ::int32_t Buff::buff_level() const {
+  // @@protoc_insertion_point(field_get:custom_client.Buff.buff_level)
+  return _internal_buff_level();
+}
+inline void Buff::set_buff_level(::int32_t value) {
+  _internal_set_buff_level(value);
+  // @@protoc_insertion_point(field_set:custom_client.Buff.buff_level)
+}
+inline ::int32_t Buff::_internal_buff_level() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.buff_level_;
+}
+inline void Buff::_internal_set_buff_level(::int32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.buff_level_ = value;
+}
+
+// optional uint32 buff_max_time = 4;
+inline bool Buff::has_buff_max_time() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  return value;
+}
+inline void Buff::clear_buff_max_time() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.buff_max_time_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000008u;
+}
+inline ::uint32_t Buff::buff_max_time() const {
+  // @@protoc_insertion_point(field_get:custom_client.Buff.buff_max_time)
+  return _internal_buff_max_time();
+}
+inline void Buff::set_buff_max_time(::uint32_t value) {
+  _internal_set_buff_max_time(value);
+  // @@protoc_insertion_point(field_set:custom_client.Buff.buff_max_time)
+}
+inline ::uint32_t Buff::_internal_buff_max_time() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.buff_max_time_;
+}
+inline void Buff::_internal_set_buff_max_time(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.buff_max_time_ = value;
+}
+
+// optional uint32 buff_left_time = 5;
+inline bool Buff::has_buff_left_time() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  return value;
+}
+inline void Buff::clear_buff_left_time() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.buff_left_time_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000010u;
+}
+inline ::uint32_t Buff::buff_left_time() const {
+  // @@protoc_insertion_point(field_get:custom_client.Buff.buff_left_time)
+  return _internal_buff_left_time();
+}
+inline void Buff::set_buff_left_time(::uint32_t value) {
+  _internal_set_buff_left_time(value);
+  // @@protoc_insertion_point(field_set:custom_client.Buff.buff_left_time)
+}
+inline ::uint32_t Buff::_internal_buff_left_time() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.buff_left_time_;
+}
+inline void Buff::_internal_set_buff_left_time(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_.buff_left_time_ = value;
 }
 
 #ifdef __GNUC__

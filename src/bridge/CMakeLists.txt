@@ -106,6 +106,14 @@ if(NOT WIN32)
   target_link_options(bridge_client PRIVATE "-Wl,--disable-new-dtags")
 endif()
 
+# ---------------- 可执行: match_simulator (赛场信息发布模拟器) ----------------
+add_executable(match_simulator src/match_simulator.cpp)
+target_link_libraries(match_simulator PRIVATE bridge_core)
+
+if(NOT WIN32)
+  target_link_options(match_simulator PRIVATE "-Wl,--disable-new-dtags")
+endif()
+
 # ---------------- 可执行: bridge_node (ROS 2 节点, 启动并管理 bridge_client) ----------------
 add_executable(bridge_node src/bridge_node.cpp)
 target_link_libraries(bridge_node PRIVATE
@@ -121,6 +129,7 @@ endif()
 install(TARGETS
   bridge_client
   bridge_node
+  match_simulator
   RUNTIME DESTINATION lib/${PROJECT_NAME}
 )
 

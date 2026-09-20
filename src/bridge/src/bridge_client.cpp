@@ -74,19 +74,70 @@ int main(int argc, char** argv) {
     // ------------------------------------------------------------
     MyMqttClient mqtt(robot_id, broker_ip, broker_port);
 
-    // 收到任意 topic 的 Protobuf 二进制后,统一反序列化入口
+    // 收到任意 topic 的二进制 payload 后,统一处理入口
     mqtt.SetProtoHandler([](const std::string& topic,
                             const std::vector<uint8_t>& payload) {
-        std::cerr << "\n[recv] topic=" << topic
-                  << ", payload=" << payload.size() << " bytes" << std::endl;
-        print_hex("  hex", payload);
+        if (payload.empty()) {
+            return;
+        }
 
-        // 演示:如果 topic 是 status/robot,就反序列化为 RobotStatus
+        // 赛场信息下行 topic 与 RoboMaster 2026 官方协议一致。
+        if (topic == "GameStatus") {
+            custom_client::GameStatus status;
+            if (status.ParseFromArray(payload.data(),
+                                      static_cast<int>(payload.size()))) {
+                std::cerr << "[recv] GameStatus round=" << status.current_round()
+                          << " stage=" << status.current_stage()
+                          << " countdown=" << status.stage_countdown_sec()
+                          << " red=" << status.red_score()
+                          << " blue=" << status.blue_score() << std::endl;
+            }
+            return;
+        }
+        if (topic == "RobotPosition") {
+            custom_client::RobotPosition pos;
+            if (pos.ParseFromArray(payload.data(),
+                                   static_cast<int>(payload.size()))) {
+                std::cerr << "[recv] RobotPosition id=" << pos.robot_id()
+                          << " x=" << pos.x() << " y=" << pos.y()
+                          << " yaw=" << pos.yaw() << std::endl;
+            }
+            return;
+        }
+        if (topic == "RobotDynamicStatus") {
+            custom_client::RobotDynamicStatus dyn;
+            if (dyn.ParseFromArray(payload.data(),
+                                   static_cast<int>(payload.size()))) {
+                std::cerr << "[recv] RobotDynamicStatus hp=" << dyn.current_health()
+                          << " heat=" << dyn.current_heat()
+                          << " ammo=" << dyn.remaining_ammo() << std::endl;
+            }
+            return;
+        }
+        if (topic == "GlobalUnitStatus") {
+            custom_client::GlobalUnitStatus gus;
+            if (gus.ParseFromArray(payload.data(),
+                                   static_cast<int>(payload.size()))) {
+                std::cerr << "[recv] GlobalUnitStatus base_hp=" << gus.base_health()
+                          << " outpost_hp=" << gus.outpost_health() << std::endl;
+            }
+            return;
+        }
+        if (topic == "Event") {
+            custom_client::Event evt;
+            if (evt.ParseFromArray(payload.data(),
+                                   static_cast<int>(payload.size()))) {
+                std::cerr << "[recv] Event id=" << evt.event_id()
+                          << " param=" << evt.param() << std::endl;
+            }
+            return;
+        }
         if (topic == "status/robot") {
+            // 仅当发射端发布 status/robot 时才会走到这里
             custom_client::RobotStatus status;
             if (status.ParseFromArray(payload.data(),
                                       static_cast<int>(payload.size()))) {
-                std::cerr << "  parsed RobotStatus:"
+                std::cerr << "[recv] RobotStatus:"
                           << " robot_id="  << status.header().robot_id()
                           << " seq="       << status.header().sequence()
                           << " mode="      << custom_client::RobotStatus_Mode_Name(status.mode())
@@ -94,9 +145,13 @@ int main(int argc, char** argv) {
                           << " fps="       << status.fps()
                           << std::endl;
             } else {
-                std::cerr << "  parse failed!" << std::endl;
+                std::cerr << "[recv] parse failed!" << std::endl;
             }
+            return;
         }
+        std::cerr << "[recv] unhandled topic=" << topic
+                  << ", payload=" << payload.size() << " bytes" << std::endl;
+        print_hex("  hex", payload);
     });
 
     if (!mqtt.Connect()) {
@@ -105,7 +160,14 @@ int main(int argc, char** argv) {
     }
     mqtt.StartReceiveLoop();
 
-    // 订阅机器人上报状态
+    // 订阅赛场信息下行 topic (与 match_simulator 发布保持一致)
+    mqtt.Subscribe("GameStatus");
+    mqtt.Subscribe("GlobalUnitStatus");
+    mqtt.Subscribe("RobotStaticStatus");
+    mqtt.Subscribe("RobotDynamicStatus");
+    mqtt.Subscribe("RobotPosition");
+    mqtt.Subscribe("Event");
+    mqtt.Subscribe("PenaltyInfo");
     mqtt.Subscribe("status/robot");
 
     // ------------------------------------------------------------

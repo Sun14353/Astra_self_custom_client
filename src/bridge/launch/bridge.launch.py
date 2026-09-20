@@ -20,7 +20,7 @@ def generate_launch_description():
         emulate_tty=True,
         parameters=[{
             'child_executable': 'bridge_client',
-            'robot_id':         7,                  # 7号英雄; 实际可由 launch 参数覆盖
+            'robot_id':         1,                  # 7号英雄; 实际可由 launch 参数覆盖
             'mqtt_broker_ip':   '192.168.12.1',
             'mqtt_broker_port': 3333,
         }],
