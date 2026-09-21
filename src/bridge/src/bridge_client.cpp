@@ -70,7 +70,7 @@ int main(int argc, char** argv) {
     }
 
     // ------------------------------------------------------------
-    // 1) 创建 MyMqttClient,内部 clientID 格式为 "robot_<id>"
+    // 1) 创建 MyMqttClient,内部 clientID 为机器人编号字符串 (如 "1")
     // ------------------------------------------------------------
     MyMqttClient mqtt(robot_id, broker_ip, broker_port);
 

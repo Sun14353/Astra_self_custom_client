@@ -8,7 +8,7 @@
 // 传输协议: MQTT (Paho MQTT C++ 客户端)
 // 服务器  : 192.168.12.1:3333
 // 客户端  : 192.168.12.2  (本机)
-// clientID: 填入所连接的机器人 ID 编号
+// clientID: 填入所连接的机器人 ID 编号 (直接使用编号字符串, 与 broker 侧一致)
 //
 // 线程模型:
 //   - 连接 / 断开 / 订阅 / 发布 由调用方线程发起, 内部用互斥锁串行化;
@@ -41,7 +41,7 @@ using MqttProtoHandler = std::function<void(const std::string& topic,
 
 class MyMqttClient {
 public:
-    // robot_id: 所连接的机器人 ID 编号,会作为 clientID 的一部分
+    // robot_id: 所连接的机器人 ID 编号,直接作为 clientID
     // ip/port : MQTT broker 地址
     MyMqttClient(uint32_t       robot_id,
                  const std::string& ip   = "192.168.12.1",

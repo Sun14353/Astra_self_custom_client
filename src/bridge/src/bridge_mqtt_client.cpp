@@ -64,9 +64,12 @@ MyMqttClient::MyMqttClient(uint32_t robot_id,
 {
     // ------------------------------------------------------------
     // clientID: 填入所连接的机器人 ID 编号
-    // 格式: "robot_<id>"  (例如 robot_7 表示 7 号英雄)
+    // 与 MQTTX / broker 侧保持一致, 直接使用机器人编号字符串,
+    // 例如 robot_id=1 时 clientID 为 "1"。
+    // 注意: 不能加 "robot_" 之类的自定义前缀, broker 会校验 clientID,
+    // 不匹配时返回 CONNACK 5 (not authorized), 连接被拒绝。
     // ------------------------------------------------------------
-    m_clientId = "robot_" + std::to_string(m_robotId);
+    m_clientId = std::to_string(m_robotId);
 
     // 关键: Paho C++ 的 MQTT 版本是在构造 client 时通过 create_options 指定的,
     // 而不是 connect_options.set_mqtt_version()。若两者不一致,连接会报
