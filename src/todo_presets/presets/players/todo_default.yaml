@@ -1,0 +1,21 @@
+# ============================================================
+# 操作手习惯预设：默认（均衡型）
+# 文件命名约定：todo_<选手/风格>.yaml 或 .json
+# 说明：所有数值均为占位，TODO 按真实选手习惯调整。
+# ============================================================
+id: "todo_default"
+name: "默认操作手"
+description: "均衡型默认习惯，适用于大多数操作手。"
+
+control:
+  mouse:
+    sensitivity: 1.0        # 鼠标灵敏度
+    invert_y: false         # 是否反向 Y 轴
+  joystick:
+    deadzone: 0.05          # 摇杆死区
+    response_curve: "linear"  # 响应曲线：linear / exponential
+  keyboard:
+    mapping: {}             # TODO: 键位 -> 动作映射
+
+custom_control:
+  mapping: []               # TODO: 具体自定义映射项（对应 todo_control）

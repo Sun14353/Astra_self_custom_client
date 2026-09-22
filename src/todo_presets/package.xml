@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>todo_presets</name>
+  <version>0.1.0</version>
+  <description>
+    todo_presets - 操作手习惯预设工作空间（架构骨架）。
+    存放不同选手/操作手习惯的 YAML/JSON 预设文件，供 todo_login 展示、
+    todo_control 加载。当前仅完成目录与示例预设，无实际功能。
+  </description>
+  <maintainer email="dev@example.com">dev</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

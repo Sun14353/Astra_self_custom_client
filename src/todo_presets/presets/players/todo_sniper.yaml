@@ -1,0 +1,20 @@
+# ============================================================
+# 操作手习惯预设：狙击型
+# 说明：低灵敏度、低死区，适合远程精确瞄准习惯。
+# ============================================================
+id: "todo_sniper"
+name: "狙击手"
+description: "低灵敏度精确瞄准习惯，适合狙击位选手。"
+
+control:
+  mouse:
+    sensitivity: 0.4        # TODO: 低灵敏度占位
+    invert_y: false
+  joystick:
+    deadzone: 0.02
+    response_curve: "linear"
+  keyboard:
+    mapping: {}             # TODO
+
+custom_control:
+  mapping: []               # TODO

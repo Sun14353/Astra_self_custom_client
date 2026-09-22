@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>todo_control</name>
+  <version>0.1.0</version>
+  <description>
+    todo_control - 自定义控制工作空间（架构骨架）。
+    负责加载操作手预设(todo_presets)、应用自定义控制映射，并将输入
+    映射为机器人控制指令。当前仅完成架构骨架，无实际功能实现。
+  </description>
+  <maintainer email="dev@example.com">dev</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

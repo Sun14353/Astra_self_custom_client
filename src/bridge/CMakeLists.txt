@@ -106,6 +106,20 @@ if(NOT WIN32)
   target_link_options(bridge_client PRIVATE "-Wl,--disable-new-dtags")
 endif()
 
+# ---------------- 可执行: match_simulator (赛场信息发布模拟器) ----------------
+add_executable(match_simulator src/match_simulator.cpp)
+target_link_libraries(match_simulator PRIVATE bridge_core)
+
+# rpath: 与 bridge_client 一致，运行时找用户自装的 protobuf/abseil 库
+# (match_simulator 实际引用了 MyMqttClient + proto，需 libprotobuf/libpaho)。
+if(NOT WIN32)
+  set_target_properties(match_simulator PROPERTIES
+    BUILD_RPATH "${USER_PROTOBUF_PREFIX}/lib"
+    INSTALL_RPATH "${USER_PROTOBUF_PREFIX}/lib"
+  )
+  target_link_options(match_simulator PRIVATE "-Wl,--disable-new-dtags")
+endif()
+
 # ---------------- 可执行: bridge_node (ROS 2 节点, 启动并管理 bridge_client) ----------------
 add_executable(bridge_node src/bridge_node.cpp)
 target_link_libraries(bridge_node PRIVATE
@@ -121,6 +135,7 @@ endif()
 install(TARGETS
   bridge_client
   bridge_node
+  match_simulator
   RUNTIME DESTINATION lib/${PROJECT_NAME}
 )
 

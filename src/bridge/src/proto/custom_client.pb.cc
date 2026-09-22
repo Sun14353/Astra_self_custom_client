@@ -22,6 +22,111 @@ namespace _pbi = ::google::protobuf::internal;
 namespace _fl = ::google::protobuf::internal::field_layout;
 namespace custom_client {
 
+inline constexpr RobotStaticStatus::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : connection_state_{0u},
+        field_state_{0u},
+        alive_state_{0u},
+        robot_id_{0u},
+        robot_type_{0u},
+        performance_system_shooter_{0u},
+        performance_system_chassis_{0u},
+        level_{0u},
+        max_health_{0u},
+        max_heat_{0u},
+        heat_cooldown_rate_{0},
+        max_power_{0u},
+        max_buffer_energy_{0u},
+        max_chassis_energy_{0u},
+        
+PROTOBUF_CONSTEXPR RobotStaticStatus::RobotStaticStatus(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct RobotStaticStatusDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR RobotStaticStatusDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~RobotStaticStatusDefaultTypeInternal() {}
+  union {
+    RobotStaticStatus _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RobotStaticStatusDefaultTypeInternal _RobotStaticStatus_default_instance_;
+
+inline constexpr RobotPosition::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : x_{0},
+        y_{0},
+        z_{0},
+        yaw_{0},
+        robot_id_{0u},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR RobotPosition::RobotPosition(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct RobotPositionDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR RobotPositionDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~RobotPositionDefaultTypeInternal() {}
+  union {
+    RobotPosition _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RobotPositionDefaultTypeInternal _RobotPosition_default_instance_;
+
+inline constexpr RobotDynamicStatus::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : current_health_{0u},
+        current_heat_{0},
+        last_projectile_fire_rate_{0},
+        current_chassis_energy_{0u},
+        current_buffer_energy_{0u},
+        current_experience_{0u},
+        experience_for_upgrade_{0u},
+        total_projectiles_fired_{0u},
+        remaining_ammo_{0u},
+        out_of_combat_countdown_{0u},
+        is_out_of_combat_{false},
+        can_remote_heal_{false},
+        can_remote_ammo_{false},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR RobotDynamicStatus::RobotDynamicStatus(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct RobotDynamicStatusDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR RobotDynamicStatusDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~RobotDynamicStatusDefaultTypeInternal() {}
+  union {
+    RobotDynamicStatus _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RobotDynamicStatusDefaultTypeInternal _RobotDynamicStatus_default_instance_;
+
+inline constexpr PenaltyInfo::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : penalty_type_{0u},
+        penalty_effect_sec_{0u},
+        total_penalty_num_{0u},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR PenaltyInfo::PenaltyInfo(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct PenaltyInfoDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR PenaltyInfoDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~PenaltyInfoDefaultTypeInternal() {}
+  union {
+    PenaltyInfo _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PenaltyInfoDefaultTypeInternal _PenaltyInfo_default_instance_;
+
 inline constexpr Header::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : timestamp_ms_{::uint64_t{0u}},
@@ -42,6 +147,113 @@ struct HeaderDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 HeaderDefaultTypeInternal _Header_default_instance_;
+
+inline constexpr GlobalUnitStatus::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : robot_health_{},
+        _robot_health_cached_byte_size_{0},
+        robot_bullets_{},
+        _robot_bullets_cached_byte_size_{0},
+        base_health_{0u},
+        base_status_{0u},
+        base_shield_{0u},
+        outpost_health_{0u},
+        outpost_status_{0u},
+        enemy_base_health_{0u},
+        enemy_base_status_{0u},
+        enemy_base_shield_{0u},
+        enemy_outpost_health_{0u},
+        enemy_outpost_status_{0u},
+        total_damage_ally_{0u},
+        total_damage_enemy_{0u},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR GlobalUnitStatus::GlobalUnitStatus(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct GlobalUnitStatusDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GlobalUnitStatusDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GlobalUnitStatusDefaultTypeInternal() {}
+  union {
+    GlobalUnitStatus _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GlobalUnitStatusDefaultTypeInternal _GlobalUnitStatus_default_instance_;
+
+inline constexpr GameStatus::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        current_round_{0u},
+        total_rounds_{0u},
+        red_score_{0u},
+        blue_score_{0u},
+        current_stage_{0u},
+        stage_countdown_sec_{0},
+        stage_elapsed_sec_{0},
+        is_paused_{false},
+        game_result_{0u},
+        end_reason_{0u} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR GameStatus::GameStatus(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct GameStatusDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GameStatusDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GameStatusDefaultTypeInternal() {}
+  union {
+    GameStatus _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GameStatusDefaultTypeInternal _GameStatus_default_instance_;
+
+inline constexpr Event::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : param_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        event_id_{0},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR Event::Event(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct EventDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR EventDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~EventDefaultTypeInternal() {}
+  union {
+    Event _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 EventDefaultTypeInternal _Event_default_instance_;
+
+inline constexpr Buff::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        robot_id_{0u},
+        buff_type_{0u},
+        buff_level_{0},
+        buff_max_time_{0u},
+        buff_left_time_{0u} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR Buff::Buff(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct BuffDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR BuffDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~BuffDefaultTypeInternal() {}
+  union {
+    Buff _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BuffDefaultTypeInternal _Buff_default_instance_;
 
 inline constexpr RobotStatus::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -115,7 +327,7 @@ struct ControlCmdDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ControlCmdDefaultTypeInternal _ControlCmd_default_instance_;
 }  // namespace custom_client
-static ::_pb::Metadata file_level_metadata_custom_5fclient_2eproto[4];
+static ::_pb::Metadata file_level_metadata_custom_5fclient_2eproto[12];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_custom_5fclient_2eproto[2];
 static constexpr const ::_pb::ServiceDescriptor**
     file_level_service_descriptors_custom_5fclient_2eproto = nullptr;
@@ -180,6 +392,151 @@ const ::uint32_t TableStruct_custom_5fclient_2eproto::offsets[] PROTOBUF_SECTION
     ~0u,
     ~0u,
     ~0u,
+    PROTOBUF_FIELD_OFFSET(::custom_client::GameStatus, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::GameStatus, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::custom_client::GameStatus, _impl_.current_round_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::GameStatus, _impl_.total_rounds_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::GameStatus, _impl_.red_score_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::GameStatus, _impl_.blue_score_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::GameStatus, _impl_.current_stage_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::GameStatus, _impl_.stage_countdown_sec_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::GameStatus, _impl_.stage_elapsed_sec_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::GameStatus, _impl_.is_paused_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::GameStatus, _impl_.game_result_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::GameStatus, _impl_.end_reason_),
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    ~0u,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(::custom_client::GlobalUnitStatus, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::custom_client::GlobalUnitStatus, _impl_.base_health_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::GlobalUnitStatus, _impl_.base_status_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::GlobalUnitStatus, _impl_.base_shield_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::GlobalUnitStatus, _impl_.outpost_health_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::GlobalUnitStatus, _impl_.outpost_status_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::GlobalUnitStatus, _impl_.enemy_base_health_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::GlobalUnitStatus, _impl_.enemy_base_status_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::GlobalUnitStatus, _impl_.enemy_base_shield_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::GlobalUnitStatus, _impl_.enemy_outpost_health_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::GlobalUnitStatus, _impl_.enemy_outpost_status_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::GlobalUnitStatus, _impl_.robot_health_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::GlobalUnitStatus, _impl_.robot_bullets_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::GlobalUnitStatus, _impl_.total_damage_ally_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::GlobalUnitStatus, _impl_.total_damage_enemy_),
+    ~0u,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotStaticStatus, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotStaticStatus, _impl_.connection_state_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotStaticStatus, _impl_.field_state_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotStaticStatus, _impl_.alive_state_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotStaticStatus, _impl_.robot_id_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotStaticStatus, _impl_.robot_type_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotStaticStatus, _impl_.performance_system_shooter_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotStaticStatus, _impl_.performance_system_chassis_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotStaticStatus, _impl_.level_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotStaticStatus, _impl_.max_health_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotStaticStatus, _impl_.max_heat_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotStaticStatus, _impl_.heat_cooldown_rate_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotStaticStatus, _impl_.max_power_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotStaticStatus, _impl_.max_buffer_energy_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotStaticStatus, _impl_.max_chassis_energy_),
+    ~0u,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotDynamicStatus, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotDynamicStatus, _impl_.current_health_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotDynamicStatus, _impl_.current_heat_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotDynamicStatus, _impl_.last_projectile_fire_rate_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotDynamicStatus, _impl_.current_chassis_energy_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotDynamicStatus, _impl_.current_buffer_energy_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotDynamicStatus, _impl_.current_experience_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotDynamicStatus, _impl_.experience_for_upgrade_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotDynamicStatus, _impl_.total_projectiles_fired_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotDynamicStatus, _impl_.remaining_ammo_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotDynamicStatus, _impl_.is_out_of_combat_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotDynamicStatus, _impl_.out_of_combat_countdown_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotDynamicStatus, _impl_.can_remote_heal_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotDynamicStatus, _impl_.can_remote_ammo_),
+    ~0u,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotPosition, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotPosition, _impl_.x_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotPosition, _impl_.y_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotPosition, _impl_.z_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotPosition, _impl_.yaw_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::RobotPosition, _impl_.robot_id_),
+    ~0u,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(::custom_client::Event, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::custom_client::Event, _impl_.event_id_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::Event, _impl_.param_),
+    ~0u,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(::custom_client::PenaltyInfo, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::custom_client::PenaltyInfo, _impl_.penalty_type_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::PenaltyInfo, _impl_.penalty_effect_sec_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::PenaltyInfo, _impl_.total_penalty_num_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::Buff, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::Buff, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::custom_client::Buff, _impl_.robot_id_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::Buff, _impl_.buff_type_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::Buff, _impl_.buff_level_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::Buff, _impl_.buff_max_time_),
+    PROTOBUF_FIELD_OFFSET(::custom_client::Buff, _impl_.buff_left_time_),
+    0,
+    1,
+    2,
+    3,
+    4,
 };
 
 static const ::_pbi::MigrationSchema
@@ -188,6 +545,14 @@ static const ::_pbi::MigrationSchema
         {11, 22, -1, sizeof(::custom_client::ControlCmd)},
         {25, 38, -1, sizeof(::custom_client::RobotStatus)},
         {43, 55, -1, sizeof(::custom_client::GenericCmd)},
+        {59, 77, -1, sizeof(::custom_client::GameStatus)},
+        {87, -1, -1, sizeof(::custom_client::GlobalUnitStatus)},
+        {109, -1, -1, sizeof(::custom_client::RobotStaticStatus)},
+        {131, -1, -1, sizeof(::custom_client::RobotDynamicStatus)},
+        {152, -1, -1, sizeof(::custom_client::RobotPosition)},
+        {165, -1, -1, sizeof(::custom_client::Event)},
+        {175, -1, -1, sizeof(::custom_client::PenaltyInfo)},
+        {186, 199, -1, sizeof(::custom_client::Buff)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -195,6 +560,14 @@ static const ::_pb::Message* const file_default_instances[] = {
     &::custom_client::_ControlCmd_default_instance_._instance,
     &::custom_client::_RobotStatus_default_instance_._instance,
     &::custom_client::_GenericCmd_default_instance_._instance,
+    &::custom_client::_GameStatus_default_instance_._instance,
+    &::custom_client::_GlobalUnitStatus_default_instance_._instance,
+    &::custom_client::_RobotStaticStatus_default_instance_._instance,
+    &::custom_client::_RobotDynamicStatus_default_instance_._instance,
+    &::custom_client::_RobotPosition_default_instance_._instance,
+    &::custom_client::_Event_default_instance_._instance,
+    &::custom_client::_PenaltyInfo_default_instance_._instance,
+    &::custom_client::_Buff_default_instance_._instance,
 };
 const char descriptor_table_protodef_custom_5fclient_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
     "\n\023custom_client.proto\022\rcustom_client\"B\n\006"
@@ -212,19 +585,69 @@ const char descriptor_table_protodef_custom_5fclient_2eproto[] PROTOBUF_SECTION_
     "(\t\"(\n\004Mode\022\010\n\004IDLE\020\000\022\013\n\007RUNNING\020\001\022\t\n\005ERR"
     "OR\020\002\"\\\n\nGenericCmd\022%\n\006header\030\001 \001(\0132\025.cus"
     "tom_client.Header\022\014\n\004name\030\002 \001(\t\022\014\n\004args\030"
-    "\003 \003(\t\022\013\n\003raw\030\004 \001(\014b\006proto3"
+    "\003 \003(\t\022\013\n\003raw\030\004 \001(\014\"\312\003\n\nGameStatus\022\032\n\rcur"
+    "rent_round\030\001 \001(\rH\000\210\001\001\022\031\n\014total_rounds\030\002 "
+    "\001(\rH\001\210\001\001\022\026\n\tred_score\030\003 \001(\rH\002\210\001\001\022\027\n\nblue"
+    "_score\030\004 \001(\rH\003\210\001\001\022\032\n\rcurrent_stage\030\005 \001(\r"
+    "H\004\210\001\001\022 \n\023stage_countdown_sec\030\006 \001(\005H\005\210\001\001\022"
+    "\036\n\021stage_elapsed_sec\030\007 \001(\005H\006\210\001\001\022\026\n\tis_pa"
+    "used\030\010 \001(\010H\007\210\001\001\022\030\n\013game_result\030\t \001(\rH\010\210\001"
+    "\001\022\027\n\nend_reason\030\n \001(\rH\t\210\001\001B\020\n\016_current_r"
+    "oundB\017\n\r_total_roundsB\014\n\n_red_scoreB\r\n\013_"
+    "blue_scoreB\020\n\016_current_stageB\026\n\024_stage_c"
+    "ountdown_secB\024\n\022_stage_elapsed_secB\014\n\n_i"
+    "s_pausedB\016\n\014_game_resultB\r\n\013_end_reason\""
+    "\362\002\n\020GlobalUnitStatus\022\023\n\013base_health\030\001 \001("
+    "\r\022\023\n\013base_status\030\002 \001(\r\022\023\n\013base_shield\030\003 "
+    "\001(\r\022\026\n\016outpost_health\030\004 \001(\r\022\026\n\016outpost_s"
+    "tatus\030\005 \001(\r\022\031\n\021enemy_base_health\030\006 \001(\r\022\031"
+    "\n\021enemy_base_status\030\007 \001(\r\022\031\n\021enemy_base_"
+    "shield\030\010 \001(\r\022\034\n\024enemy_outpost_health\030\t \001"
+    "(\r\022\034\n\024enemy_outpost_status\030\n \001(\r\022\024\n\014robo"
+    "t_health\030\013 \003(\r\022\025\n\rrobot_bullets\030\014 \003(\005\022\031\n"
+    "\021total_damage_ally\030\r \001(\r\022\032\n\022total_damage"
+    "_enemy\030\016 \001(\r\"\340\002\n\021RobotStaticStatus\022\030\n\020co"
+    "nnection_state\030\001 \001(\r\022\023\n\013field_state\030\002 \001("
+    "\r\022\023\n\013alive_state\030\003 \001(\r\022\020\n\010robot_id\030\004 \001(\r"
+    "\022\022\n\nrobot_type\030\005 \001(\r\022\"\n\032performance_syst"
+    "em_shooter\030\006 \001(\r\022\"\n\032performance_system_c"
+    "hassis\030\007 \001(\r\022\r\n\005level\030\010 \001(\r\022\022\n\nmax_healt"
+    "h\030\t \001(\r\022\020\n\010max_heat\030\n \001(\r\022\032\n\022heat_cooldo"
+    "wn_rate\030\013 \001(\002\022\021\n\tmax_power\030\014 \001(\r\022\031\n\021max_"
+    "buffer_energy\030\r \001(\r\022\032\n\022max_chassis_energ"
+    "y\030\016 \001(\r\"\206\003\n\022RobotDynamicStatus\022\026\n\016curren"
+    "t_health\030\001 \001(\r\022\024\n\014current_heat\030\002 \001(\002\022!\n\031"
+    "last_projectile_fire_rate\030\003 \001(\002\022\036\n\026curre"
+    "nt_chassis_energy\030\004 \001(\r\022\035\n\025current_buffe"
+    "r_energy\030\005 \001(\r\022\032\n\022current_experience\030\006 \001"
+    "(\r\022\036\n\026experience_for_upgrade\030\007 \001(\r\022\037\n\027to"
+    "tal_projectiles_fired\030\010 \001(\r\022\026\n\016remaining"
+    "_ammo\030\t \001(\r\022\030\n\020is_out_of_combat\030\n \001(\010\022\037\n"
+    "\027out_of_combat_countdown\030\013 \001(\r\022\027\n\017can_re"
+    "mote_heal\030\014 \001(\010\022\027\n\017can_remote_ammo\030\r \001(\010"
+    "\"O\n\rRobotPosition\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022"
+    "\t\n\001z\030\003 \001(\002\022\013\n\003yaw\030\004 \001(\002\022\020\n\010robot_id\030\005 \001("
+    "\r\"(\n\005Event\022\020\n\010event_id\030\001 \001(\005\022\r\n\005param\030\002 "
+    "\001(\t\"Z\n\013PenaltyInfo\022\024\n\014penalty_type\030\001 \001(\r"
+    "\022\032\n\022penalty_effect_sec\030\002 \001(\r\022\031\n\021total_pe"
+    "nalty_num\030\003 \001(\r\"\326\001\n\004Buff\022\025\n\010robot_id\030\001 \001"
+    "(\rH\000\210\001\001\022\026\n\tbuff_type\030\002 \001(\rH\001\210\001\001\022\027\n\nbuff_"
+    "level\030\003 \001(\005H\002\210\001\001\022\032\n\rbuff_max_time\030\004 \001(\rH"
+    "\003\210\001\001\022\033\n\016buff_left_time\030\005 \001(\rH\004\210\001\001B\013\n\t_ro"
+    "bot_idB\014\n\n_buff_typeB\r\n\013_buff_levelB\020\n\016_"
+    "buff_max_timeB\021\n\017_buff_left_timeb\006proto3"
 };
 static ::absl::once_flag descriptor_table_custom_5fclient_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_custom_5fclient_2eproto = {
     false,
     false,
-    626,
+    2640,
     descriptor_table_protodef_custom_5fclient_2eproto,
     "custom_client.proto",
     &descriptor_table_custom_5fclient_2eproto_once,
     nullptr,
     0,
-    4,
+    12,
     schemas,
     file_default_instances,
     TableStruct_custom_5fclient_2eproto::offsets,
@@ -1414,6 +1837,2996 @@ void GenericCmd::InternalSwap(GenericCmd* PROTOBUF_RESTRICT other) {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_custom_5fclient_2eproto_getter, &descriptor_table_custom_5fclient_2eproto_once,
       file_level_metadata_custom_5fclient_2eproto[3]);
+}
+// ===================================================================
+
+class GameStatus::_Internal {
+ public:
+  using HasBits = decltype(std::declval<GameStatus>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(GameStatus, _impl_._has_bits_);
+  static void set_has_current_round(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_total_rounds(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static void set_has_red_score(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static void set_has_blue_score(HasBits* has_bits) {
+    (*has_bits)[0] |= 8u;
+  }
+  static void set_has_current_stage(HasBits* has_bits) {
+    (*has_bits)[0] |= 16u;
+  }
+  static void set_has_stage_countdown_sec(HasBits* has_bits) {
+    (*has_bits)[0] |= 32u;
+  }
+  static void set_has_stage_elapsed_sec(HasBits* has_bits) {
+    (*has_bits)[0] |= 64u;
+  }
+  static void set_has_is_paused(HasBits* has_bits) {
+    (*has_bits)[0] |= 128u;
+  }
+  static void set_has_game_result(HasBits* has_bits) {
+    (*has_bits)[0] |= 256u;
+  }
+  static void set_has_end_reason(HasBits* has_bits) {
+    (*has_bits)[0] |= 512u;
+  }
+};
+
+GameStatus::GameStatus(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:custom_client.GameStatus)
+}
+GameStatus::GameStatus(
+    ::google::protobuf::Arena* arena, const GameStatus& from)
+    : GameStatus(arena) {
+  MergeFrom(from);
+}
+inline PROTOBUF_NDEBUG_INLINE GameStatus::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : _cached_size_{0} {}
+
+inline void GameStatus::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, current_round_),
+           0,
+           offsetof(Impl_, end_reason_) -
+               offsetof(Impl_, current_round_) +
+               sizeof(Impl_::end_reason_));
+}
+GameStatus::~GameStatus() {
+  // @@protoc_insertion_point(destructor:custom_client.GameStatus)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void GameStatus::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.~Impl_();
+}
+
+PROTOBUF_NOINLINE void GameStatus::Clear() {
+// @@protoc_insertion_point(message_clear_start:custom_client.GameStatus)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x000000ffu) {
+    ::memset(&_impl_.current_round_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.is_paused_) -
+        reinterpret_cast<char*>(&_impl_.current_round_)) + sizeof(_impl_.is_paused_));
+  }
+  if (cached_has_bits & 0x00000300u) {
+    ::memset(&_impl_.game_result_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.end_reason_) -
+        reinterpret_cast<char*>(&_impl_.game_result_)) + sizeof(_impl_.end_reason_));
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+const char* GameStatus::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
+}
+
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<4, 10, 0, 0, 2> GameStatus::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(GameStatus, _impl_._has_bits_),
+    0, // no _extensions_
+    10, 120,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294966272,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    10,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_GameStatus_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // optional uint32 current_round = 1;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GameStatus, _impl_.current_round_), 0>(),
+     {8, 0, 0, PROTOBUF_FIELD_OFFSET(GameStatus, _impl_.current_round_)}},
+    // optional uint32 total_rounds = 2;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GameStatus, _impl_.total_rounds_), 1>(),
+     {16, 1, 0, PROTOBUF_FIELD_OFFSET(GameStatus, _impl_.total_rounds_)}},
+    // optional uint32 red_score = 3;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GameStatus, _impl_.red_score_), 2>(),
+     {24, 2, 0, PROTOBUF_FIELD_OFFSET(GameStatus, _impl_.red_score_)}},
+    // optional uint32 blue_score = 4;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GameStatus, _impl_.blue_score_), 3>(),
+     {32, 3, 0, PROTOBUF_FIELD_OFFSET(GameStatus, _impl_.blue_score_)}},
+    // optional uint32 current_stage = 5;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GameStatus, _impl_.current_stage_), 4>(),
+     {40, 4, 0, PROTOBUF_FIELD_OFFSET(GameStatus, _impl_.current_stage_)}},
+    // optional int32 stage_countdown_sec = 6;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GameStatus, _impl_.stage_countdown_sec_), 5>(),
+     {48, 5, 0, PROTOBUF_FIELD_OFFSET(GameStatus, _impl_.stage_countdown_sec_)}},
+    // optional int32 stage_elapsed_sec = 7;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GameStatus, _impl_.stage_elapsed_sec_), 6>(),
+     {56, 6, 0, PROTOBUF_FIELD_OFFSET(GameStatus, _impl_.stage_elapsed_sec_)}},
+    // optional bool is_paused = 8;
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(GameStatus, _impl_.is_paused_), 7>(),
+     {64, 7, 0, PROTOBUF_FIELD_OFFSET(GameStatus, _impl_.is_paused_)}},
+    // optional uint32 game_result = 9;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GameStatus, _impl_.game_result_), 8>(),
+     {72, 8, 0, PROTOBUF_FIELD_OFFSET(GameStatus, _impl_.game_result_)}},
+    // optional uint32 end_reason = 10;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GameStatus, _impl_.end_reason_), 9>(),
+     {80, 9, 0, PROTOBUF_FIELD_OFFSET(GameStatus, _impl_.end_reason_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // optional uint32 current_round = 1;
+    {PROTOBUF_FIELD_OFFSET(GameStatus, _impl_.current_round_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
+    // optional uint32 total_rounds = 2;
+    {PROTOBUF_FIELD_OFFSET(GameStatus, _impl_.total_rounds_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
+    // optional uint32 red_score = 3;
+    {PROTOBUF_FIELD_OFFSET(GameStatus, _impl_.red_score_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
+    // optional uint32 blue_score = 4;
+    {PROTOBUF_FIELD_OFFSET(GameStatus, _impl_.blue_score_), _Internal::kHasBitsOffset + 3, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
+    // optional uint32 current_stage = 5;
+    {PROTOBUF_FIELD_OFFSET(GameStatus, _impl_.current_stage_), _Internal::kHasBitsOffset + 4, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
+    // optional int32 stage_countdown_sec = 6;
+    {PROTOBUF_FIELD_OFFSET(GameStatus, _impl_.stage_countdown_sec_), _Internal::kHasBitsOffset + 5, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+    // optional int32 stage_elapsed_sec = 7;
+    {PROTOBUF_FIELD_OFFSET(GameStatus, _impl_.stage_elapsed_sec_), _Internal::kHasBitsOffset + 6, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+    // optional bool is_paused = 8;
+    {PROTOBUF_FIELD_OFFSET(GameStatus, _impl_.is_paused_), _Internal::kHasBitsOffset + 7, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBool)},
+    // optional uint32 game_result = 9;
+    {PROTOBUF_FIELD_OFFSET(GameStatus, _impl_.game_result_), _Internal::kHasBitsOffset + 8, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
+    // optional uint32 end_reason = 10;
+    {PROTOBUF_FIELD_OFFSET(GameStatus, _impl_.end_reason_), _Internal::kHasBitsOffset + 9, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
+
+::uint8_t* GameStatus::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:custom_client.GameStatus)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  // optional uint32 current_round = 1;
+  if (cached_has_bits & 0x00000001u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        1, this->_internal_current_round(), target);
+  }
+
+  // optional uint32 total_rounds = 2;
+  if (cached_has_bits & 0x00000002u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        2, this->_internal_total_rounds(), target);
+  }
+
+  // optional uint32 red_score = 3;
+  if (cached_has_bits & 0x00000004u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        3, this->_internal_red_score(), target);
+  }
+
+  // optional uint32 blue_score = 4;
+  if (cached_has_bits & 0x00000008u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        4, this->_internal_blue_score(), target);
+  }
+
+  // optional uint32 current_stage = 5;
+  if (cached_has_bits & 0x00000010u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        5, this->_internal_current_stage(), target);
+  }
+
+  // optional int32 stage_countdown_sec = 6;
+  if (cached_has_bits & 0x00000020u) {
+    target = ::google::protobuf::internal::WireFormatLite::
+        WriteInt32ToArrayWithField<6>(
+            stream, this->_internal_stage_countdown_sec(), target);
+  }
+
+  // optional int32 stage_elapsed_sec = 7;
+  if (cached_has_bits & 0x00000040u) {
+    target = ::google::protobuf::internal::WireFormatLite::
+        WriteInt32ToArrayWithField<7>(
+            stream, this->_internal_stage_elapsed_sec(), target);
+  }
+
+  // optional bool is_paused = 8;
+  if (cached_has_bits & 0x00000080u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        8, this->_internal_is_paused(), target);
+  }
+
+  // optional uint32 game_result = 9;
+  if (cached_has_bits & 0x00000100u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        9, this->_internal_game_result(), target);
+  }
+
+  // optional uint32 end_reason = 10;
+  if (cached_has_bits & 0x00000200u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        10, this->_internal_end_reason(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:custom_client.GameStatus)
+  return target;
+}
+
+::size_t GameStatus::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:custom_client.GameStatus)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x000000ffu) {
+    // optional uint32 current_round = 1;
+    if (cached_has_bits & 0x00000001u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+          this->_internal_current_round());
+    }
+
+    // optional uint32 total_rounds = 2;
+    if (cached_has_bits & 0x00000002u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+          this->_internal_total_rounds());
+    }
+
+    // optional uint32 red_score = 3;
+    if (cached_has_bits & 0x00000004u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+          this->_internal_red_score());
+    }
+
+    // optional uint32 blue_score = 4;
+    if (cached_has_bits & 0x00000008u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+          this->_internal_blue_score());
+    }
+
+    // optional uint32 current_stage = 5;
+    if (cached_has_bits & 0x00000010u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+          this->_internal_current_stage());
+    }
+
+    // optional int32 stage_countdown_sec = 6;
+    if (cached_has_bits & 0x00000020u) {
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+          this->_internal_stage_countdown_sec());
+    }
+
+    // optional int32 stage_elapsed_sec = 7;
+    if (cached_has_bits & 0x00000040u) {
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+          this->_internal_stage_elapsed_sec());
+    }
+
+    // optional bool is_paused = 8;
+    if (cached_has_bits & 0x00000080u) {
+      total_size += 2;
+    }
+
+  }
+  if (cached_has_bits & 0x00000300u) {
+    // optional uint32 game_result = 9;
+    if (cached_has_bits & 0x00000100u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+          this->_internal_game_result());
+    }
+
+    // optional uint32 end_reason = 10;
+    if (cached_has_bits & 0x00000200u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+          this->_internal_end_reason());
+    }
+
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::google::protobuf::Message::ClassData GameStatus::_class_data_ = {
+    GameStatus::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
+};
+const ::google::protobuf::Message::ClassData* GameStatus::GetClassData() const {
+  return &_class_data_;
+}
+
+void GameStatus::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<GameStatus*>(&to_msg);
+  auto& from = static_cast<const GameStatus&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:custom_client.GameStatus)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x000000ffu) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_impl_.current_round_ = from._impl_.current_round_;
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.total_rounds_ = from._impl_.total_rounds_;
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_impl_.red_score_ = from._impl_.red_score_;
+    }
+    if (cached_has_bits & 0x00000008u) {
+      _this->_impl_.blue_score_ = from._impl_.blue_score_;
+    }
+    if (cached_has_bits & 0x00000010u) {
+      _this->_impl_.current_stage_ = from._impl_.current_stage_;
+    }
+    if (cached_has_bits & 0x00000020u) {
+      _this->_impl_.stage_countdown_sec_ = from._impl_.stage_countdown_sec_;
+    }
+    if (cached_has_bits & 0x00000040u) {
+      _this->_impl_.stage_elapsed_sec_ = from._impl_.stage_elapsed_sec_;
+    }
+    if (cached_has_bits & 0x00000080u) {
+      _this->_impl_.is_paused_ = from._impl_.is_paused_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  if (cached_has_bits & 0x00000300u) {
+    if (cached_has_bits & 0x00000100u) {
+      _this->_impl_.game_result_ = from._impl_.game_result_;
+    }
+    if (cached_has_bits & 0x00000200u) {
+      _this->_impl_.end_reason_ = from._impl_.end_reason_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GameStatus::CopyFrom(const GameStatus& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:custom_client.GameStatus)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+PROTOBUF_NOINLINE bool GameStatus::IsInitialized() const {
+  return true;
+}
+
+::_pbi::CachedSize* GameStatus::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void GameStatus::InternalSwap(GameStatus* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(GameStatus, _impl_.end_reason_)
+      + sizeof(GameStatus::_impl_.end_reason_)
+      - PROTOBUF_FIELD_OFFSET(GameStatus, _impl_.current_round_)>(
+          reinterpret_cast<char*>(&_impl_.current_round_),
+          reinterpret_cast<char*>(&other->_impl_.current_round_));
+}
+
+::google::protobuf::Metadata GameStatus::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_custom_5fclient_2eproto_getter, &descriptor_table_custom_5fclient_2eproto_once,
+      file_level_metadata_custom_5fclient_2eproto[4]);
+}
+// ===================================================================
+
+class GlobalUnitStatus::_Internal {
+ public:
+};
+
+GlobalUnitStatus::GlobalUnitStatus(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:custom_client.GlobalUnitStatus)
+}
+inline PROTOBUF_NDEBUG_INLINE GlobalUnitStatus::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from)
+      : robot_health_{visibility, arena, from.robot_health_},
+        _robot_health_cached_byte_size_{0},
+        robot_bullets_{visibility, arena, from.robot_bullets_},
+        _robot_bullets_cached_byte_size_{0},
+        _cached_size_{0} {}
+
+GlobalUnitStatus::GlobalUnitStatus(
+    ::google::protobuf::Arena* arena,
+    const GlobalUnitStatus& from)
+    : ::google::protobuf::Message(arena) {
+  GlobalUnitStatus* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
+  ::memcpy(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, base_health_),
+           reinterpret_cast<const char *>(&from._impl_) +
+               offsetof(Impl_, base_health_),
+           offsetof(Impl_, total_damage_enemy_) -
+               offsetof(Impl_, base_health_) +
+               sizeof(Impl_::total_damage_enemy_));
+
+  // @@protoc_insertion_point(copy_constructor:custom_client.GlobalUnitStatus)
+}
+inline PROTOBUF_NDEBUG_INLINE GlobalUnitStatus::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : robot_health_{visibility, arena},
+        _robot_health_cached_byte_size_{0},
+        robot_bullets_{visibility, arena},
+        _robot_bullets_cached_byte_size_{0},
+        _cached_size_{0} {}
+
+inline void GlobalUnitStatus::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, base_health_),
+           0,
+           offsetof(Impl_, total_damage_enemy_) -
+               offsetof(Impl_, base_health_) +
+               sizeof(Impl_::total_damage_enemy_));
+}
+GlobalUnitStatus::~GlobalUnitStatus() {
+  // @@protoc_insertion_point(destructor:custom_client.GlobalUnitStatus)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void GlobalUnitStatus::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.~Impl_();
+}
+
+PROTOBUF_NOINLINE void GlobalUnitStatus::Clear() {
+// @@protoc_insertion_point(message_clear_start:custom_client.GlobalUnitStatus)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.robot_health_.Clear();
+  _impl_.robot_bullets_.Clear();
+  ::memset(&_impl_.base_health_, 0, static_cast<::size_t>(
+      reinterpret_cast<char*>(&_impl_.total_damage_enemy_) -
+      reinterpret_cast<char*>(&_impl_.base_health_)) + sizeof(_impl_.total_damage_enemy_));
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+const char* GlobalUnitStatus::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
+}
+
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<4, 14, 0, 0, 2> GlobalUnitStatus::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    14, 120,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294950912,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    14,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_GlobalUnitStatus_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // uint32 base_health = 1;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GlobalUnitStatus, _impl_.base_health_), 63>(),
+     {8, 63, 0, PROTOBUF_FIELD_OFFSET(GlobalUnitStatus, _impl_.base_health_)}},
+    // uint32 base_status = 2;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GlobalUnitStatus, _impl_.base_status_), 63>(),
+     {16, 63, 0, PROTOBUF_FIELD_OFFSET(GlobalUnitStatus, _impl_.base_status_)}},
+    // uint32 base_shield = 3;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GlobalUnitStatus, _impl_.base_shield_), 63>(),
+     {24, 63, 0, PROTOBUF_FIELD_OFFSET(GlobalUnitStatus, _impl_.base_shield_)}},
+    // uint32 outpost_health = 4;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GlobalUnitStatus, _impl_.outpost_health_), 63>(),
+     {32, 63, 0, PROTOBUF_FIELD_OFFSET(GlobalUnitStatus, _impl_.outpost_health_)}},
+    // uint32 outpost_status = 5;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GlobalUnitStatus, _impl_.outpost_status_), 63>(),
+     {40, 63, 0, PROTOBUF_FIELD_OFFSET(GlobalUnitStatus, _impl_.outpost_status_)}},
+    // uint32 enemy_base_health = 6;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GlobalUnitStatus, _impl_.enemy_base_health_), 63>(),
+     {48, 63, 0, PROTOBUF_FIELD_OFFSET(GlobalUnitStatus, _impl_.enemy_base_health_)}},
+    // uint32 enemy_base_status = 7;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GlobalUnitStatus, _impl_.enemy_base_status_), 63>(),
+     {56, 63, 0, PROTOBUF_FIELD_OFFSET(GlobalUnitStatus, _impl_.enemy_base_status_)}},
+    // uint32 enemy_base_shield = 8;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GlobalUnitStatus, _impl_.enemy_base_shield_), 63>(),
+     {64, 63, 0, PROTOBUF_FIELD_OFFSET(GlobalUnitStatus, _impl_.enemy_base_shield_)}},
+    // uint32 enemy_outpost_health = 9;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GlobalUnitStatus, _impl_.enemy_outpost_health_), 63>(),
+     {72, 63, 0, PROTOBUF_FIELD_OFFSET(GlobalUnitStatus, _impl_.enemy_outpost_health_)}},
+    // uint32 enemy_outpost_status = 10;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GlobalUnitStatus, _impl_.enemy_outpost_status_), 63>(),
+     {80, 63, 0, PROTOBUF_FIELD_OFFSET(GlobalUnitStatus, _impl_.enemy_outpost_status_)}},
+    // repeated uint32 robot_health = 11;
+    {::_pbi::TcParser::FastV32P1,
+     {90, 63, 0, PROTOBUF_FIELD_OFFSET(GlobalUnitStatus, _impl_.robot_health_)}},
+    // repeated int32 robot_bullets = 12;
+    {::_pbi::TcParser::FastV32P1,
+     {98, 63, 0, PROTOBUF_FIELD_OFFSET(GlobalUnitStatus, _impl_.robot_bullets_)}},
+    // uint32 total_damage_ally = 13;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GlobalUnitStatus, _impl_.total_damage_ally_), 63>(),
+     {104, 63, 0, PROTOBUF_FIELD_OFFSET(GlobalUnitStatus, _impl_.total_damage_ally_)}},
+    // uint32 total_damage_enemy = 14;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GlobalUnitStatus, _impl_.total_damage_enemy_), 63>(),
+     {112, 63, 0, PROTOBUF_FIELD_OFFSET(GlobalUnitStatus, _impl_.total_damage_enemy_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // uint32 base_health = 1;
+    {PROTOBUF_FIELD_OFFSET(GlobalUnitStatus, _impl_.base_health_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // uint32 base_status = 2;
+    {PROTOBUF_FIELD_OFFSET(GlobalUnitStatus, _impl_.base_status_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // uint32 base_shield = 3;
+    {PROTOBUF_FIELD_OFFSET(GlobalUnitStatus, _impl_.base_shield_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // uint32 outpost_health = 4;
+    {PROTOBUF_FIELD_OFFSET(GlobalUnitStatus, _impl_.outpost_health_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // uint32 outpost_status = 5;
+    {PROTOBUF_FIELD_OFFSET(GlobalUnitStatus, _impl_.outpost_status_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // uint32 enemy_base_health = 6;
+    {PROTOBUF_FIELD_OFFSET(GlobalUnitStatus, _impl_.enemy_base_health_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // uint32 enemy_base_status = 7;
+    {PROTOBUF_FIELD_OFFSET(GlobalUnitStatus, _impl_.enemy_base_status_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // uint32 enemy_base_shield = 8;
+    {PROTOBUF_FIELD_OFFSET(GlobalUnitStatus, _impl_.enemy_base_shield_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // uint32 enemy_outpost_health = 9;
+    {PROTOBUF_FIELD_OFFSET(GlobalUnitStatus, _impl_.enemy_outpost_health_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // uint32 enemy_outpost_status = 10;
+    {PROTOBUF_FIELD_OFFSET(GlobalUnitStatus, _impl_.enemy_outpost_status_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // repeated uint32 robot_health = 11;
+    {PROTOBUF_FIELD_OFFSET(GlobalUnitStatus, _impl_.robot_health_), 0, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kPackedUInt32)},
+    // repeated int32 robot_bullets = 12;
+    {PROTOBUF_FIELD_OFFSET(GlobalUnitStatus, _impl_.robot_bullets_), 0, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kPackedInt32)},
+    // uint32 total_damage_ally = 13;
+    {PROTOBUF_FIELD_OFFSET(GlobalUnitStatus, _impl_.total_damage_ally_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // uint32 total_damage_enemy = 14;
+    {PROTOBUF_FIELD_OFFSET(GlobalUnitStatus, _impl_.total_damage_enemy_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
+
+::uint8_t* GlobalUnitStatus::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:custom_client.GlobalUnitStatus)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // uint32 base_health = 1;
+  if (this->_internal_base_health() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        1, this->_internal_base_health(), target);
+  }
+
+  // uint32 base_status = 2;
+  if (this->_internal_base_status() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        2, this->_internal_base_status(), target);
+  }
+
+  // uint32 base_shield = 3;
+  if (this->_internal_base_shield() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        3, this->_internal_base_shield(), target);
+  }
+
+  // uint32 outpost_health = 4;
+  if (this->_internal_outpost_health() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        4, this->_internal_outpost_health(), target);
+  }
+
+  // uint32 outpost_status = 5;
+  if (this->_internal_outpost_status() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        5, this->_internal_outpost_status(), target);
+  }
+
+  // uint32 enemy_base_health = 6;
+  if (this->_internal_enemy_base_health() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        6, this->_internal_enemy_base_health(), target);
+  }
+
+  // uint32 enemy_base_status = 7;
+  if (this->_internal_enemy_base_status() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        7, this->_internal_enemy_base_status(), target);
+  }
+
+  // uint32 enemy_base_shield = 8;
+  if (this->_internal_enemy_base_shield() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        8, this->_internal_enemy_base_shield(), target);
+  }
+
+  // uint32 enemy_outpost_health = 9;
+  if (this->_internal_enemy_outpost_health() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        9, this->_internal_enemy_outpost_health(), target);
+  }
+
+  // uint32 enemy_outpost_status = 10;
+  if (this->_internal_enemy_outpost_status() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        10, this->_internal_enemy_outpost_status(), target);
+  }
+
+  // repeated uint32 robot_health = 11;
+  {
+    int byte_size = _impl_._robot_health_cached_byte_size_.Get();
+    if (byte_size > 0) {
+      target = stream->WriteUInt32Packed(
+          11, _internal_robot_health(), byte_size, target);
+    }
+  }
+
+  // repeated int32 robot_bullets = 12;
+  {
+    int byte_size = _impl_._robot_bullets_cached_byte_size_.Get();
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(
+          12, _internal_robot_bullets(), byte_size, target);
+    }
+  }
+
+  // uint32 total_damage_ally = 13;
+  if (this->_internal_total_damage_ally() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        13, this->_internal_total_damage_ally(), target);
+  }
+
+  // uint32 total_damage_enemy = 14;
+  if (this->_internal_total_damage_enemy() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        14, this->_internal_total_damage_enemy(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:custom_client.GlobalUnitStatus)
+  return target;
+}
+
+::size_t GlobalUnitStatus::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:custom_client.GlobalUnitStatus)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated uint32 robot_health = 11;
+  {
+    std::size_t data_size = ::_pbi::WireFormatLite::UInt32Size(
+        this->_internal_robot_health())
+    ;
+    _impl_._robot_health_cached_byte_size_.Set(::_pbi::ToCachedSize(data_size));
+    std::size_t tag_size = data_size == 0
+        ? 0
+        : 1 + ::_pbi::WireFormatLite::Int32Size(
+                            static_cast<int32_t>(data_size))
+    ;
+    total_size += tag_size + data_size;
+  }
+  // repeated int32 robot_bullets = 12;
+  {
+    std::size_t data_size = ::_pbi::WireFormatLite::Int32Size(
+        this->_internal_robot_bullets())
+    ;
+    _impl_._robot_bullets_cached_byte_size_.Set(::_pbi::ToCachedSize(data_size));
+    std::size_t tag_size = data_size == 0
+        ? 0
+        : 1 + ::_pbi::WireFormatLite::Int32Size(
+                            static_cast<int32_t>(data_size))
+    ;
+    total_size += tag_size + data_size;
+  }
+  // uint32 base_health = 1;
+  if (this->_internal_base_health() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_base_health());
+  }
+
+  // uint32 base_status = 2;
+  if (this->_internal_base_status() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_base_status());
+  }
+
+  // uint32 base_shield = 3;
+  if (this->_internal_base_shield() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_base_shield());
+  }
+
+  // uint32 outpost_health = 4;
+  if (this->_internal_outpost_health() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_outpost_health());
+  }
+
+  // uint32 outpost_status = 5;
+  if (this->_internal_outpost_status() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_outpost_status());
+  }
+
+  // uint32 enemy_base_health = 6;
+  if (this->_internal_enemy_base_health() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_enemy_base_health());
+  }
+
+  // uint32 enemy_base_status = 7;
+  if (this->_internal_enemy_base_status() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_enemy_base_status());
+  }
+
+  // uint32 enemy_base_shield = 8;
+  if (this->_internal_enemy_base_shield() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_enemy_base_shield());
+  }
+
+  // uint32 enemy_outpost_health = 9;
+  if (this->_internal_enemy_outpost_health() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_enemy_outpost_health());
+  }
+
+  // uint32 enemy_outpost_status = 10;
+  if (this->_internal_enemy_outpost_status() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_enemy_outpost_status());
+  }
+
+  // uint32 total_damage_ally = 13;
+  if (this->_internal_total_damage_ally() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_total_damage_ally());
+  }
+
+  // uint32 total_damage_enemy = 14;
+  if (this->_internal_total_damage_enemy() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_total_damage_enemy());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::google::protobuf::Message::ClassData GlobalUnitStatus::_class_data_ = {
+    GlobalUnitStatus::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
+};
+const ::google::protobuf::Message::ClassData* GlobalUnitStatus::GetClassData() const {
+  return &_class_data_;
+}
+
+void GlobalUnitStatus::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<GlobalUnitStatus*>(&to_msg);
+  auto& from = static_cast<const GlobalUnitStatus&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:custom_client.GlobalUnitStatus)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_internal_mutable_robot_health()->MergeFrom(from._internal_robot_health());
+  _this->_internal_mutable_robot_bullets()->MergeFrom(from._internal_robot_bullets());
+  if (from._internal_base_health() != 0) {
+    _this->_internal_set_base_health(from._internal_base_health());
+  }
+  if (from._internal_base_status() != 0) {
+    _this->_internal_set_base_status(from._internal_base_status());
+  }
+  if (from._internal_base_shield() != 0) {
+    _this->_internal_set_base_shield(from._internal_base_shield());
+  }
+  if (from._internal_outpost_health() != 0) {
+    _this->_internal_set_outpost_health(from._internal_outpost_health());
+  }
+  if (from._internal_outpost_status() != 0) {
+    _this->_internal_set_outpost_status(from._internal_outpost_status());
+  }
+  if (from._internal_enemy_base_health() != 0) {
+    _this->_internal_set_enemy_base_health(from._internal_enemy_base_health());
+  }
+  if (from._internal_enemy_base_status() != 0) {
+    _this->_internal_set_enemy_base_status(from._internal_enemy_base_status());
+  }
+  if (from._internal_enemy_base_shield() != 0) {
+    _this->_internal_set_enemy_base_shield(from._internal_enemy_base_shield());
+  }
+  if (from._internal_enemy_outpost_health() != 0) {
+    _this->_internal_set_enemy_outpost_health(from._internal_enemy_outpost_health());
+  }
+  if (from._internal_enemy_outpost_status() != 0) {
+    _this->_internal_set_enemy_outpost_status(from._internal_enemy_outpost_status());
+  }
+  if (from._internal_total_damage_ally() != 0) {
+    _this->_internal_set_total_damage_ally(from._internal_total_damage_ally());
+  }
+  if (from._internal_total_damage_enemy() != 0) {
+    _this->_internal_set_total_damage_enemy(from._internal_total_damage_enemy());
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GlobalUnitStatus::CopyFrom(const GlobalUnitStatus& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:custom_client.GlobalUnitStatus)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+PROTOBUF_NOINLINE bool GlobalUnitStatus::IsInitialized() const {
+  return true;
+}
+
+::_pbi::CachedSize* GlobalUnitStatus::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void GlobalUnitStatus::InternalSwap(GlobalUnitStatus* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.robot_health_.InternalSwap(&other->_impl_.robot_health_);
+  _impl_.robot_bullets_.InternalSwap(&other->_impl_.robot_bullets_);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(GlobalUnitStatus, _impl_.total_damage_enemy_)
+      + sizeof(GlobalUnitStatus::_impl_.total_damage_enemy_)
+      - PROTOBUF_FIELD_OFFSET(GlobalUnitStatus, _impl_.base_health_)>(
+          reinterpret_cast<char*>(&_impl_.base_health_),
+          reinterpret_cast<char*>(&other->_impl_.base_health_));
+}
+
+::google::protobuf::Metadata GlobalUnitStatus::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_custom_5fclient_2eproto_getter, &descriptor_table_custom_5fclient_2eproto_once,
+      file_level_metadata_custom_5fclient_2eproto[5]);
+}
+// ===================================================================
+
+class RobotStaticStatus::_Internal {
+ public:
+};
+
+RobotStaticStatus::RobotStaticStatus(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:custom_client.RobotStaticStatus)
+}
+RobotStaticStatus::RobotStaticStatus(
+    ::google::protobuf::Arena* arena, const RobotStaticStatus& from)
+    : RobotStaticStatus(arena) {
+  MergeFrom(from);
+}
+inline PROTOBUF_NDEBUG_INLINE RobotStaticStatus::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : _cached_size_{0} {}
+
+inline void RobotStaticStatus::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, connection_state_),
+           0,
+           offsetof(Impl_, max_chassis_energy_) -
+               offsetof(Impl_, connection_state_) +
+               sizeof(Impl_::max_chassis_energy_));
+}
+RobotStaticStatus::~RobotStaticStatus() {
+  // @@protoc_insertion_point(destructor:custom_client.RobotStaticStatus)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void RobotStaticStatus::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.~Impl_();
+}
+
+PROTOBUF_NOINLINE void RobotStaticStatus::Clear() {
+// @@protoc_insertion_point(message_clear_start:custom_client.RobotStaticStatus)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&_impl_.connection_state_, 0, static_cast<::size_t>(
+      reinterpret_cast<char*>(&_impl_.max_chassis_energy_) -
+      reinterpret_cast<char*>(&_impl_.connection_state_)) + sizeof(_impl_.max_chassis_energy_));
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+const char* RobotStaticStatus::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
+}
+
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<4, 14, 0, 0, 2> RobotStaticStatus::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    14, 120,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294950912,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    14,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_RobotStaticStatus_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // uint32 connection_state = 1;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RobotStaticStatus, _impl_.connection_state_), 63>(),
+     {8, 63, 0, PROTOBUF_FIELD_OFFSET(RobotStaticStatus, _impl_.connection_state_)}},
+    // uint32 field_state = 2;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RobotStaticStatus, _impl_.field_state_), 63>(),
+     {16, 63, 0, PROTOBUF_FIELD_OFFSET(RobotStaticStatus, _impl_.field_state_)}},
+    // uint32 alive_state = 3;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RobotStaticStatus, _impl_.alive_state_), 63>(),
+     {24, 63, 0, PROTOBUF_FIELD_OFFSET(RobotStaticStatus, _impl_.alive_state_)}},
+    // uint32 robot_id = 4;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RobotStaticStatus, _impl_.robot_id_), 63>(),
+     {32, 63, 0, PROTOBUF_FIELD_OFFSET(RobotStaticStatus, _impl_.robot_id_)}},
+    // uint32 robot_type = 5;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RobotStaticStatus, _impl_.robot_type_), 63>(),
+     {40, 63, 0, PROTOBUF_FIELD_OFFSET(RobotStaticStatus, _impl_.robot_type_)}},
+    // uint32 performance_system_shooter = 6;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RobotStaticStatus, _impl_.performance_system_shooter_), 63>(),
+     {48, 63, 0, PROTOBUF_FIELD_OFFSET(RobotStaticStatus, _impl_.performance_system_shooter_)}},
+    // uint32 performance_system_chassis = 7;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RobotStaticStatus, _impl_.performance_system_chassis_), 63>(),
+     {56, 63, 0, PROTOBUF_FIELD_OFFSET(RobotStaticStatus, _impl_.performance_system_chassis_)}},
+    // uint32 level = 8;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RobotStaticStatus, _impl_.level_), 63>(),
+     {64, 63, 0, PROTOBUF_FIELD_OFFSET(RobotStaticStatus, _impl_.level_)}},
+    // uint32 max_health = 9;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RobotStaticStatus, _impl_.max_health_), 63>(),
+     {72, 63, 0, PROTOBUF_FIELD_OFFSET(RobotStaticStatus, _impl_.max_health_)}},
+    // uint32 max_heat = 10;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RobotStaticStatus, _impl_.max_heat_), 63>(),
+     {80, 63, 0, PROTOBUF_FIELD_OFFSET(RobotStaticStatus, _impl_.max_heat_)}},
+    // float heat_cooldown_rate = 11;
+    {::_pbi::TcParser::FastF32S1,
+     {93, 63, 0, PROTOBUF_FIELD_OFFSET(RobotStaticStatus, _impl_.heat_cooldown_rate_)}},
+    // uint32 max_power = 12;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RobotStaticStatus, _impl_.max_power_), 63>(),
+     {96, 63, 0, PROTOBUF_FIELD_OFFSET(RobotStaticStatus, _impl_.max_power_)}},
+    // uint32 max_buffer_energy = 13;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RobotStaticStatus, _impl_.max_buffer_energy_), 63>(),
+     {104, 63, 0, PROTOBUF_FIELD_OFFSET(RobotStaticStatus, _impl_.max_buffer_energy_)}},
+    // uint32 max_chassis_energy = 14;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RobotStaticStatus, _impl_.max_chassis_energy_), 63>(),
+     {112, 63, 0, PROTOBUF_FIELD_OFFSET(RobotStaticStatus, _impl_.max_chassis_energy_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // uint32 connection_state = 1;
+    {PROTOBUF_FIELD_OFFSET(RobotStaticStatus, _impl_.connection_state_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // uint32 field_state = 2;
+    {PROTOBUF_FIELD_OFFSET(RobotStaticStatus, _impl_.field_state_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // uint32 alive_state = 3;
+    {PROTOBUF_FIELD_OFFSET(RobotStaticStatus, _impl_.alive_state_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // uint32 robot_id = 4;
+    {PROTOBUF_FIELD_OFFSET(RobotStaticStatus, _impl_.robot_id_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // uint32 robot_type = 5;
+    {PROTOBUF_FIELD_OFFSET(RobotStaticStatus, _impl_.robot_type_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // uint32 performance_system_shooter = 6;
+    {PROTOBUF_FIELD_OFFSET(RobotStaticStatus, _impl_.performance_system_shooter_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // uint32 performance_system_chassis = 7;
+    {PROTOBUF_FIELD_OFFSET(RobotStaticStatus, _impl_.performance_system_chassis_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // uint32 level = 8;
+    {PROTOBUF_FIELD_OFFSET(RobotStaticStatus, _impl_.level_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // uint32 max_health = 9;
+    {PROTOBUF_FIELD_OFFSET(RobotStaticStatus, _impl_.max_health_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // uint32 max_heat = 10;
+    {PROTOBUF_FIELD_OFFSET(RobotStaticStatus, _impl_.max_heat_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // float heat_cooldown_rate = 11;
+    {PROTOBUF_FIELD_OFFSET(RobotStaticStatus, _impl_.heat_cooldown_rate_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kFloat)},
+    // uint32 max_power = 12;
+    {PROTOBUF_FIELD_OFFSET(RobotStaticStatus, _impl_.max_power_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // uint32 max_buffer_energy = 13;
+    {PROTOBUF_FIELD_OFFSET(RobotStaticStatus, _impl_.max_buffer_energy_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // uint32 max_chassis_energy = 14;
+    {PROTOBUF_FIELD_OFFSET(RobotStaticStatus, _impl_.max_chassis_energy_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
+
+::uint8_t* RobotStaticStatus::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:custom_client.RobotStaticStatus)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // uint32 connection_state = 1;
+  if (this->_internal_connection_state() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        1, this->_internal_connection_state(), target);
+  }
+
+  // uint32 field_state = 2;
+  if (this->_internal_field_state() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        2, this->_internal_field_state(), target);
+  }
+
+  // uint32 alive_state = 3;
+  if (this->_internal_alive_state() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        3, this->_internal_alive_state(), target);
+  }
+
+  // uint32 robot_id = 4;
+  if (this->_internal_robot_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        4, this->_internal_robot_id(), target);
+  }
+
+  // uint32 robot_type = 5;
+  if (this->_internal_robot_type() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        5, this->_internal_robot_type(), target);
+  }
+
+  // uint32 performance_system_shooter = 6;
+  if (this->_internal_performance_system_shooter() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        6, this->_internal_performance_system_shooter(), target);
+  }
+
+  // uint32 performance_system_chassis = 7;
+  if (this->_internal_performance_system_chassis() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        7, this->_internal_performance_system_chassis(), target);
+  }
+
+  // uint32 level = 8;
+  if (this->_internal_level() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        8, this->_internal_level(), target);
+  }
+
+  // uint32 max_health = 9;
+  if (this->_internal_max_health() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        9, this->_internal_max_health(), target);
+  }
+
+  // uint32 max_heat = 10;
+  if (this->_internal_max_heat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        10, this->_internal_max_heat(), target);
+  }
+
+  // float heat_cooldown_rate = 11;
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_heat_cooldown_rate = this->_internal_heat_cooldown_rate();
+  ::uint32_t raw_heat_cooldown_rate;
+  memcpy(&raw_heat_cooldown_rate, &tmp_heat_cooldown_rate, sizeof(tmp_heat_cooldown_rate));
+  if (raw_heat_cooldown_rate != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        11, this->_internal_heat_cooldown_rate(), target);
+  }
+
+  // uint32 max_power = 12;
+  if (this->_internal_max_power() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        12, this->_internal_max_power(), target);
+  }
+
+  // uint32 max_buffer_energy = 13;
+  if (this->_internal_max_buffer_energy() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        13, this->_internal_max_buffer_energy(), target);
+  }
+
+  // uint32 max_chassis_energy = 14;
+  if (this->_internal_max_chassis_energy() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        14, this->_internal_max_chassis_energy(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:custom_client.RobotStaticStatus)
+  return target;
+}
+
+::size_t RobotStaticStatus::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:custom_client.RobotStaticStatus)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 connection_state = 1;
+  if (this->_internal_connection_state() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_connection_state());
+  }
+
+  // uint32 field_state = 2;
+  if (this->_internal_field_state() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_field_state());
+  }
+
+  // uint32 alive_state = 3;
+  if (this->_internal_alive_state() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_alive_state());
+  }
+
+  // uint32 robot_id = 4;
+  if (this->_internal_robot_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_robot_id());
+  }
+
+  // uint32 robot_type = 5;
+  if (this->_internal_robot_type() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_robot_type());
+  }
+
+  // uint32 performance_system_shooter = 6;
+  if (this->_internal_performance_system_shooter() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_performance_system_shooter());
+  }
+
+  // uint32 performance_system_chassis = 7;
+  if (this->_internal_performance_system_chassis() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_performance_system_chassis());
+  }
+
+  // uint32 level = 8;
+  if (this->_internal_level() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_level());
+  }
+
+  // uint32 max_health = 9;
+  if (this->_internal_max_health() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_max_health());
+  }
+
+  // uint32 max_heat = 10;
+  if (this->_internal_max_heat() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_max_heat());
+  }
+
+  // float heat_cooldown_rate = 11;
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_heat_cooldown_rate = this->_internal_heat_cooldown_rate();
+  ::uint32_t raw_heat_cooldown_rate;
+  memcpy(&raw_heat_cooldown_rate, &tmp_heat_cooldown_rate, sizeof(tmp_heat_cooldown_rate));
+  if (raw_heat_cooldown_rate != 0) {
+    total_size += 5;
+  }
+
+  // uint32 max_power = 12;
+  if (this->_internal_max_power() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_max_power());
+  }
+
+  // uint32 max_buffer_energy = 13;
+  if (this->_internal_max_buffer_energy() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_max_buffer_energy());
+  }
+
+  // uint32 max_chassis_energy = 14;
+  if (this->_internal_max_chassis_energy() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_max_chassis_energy());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::google::protobuf::Message::ClassData RobotStaticStatus::_class_data_ = {
+    RobotStaticStatus::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
+};
+const ::google::protobuf::Message::ClassData* RobotStaticStatus::GetClassData() const {
+  return &_class_data_;
+}
+
+void RobotStaticStatus::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<RobotStaticStatus*>(&to_msg);
+  auto& from = static_cast<const RobotStaticStatus&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:custom_client.RobotStaticStatus)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_connection_state() != 0) {
+    _this->_internal_set_connection_state(from._internal_connection_state());
+  }
+  if (from._internal_field_state() != 0) {
+    _this->_internal_set_field_state(from._internal_field_state());
+  }
+  if (from._internal_alive_state() != 0) {
+    _this->_internal_set_alive_state(from._internal_alive_state());
+  }
+  if (from._internal_robot_id() != 0) {
+    _this->_internal_set_robot_id(from._internal_robot_id());
+  }
+  if (from._internal_robot_type() != 0) {
+    _this->_internal_set_robot_type(from._internal_robot_type());
+  }
+  if (from._internal_performance_system_shooter() != 0) {
+    _this->_internal_set_performance_system_shooter(from._internal_performance_system_shooter());
+  }
+  if (from._internal_performance_system_chassis() != 0) {
+    _this->_internal_set_performance_system_chassis(from._internal_performance_system_chassis());
+  }
+  if (from._internal_level() != 0) {
+    _this->_internal_set_level(from._internal_level());
+  }
+  if (from._internal_max_health() != 0) {
+    _this->_internal_set_max_health(from._internal_max_health());
+  }
+  if (from._internal_max_heat() != 0) {
+    _this->_internal_set_max_heat(from._internal_max_heat());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_heat_cooldown_rate = from._internal_heat_cooldown_rate();
+  ::uint32_t raw_heat_cooldown_rate;
+  memcpy(&raw_heat_cooldown_rate, &tmp_heat_cooldown_rate, sizeof(tmp_heat_cooldown_rate));
+  if (raw_heat_cooldown_rate != 0) {
+    _this->_internal_set_heat_cooldown_rate(from._internal_heat_cooldown_rate());
+  }
+  if (from._internal_max_power() != 0) {
+    _this->_internal_set_max_power(from._internal_max_power());
+  }
+  if (from._internal_max_buffer_energy() != 0) {
+    _this->_internal_set_max_buffer_energy(from._internal_max_buffer_energy());
+  }
+  if (from._internal_max_chassis_energy() != 0) {
+    _this->_internal_set_max_chassis_energy(from._internal_max_chassis_energy());
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void RobotStaticStatus::CopyFrom(const RobotStaticStatus& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:custom_client.RobotStaticStatus)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+PROTOBUF_NOINLINE bool RobotStaticStatus::IsInitialized() const {
+  return true;
+}
+
+::_pbi::CachedSize* RobotStaticStatus::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void RobotStaticStatus::InternalSwap(RobotStaticStatus* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(RobotStaticStatus, _impl_.max_chassis_energy_)
+      + sizeof(RobotStaticStatus::_impl_.max_chassis_energy_)
+      - PROTOBUF_FIELD_OFFSET(RobotStaticStatus, _impl_.connection_state_)>(
+          reinterpret_cast<char*>(&_impl_.connection_state_),
+          reinterpret_cast<char*>(&other->_impl_.connection_state_));
+}
+
+::google::protobuf::Metadata RobotStaticStatus::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_custom_5fclient_2eproto_getter, &descriptor_table_custom_5fclient_2eproto_once,
+      file_level_metadata_custom_5fclient_2eproto[6]);
+}
+// ===================================================================
+
+class RobotDynamicStatus::_Internal {
+ public:
+};
+
+RobotDynamicStatus::RobotDynamicStatus(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:custom_client.RobotDynamicStatus)
+}
+RobotDynamicStatus::RobotDynamicStatus(
+    ::google::protobuf::Arena* arena, const RobotDynamicStatus& from)
+    : RobotDynamicStatus(arena) {
+  MergeFrom(from);
+}
+inline PROTOBUF_NDEBUG_INLINE RobotDynamicStatus::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : _cached_size_{0} {}
+
+inline void RobotDynamicStatus::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, current_health_),
+           0,
+           offsetof(Impl_, can_remote_ammo_) -
+               offsetof(Impl_, current_health_) +
+               sizeof(Impl_::can_remote_ammo_));
+}
+RobotDynamicStatus::~RobotDynamicStatus() {
+  // @@protoc_insertion_point(destructor:custom_client.RobotDynamicStatus)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void RobotDynamicStatus::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.~Impl_();
+}
+
+PROTOBUF_NOINLINE void RobotDynamicStatus::Clear() {
+// @@protoc_insertion_point(message_clear_start:custom_client.RobotDynamicStatus)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&_impl_.current_health_, 0, static_cast<::size_t>(
+      reinterpret_cast<char*>(&_impl_.can_remote_ammo_) -
+      reinterpret_cast<char*>(&_impl_.current_health_)) + sizeof(_impl_.can_remote_ammo_));
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+const char* RobotDynamicStatus::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
+}
+
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<4, 13, 0, 0, 2> RobotDynamicStatus::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    13, 120,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294959104,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    13,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_RobotDynamicStatus_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // uint32 current_health = 1;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RobotDynamicStatus, _impl_.current_health_), 63>(),
+     {8, 63, 0, PROTOBUF_FIELD_OFFSET(RobotDynamicStatus, _impl_.current_health_)}},
+    // float current_heat = 2;
+    {::_pbi::TcParser::FastF32S1,
+     {21, 63, 0, PROTOBUF_FIELD_OFFSET(RobotDynamicStatus, _impl_.current_heat_)}},
+    // float last_projectile_fire_rate = 3;
+    {::_pbi::TcParser::FastF32S1,
+     {29, 63, 0, PROTOBUF_FIELD_OFFSET(RobotDynamicStatus, _impl_.last_projectile_fire_rate_)}},
+    // uint32 current_chassis_energy = 4;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RobotDynamicStatus, _impl_.current_chassis_energy_), 63>(),
+     {32, 63, 0, PROTOBUF_FIELD_OFFSET(RobotDynamicStatus, _impl_.current_chassis_energy_)}},
+    // uint32 current_buffer_energy = 5;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RobotDynamicStatus, _impl_.current_buffer_energy_), 63>(),
+     {40, 63, 0, PROTOBUF_FIELD_OFFSET(RobotDynamicStatus, _impl_.current_buffer_energy_)}},
+    // uint32 current_experience = 6;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RobotDynamicStatus, _impl_.current_experience_), 63>(),
+     {48, 63, 0, PROTOBUF_FIELD_OFFSET(RobotDynamicStatus, _impl_.current_experience_)}},
+    // uint32 experience_for_upgrade = 7;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RobotDynamicStatus, _impl_.experience_for_upgrade_), 63>(),
+     {56, 63, 0, PROTOBUF_FIELD_OFFSET(RobotDynamicStatus, _impl_.experience_for_upgrade_)}},
+    // uint32 total_projectiles_fired = 8;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RobotDynamicStatus, _impl_.total_projectiles_fired_), 63>(),
+     {64, 63, 0, PROTOBUF_FIELD_OFFSET(RobotDynamicStatus, _impl_.total_projectiles_fired_)}},
+    // uint32 remaining_ammo = 9;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RobotDynamicStatus, _impl_.remaining_ammo_), 63>(),
+     {72, 63, 0, PROTOBUF_FIELD_OFFSET(RobotDynamicStatus, _impl_.remaining_ammo_)}},
+    // bool is_out_of_combat = 10;
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(RobotDynamicStatus, _impl_.is_out_of_combat_), 63>(),
+     {80, 63, 0, PROTOBUF_FIELD_OFFSET(RobotDynamicStatus, _impl_.is_out_of_combat_)}},
+    // uint32 out_of_combat_countdown = 11;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RobotDynamicStatus, _impl_.out_of_combat_countdown_), 63>(),
+     {88, 63, 0, PROTOBUF_FIELD_OFFSET(RobotDynamicStatus, _impl_.out_of_combat_countdown_)}},
+    // bool can_remote_heal = 12;
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(RobotDynamicStatus, _impl_.can_remote_heal_), 63>(),
+     {96, 63, 0, PROTOBUF_FIELD_OFFSET(RobotDynamicStatus, _impl_.can_remote_heal_)}},
+    // bool can_remote_ammo = 13;
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(RobotDynamicStatus, _impl_.can_remote_ammo_), 63>(),
+     {104, 63, 0, PROTOBUF_FIELD_OFFSET(RobotDynamicStatus, _impl_.can_remote_ammo_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // uint32 current_health = 1;
+    {PROTOBUF_FIELD_OFFSET(RobotDynamicStatus, _impl_.current_health_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // float current_heat = 2;
+    {PROTOBUF_FIELD_OFFSET(RobotDynamicStatus, _impl_.current_heat_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kFloat)},
+    // float last_projectile_fire_rate = 3;
+    {PROTOBUF_FIELD_OFFSET(RobotDynamicStatus, _impl_.last_projectile_fire_rate_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kFloat)},
+    // uint32 current_chassis_energy = 4;
+    {PROTOBUF_FIELD_OFFSET(RobotDynamicStatus, _impl_.current_chassis_energy_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // uint32 current_buffer_energy = 5;
+    {PROTOBUF_FIELD_OFFSET(RobotDynamicStatus, _impl_.current_buffer_energy_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // uint32 current_experience = 6;
+    {PROTOBUF_FIELD_OFFSET(RobotDynamicStatus, _impl_.current_experience_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // uint32 experience_for_upgrade = 7;
+    {PROTOBUF_FIELD_OFFSET(RobotDynamicStatus, _impl_.experience_for_upgrade_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // uint32 total_projectiles_fired = 8;
+    {PROTOBUF_FIELD_OFFSET(RobotDynamicStatus, _impl_.total_projectiles_fired_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // uint32 remaining_ammo = 9;
+    {PROTOBUF_FIELD_OFFSET(RobotDynamicStatus, _impl_.remaining_ammo_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // bool is_out_of_combat = 10;
+    {PROTOBUF_FIELD_OFFSET(RobotDynamicStatus, _impl_.is_out_of_combat_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBool)},
+    // uint32 out_of_combat_countdown = 11;
+    {PROTOBUF_FIELD_OFFSET(RobotDynamicStatus, _impl_.out_of_combat_countdown_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // bool can_remote_heal = 12;
+    {PROTOBUF_FIELD_OFFSET(RobotDynamicStatus, _impl_.can_remote_heal_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBool)},
+    // bool can_remote_ammo = 13;
+    {PROTOBUF_FIELD_OFFSET(RobotDynamicStatus, _impl_.can_remote_ammo_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBool)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
+
+::uint8_t* RobotDynamicStatus::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:custom_client.RobotDynamicStatus)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // uint32 current_health = 1;
+  if (this->_internal_current_health() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        1, this->_internal_current_health(), target);
+  }
+
+  // float current_heat = 2;
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_current_heat = this->_internal_current_heat();
+  ::uint32_t raw_current_heat;
+  memcpy(&raw_current_heat, &tmp_current_heat, sizeof(tmp_current_heat));
+  if (raw_current_heat != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        2, this->_internal_current_heat(), target);
+  }
+
+  // float last_projectile_fire_rate = 3;
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_last_projectile_fire_rate = this->_internal_last_projectile_fire_rate();
+  ::uint32_t raw_last_projectile_fire_rate;
+  memcpy(&raw_last_projectile_fire_rate, &tmp_last_projectile_fire_rate, sizeof(tmp_last_projectile_fire_rate));
+  if (raw_last_projectile_fire_rate != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        3, this->_internal_last_projectile_fire_rate(), target);
+  }
+
+  // uint32 current_chassis_energy = 4;
+  if (this->_internal_current_chassis_energy() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        4, this->_internal_current_chassis_energy(), target);
+  }
+
+  // uint32 current_buffer_energy = 5;
+  if (this->_internal_current_buffer_energy() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        5, this->_internal_current_buffer_energy(), target);
+  }
+
+  // uint32 current_experience = 6;
+  if (this->_internal_current_experience() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        6, this->_internal_current_experience(), target);
+  }
+
+  // uint32 experience_for_upgrade = 7;
+  if (this->_internal_experience_for_upgrade() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        7, this->_internal_experience_for_upgrade(), target);
+  }
+
+  // uint32 total_projectiles_fired = 8;
+  if (this->_internal_total_projectiles_fired() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        8, this->_internal_total_projectiles_fired(), target);
+  }
+
+  // uint32 remaining_ammo = 9;
+  if (this->_internal_remaining_ammo() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        9, this->_internal_remaining_ammo(), target);
+  }
+
+  // bool is_out_of_combat = 10;
+  if (this->_internal_is_out_of_combat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        10, this->_internal_is_out_of_combat(), target);
+  }
+
+  // uint32 out_of_combat_countdown = 11;
+  if (this->_internal_out_of_combat_countdown() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        11, this->_internal_out_of_combat_countdown(), target);
+  }
+
+  // bool can_remote_heal = 12;
+  if (this->_internal_can_remote_heal() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        12, this->_internal_can_remote_heal(), target);
+  }
+
+  // bool can_remote_ammo = 13;
+  if (this->_internal_can_remote_ammo() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        13, this->_internal_can_remote_ammo(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:custom_client.RobotDynamicStatus)
+  return target;
+}
+
+::size_t RobotDynamicStatus::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:custom_client.RobotDynamicStatus)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 current_health = 1;
+  if (this->_internal_current_health() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_current_health());
+  }
+
+  // float current_heat = 2;
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_current_heat = this->_internal_current_heat();
+  ::uint32_t raw_current_heat;
+  memcpy(&raw_current_heat, &tmp_current_heat, sizeof(tmp_current_heat));
+  if (raw_current_heat != 0) {
+    total_size += 5;
+  }
+
+  // float last_projectile_fire_rate = 3;
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_last_projectile_fire_rate = this->_internal_last_projectile_fire_rate();
+  ::uint32_t raw_last_projectile_fire_rate;
+  memcpy(&raw_last_projectile_fire_rate, &tmp_last_projectile_fire_rate, sizeof(tmp_last_projectile_fire_rate));
+  if (raw_last_projectile_fire_rate != 0) {
+    total_size += 5;
+  }
+
+  // uint32 current_chassis_energy = 4;
+  if (this->_internal_current_chassis_energy() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_current_chassis_energy());
+  }
+
+  // uint32 current_buffer_energy = 5;
+  if (this->_internal_current_buffer_energy() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_current_buffer_energy());
+  }
+
+  // uint32 current_experience = 6;
+  if (this->_internal_current_experience() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_current_experience());
+  }
+
+  // uint32 experience_for_upgrade = 7;
+  if (this->_internal_experience_for_upgrade() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_experience_for_upgrade());
+  }
+
+  // uint32 total_projectiles_fired = 8;
+  if (this->_internal_total_projectiles_fired() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_total_projectiles_fired());
+  }
+
+  // uint32 remaining_ammo = 9;
+  if (this->_internal_remaining_ammo() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_remaining_ammo());
+  }
+
+  // uint32 out_of_combat_countdown = 11;
+  if (this->_internal_out_of_combat_countdown() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_out_of_combat_countdown());
+  }
+
+  // bool is_out_of_combat = 10;
+  if (this->_internal_is_out_of_combat() != 0) {
+    total_size += 2;
+  }
+
+  // bool can_remote_heal = 12;
+  if (this->_internal_can_remote_heal() != 0) {
+    total_size += 2;
+  }
+
+  // bool can_remote_ammo = 13;
+  if (this->_internal_can_remote_ammo() != 0) {
+    total_size += 2;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::google::protobuf::Message::ClassData RobotDynamicStatus::_class_data_ = {
+    RobotDynamicStatus::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
+};
+const ::google::protobuf::Message::ClassData* RobotDynamicStatus::GetClassData() const {
+  return &_class_data_;
+}
+
+void RobotDynamicStatus::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<RobotDynamicStatus*>(&to_msg);
+  auto& from = static_cast<const RobotDynamicStatus&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:custom_client.RobotDynamicStatus)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_current_health() != 0) {
+    _this->_internal_set_current_health(from._internal_current_health());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_current_heat = from._internal_current_heat();
+  ::uint32_t raw_current_heat;
+  memcpy(&raw_current_heat, &tmp_current_heat, sizeof(tmp_current_heat));
+  if (raw_current_heat != 0) {
+    _this->_internal_set_current_heat(from._internal_current_heat());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_last_projectile_fire_rate = from._internal_last_projectile_fire_rate();
+  ::uint32_t raw_last_projectile_fire_rate;
+  memcpy(&raw_last_projectile_fire_rate, &tmp_last_projectile_fire_rate, sizeof(tmp_last_projectile_fire_rate));
+  if (raw_last_projectile_fire_rate != 0) {
+    _this->_internal_set_last_projectile_fire_rate(from._internal_last_projectile_fire_rate());
+  }
+  if (from._internal_current_chassis_energy() != 0) {
+    _this->_internal_set_current_chassis_energy(from._internal_current_chassis_energy());
+  }
+  if (from._internal_current_buffer_energy() != 0) {
+    _this->_internal_set_current_buffer_energy(from._internal_current_buffer_energy());
+  }
+  if (from._internal_current_experience() != 0) {
+    _this->_internal_set_current_experience(from._internal_current_experience());
+  }
+  if (from._internal_experience_for_upgrade() != 0) {
+    _this->_internal_set_experience_for_upgrade(from._internal_experience_for_upgrade());
+  }
+  if (from._internal_total_projectiles_fired() != 0) {
+    _this->_internal_set_total_projectiles_fired(from._internal_total_projectiles_fired());
+  }
+  if (from._internal_remaining_ammo() != 0) {
+    _this->_internal_set_remaining_ammo(from._internal_remaining_ammo());
+  }
+  if (from._internal_out_of_combat_countdown() != 0) {
+    _this->_internal_set_out_of_combat_countdown(from._internal_out_of_combat_countdown());
+  }
+  if (from._internal_is_out_of_combat() != 0) {
+    _this->_internal_set_is_out_of_combat(from._internal_is_out_of_combat());
+  }
+  if (from._internal_can_remote_heal() != 0) {
+    _this->_internal_set_can_remote_heal(from._internal_can_remote_heal());
+  }
+  if (from._internal_can_remote_ammo() != 0) {
+    _this->_internal_set_can_remote_ammo(from._internal_can_remote_ammo());
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void RobotDynamicStatus::CopyFrom(const RobotDynamicStatus& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:custom_client.RobotDynamicStatus)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+PROTOBUF_NOINLINE bool RobotDynamicStatus::IsInitialized() const {
+  return true;
+}
+
+::_pbi::CachedSize* RobotDynamicStatus::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void RobotDynamicStatus::InternalSwap(RobotDynamicStatus* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(RobotDynamicStatus, _impl_.can_remote_ammo_)
+      + sizeof(RobotDynamicStatus::_impl_.can_remote_ammo_)
+      - PROTOBUF_FIELD_OFFSET(RobotDynamicStatus, _impl_.current_health_)>(
+          reinterpret_cast<char*>(&_impl_.current_health_),
+          reinterpret_cast<char*>(&other->_impl_.current_health_));
+}
+
+::google::protobuf::Metadata RobotDynamicStatus::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_custom_5fclient_2eproto_getter, &descriptor_table_custom_5fclient_2eproto_once,
+      file_level_metadata_custom_5fclient_2eproto[7]);
+}
+// ===================================================================
+
+class RobotPosition::_Internal {
+ public:
+};
+
+RobotPosition::RobotPosition(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:custom_client.RobotPosition)
+}
+RobotPosition::RobotPosition(
+    ::google::protobuf::Arena* arena, const RobotPosition& from)
+    : RobotPosition(arena) {
+  MergeFrom(from);
+}
+inline PROTOBUF_NDEBUG_INLINE RobotPosition::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : _cached_size_{0} {}
+
+inline void RobotPosition::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, x_),
+           0,
+           offsetof(Impl_, robot_id_) -
+               offsetof(Impl_, x_) +
+               sizeof(Impl_::robot_id_));
+}
+RobotPosition::~RobotPosition() {
+  // @@protoc_insertion_point(destructor:custom_client.RobotPosition)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void RobotPosition::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.~Impl_();
+}
+
+PROTOBUF_NOINLINE void RobotPosition::Clear() {
+// @@protoc_insertion_point(message_clear_start:custom_client.RobotPosition)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&_impl_.x_, 0, static_cast<::size_t>(
+      reinterpret_cast<char*>(&_impl_.robot_id_) -
+      reinterpret_cast<char*>(&_impl_.x_)) + sizeof(_impl_.robot_id_));
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+const char* RobotPosition::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
+}
+
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<3, 5, 0, 0, 2> RobotPosition::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    5, 56,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967264,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    5,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_RobotPosition_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // float x = 1;
+    {::_pbi::TcParser::FastF32S1,
+     {13, 63, 0, PROTOBUF_FIELD_OFFSET(RobotPosition, _impl_.x_)}},
+    // float y = 2;
+    {::_pbi::TcParser::FastF32S1,
+     {21, 63, 0, PROTOBUF_FIELD_OFFSET(RobotPosition, _impl_.y_)}},
+    // float z = 3;
+    {::_pbi::TcParser::FastF32S1,
+     {29, 63, 0, PROTOBUF_FIELD_OFFSET(RobotPosition, _impl_.z_)}},
+    // float yaw = 4;
+    {::_pbi::TcParser::FastF32S1,
+     {37, 63, 0, PROTOBUF_FIELD_OFFSET(RobotPosition, _impl_.yaw_)}},
+    // uint32 robot_id = 5;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RobotPosition, _impl_.robot_id_), 63>(),
+     {40, 63, 0, PROTOBUF_FIELD_OFFSET(RobotPosition, _impl_.robot_id_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // float x = 1;
+    {PROTOBUF_FIELD_OFFSET(RobotPosition, _impl_.x_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kFloat)},
+    // float y = 2;
+    {PROTOBUF_FIELD_OFFSET(RobotPosition, _impl_.y_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kFloat)},
+    // float z = 3;
+    {PROTOBUF_FIELD_OFFSET(RobotPosition, _impl_.z_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kFloat)},
+    // float yaw = 4;
+    {PROTOBUF_FIELD_OFFSET(RobotPosition, _impl_.yaw_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kFloat)},
+    // uint32 robot_id = 5;
+    {PROTOBUF_FIELD_OFFSET(RobotPosition, _impl_.robot_id_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
+
+::uint8_t* RobotPosition::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:custom_client.RobotPosition)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // float x = 1;
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_x = this->_internal_x();
+  ::uint32_t raw_x;
+  memcpy(&raw_x, &tmp_x, sizeof(tmp_x));
+  if (raw_x != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        1, this->_internal_x(), target);
+  }
+
+  // float y = 2;
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_y = this->_internal_y();
+  ::uint32_t raw_y;
+  memcpy(&raw_y, &tmp_y, sizeof(tmp_y));
+  if (raw_y != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        2, this->_internal_y(), target);
+  }
+
+  // float z = 3;
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_z = this->_internal_z();
+  ::uint32_t raw_z;
+  memcpy(&raw_z, &tmp_z, sizeof(tmp_z));
+  if (raw_z != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        3, this->_internal_z(), target);
+  }
+
+  // float yaw = 4;
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_yaw = this->_internal_yaw();
+  ::uint32_t raw_yaw;
+  memcpy(&raw_yaw, &tmp_yaw, sizeof(tmp_yaw));
+  if (raw_yaw != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        4, this->_internal_yaw(), target);
+  }
+
+  // uint32 robot_id = 5;
+  if (this->_internal_robot_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        5, this->_internal_robot_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:custom_client.RobotPosition)
+  return target;
+}
+
+::size_t RobotPosition::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:custom_client.RobotPosition)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // float x = 1;
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_x = this->_internal_x();
+  ::uint32_t raw_x;
+  memcpy(&raw_x, &tmp_x, sizeof(tmp_x));
+  if (raw_x != 0) {
+    total_size += 5;
+  }
+
+  // float y = 2;
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_y = this->_internal_y();
+  ::uint32_t raw_y;
+  memcpy(&raw_y, &tmp_y, sizeof(tmp_y));
+  if (raw_y != 0) {
+    total_size += 5;
+  }
+
+  // float z = 3;
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_z = this->_internal_z();
+  ::uint32_t raw_z;
+  memcpy(&raw_z, &tmp_z, sizeof(tmp_z));
+  if (raw_z != 0) {
+    total_size += 5;
+  }
+
+  // float yaw = 4;
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_yaw = this->_internal_yaw();
+  ::uint32_t raw_yaw;
+  memcpy(&raw_yaw, &tmp_yaw, sizeof(tmp_yaw));
+  if (raw_yaw != 0) {
+    total_size += 5;
+  }
+
+  // uint32 robot_id = 5;
+  if (this->_internal_robot_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_robot_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::google::protobuf::Message::ClassData RobotPosition::_class_data_ = {
+    RobotPosition::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
+};
+const ::google::protobuf::Message::ClassData* RobotPosition::GetClassData() const {
+  return &_class_data_;
+}
+
+void RobotPosition::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<RobotPosition*>(&to_msg);
+  auto& from = static_cast<const RobotPosition&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:custom_client.RobotPosition)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_x = from._internal_x();
+  ::uint32_t raw_x;
+  memcpy(&raw_x, &tmp_x, sizeof(tmp_x));
+  if (raw_x != 0) {
+    _this->_internal_set_x(from._internal_x());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_y = from._internal_y();
+  ::uint32_t raw_y;
+  memcpy(&raw_y, &tmp_y, sizeof(tmp_y));
+  if (raw_y != 0) {
+    _this->_internal_set_y(from._internal_y());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_z = from._internal_z();
+  ::uint32_t raw_z;
+  memcpy(&raw_z, &tmp_z, sizeof(tmp_z));
+  if (raw_z != 0) {
+    _this->_internal_set_z(from._internal_z());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_yaw = from._internal_yaw();
+  ::uint32_t raw_yaw;
+  memcpy(&raw_yaw, &tmp_yaw, sizeof(tmp_yaw));
+  if (raw_yaw != 0) {
+    _this->_internal_set_yaw(from._internal_yaw());
+  }
+  if (from._internal_robot_id() != 0) {
+    _this->_internal_set_robot_id(from._internal_robot_id());
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void RobotPosition::CopyFrom(const RobotPosition& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:custom_client.RobotPosition)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+PROTOBUF_NOINLINE bool RobotPosition::IsInitialized() const {
+  return true;
+}
+
+::_pbi::CachedSize* RobotPosition::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void RobotPosition::InternalSwap(RobotPosition* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(RobotPosition, _impl_.robot_id_)
+      + sizeof(RobotPosition::_impl_.robot_id_)
+      - PROTOBUF_FIELD_OFFSET(RobotPosition, _impl_.x_)>(
+          reinterpret_cast<char*>(&_impl_.x_),
+          reinterpret_cast<char*>(&other->_impl_.x_));
+}
+
+::google::protobuf::Metadata RobotPosition::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_custom_5fclient_2eproto_getter, &descriptor_table_custom_5fclient_2eproto_once,
+      file_level_metadata_custom_5fclient_2eproto[8]);
+}
+// ===================================================================
+
+class Event::_Internal {
+ public:
+};
+
+Event::Event(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:custom_client.Event)
+}
+inline PROTOBUF_NDEBUG_INLINE Event::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from)
+      : param_(arena, from.param_),
+        _cached_size_{0} {}
+
+Event::Event(
+    ::google::protobuf::Arena* arena,
+    const Event& from)
+    : ::google::protobuf::Message(arena) {
+  Event* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
+  _impl_.event_id_ = from._impl_.event_id_;
+
+  // @@protoc_insertion_point(copy_constructor:custom_client.Event)
+}
+inline PROTOBUF_NDEBUG_INLINE Event::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : param_(arena),
+        _cached_size_{0} {}
+
+inline void Event::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.event_id_ = {};
+}
+Event::~Event() {
+  // @@protoc_insertion_point(destructor:custom_client.Event)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void Event::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.param_.Destroy();
+  _impl_.~Impl_();
+}
+
+PROTOBUF_NOINLINE void Event::Clear() {
+// @@protoc_insertion_point(message_clear_start:custom_client.Event)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.param_.ClearToEmpty();
+  _impl_.event_id_ = 0;
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+const char* Event::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
+}
+
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 0, 33, 2> Event::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_Event_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // string param = 2;
+    {::_pbi::TcParser::FastUS1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(Event, _impl_.param_)}},
+    // int32 event_id = 1;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Event, _impl_.event_id_), 63>(),
+     {8, 63, 0, PROTOBUF_FIELD_OFFSET(Event, _impl_.event_id_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // int32 event_id = 1;
+    {PROTOBUF_FIELD_OFFSET(Event, _impl_.event_id_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
+    // string param = 2;
+    {PROTOBUF_FIELD_OFFSET(Event, _impl_.param_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+  }},
+  // no aux_entries
+  {{
+    "\23\0\5\0\0\0\0\0"
+    "custom_client.Event"
+    "param"
+  }},
+};
+
+::uint8_t* Event::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:custom_client.Event)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // int32 event_id = 1;
+  if (this->_internal_event_id() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::
+        WriteInt32ToArrayWithField<1>(
+            stream, this->_internal_event_id(), target);
+  }
+
+  // string param = 2;
+  if (!this->_internal_param().empty()) {
+    const std::string& _s = this->_internal_param();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "custom_client.Event.param");
+    target = stream->WriteStringMaybeAliased(2, _s, target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:custom_client.Event)
+  return target;
+}
+
+::size_t Event::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:custom_client.Event)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string param = 2;
+  if (!this->_internal_param().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_param());
+  }
+
+  // int32 event_id = 1;
+  if (this->_internal_event_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+        this->_internal_event_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::google::protobuf::Message::ClassData Event::_class_data_ = {
+    Event::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
+};
+const ::google::protobuf::Message::ClassData* Event::GetClassData() const {
+  return &_class_data_;
+}
+
+void Event::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<Event*>(&to_msg);
+  auto& from = static_cast<const Event&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:custom_client.Event)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_param().empty()) {
+    _this->_internal_set_param(from._internal_param());
+  }
+  if (from._internal_event_id() != 0) {
+    _this->_internal_set_event_id(from._internal_event_id());
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Event::CopyFrom(const Event& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:custom_client.Event)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+PROTOBUF_NOINLINE bool Event::IsInitialized() const {
+  return true;
+}
+
+::_pbi::CachedSize* Event::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void Event::InternalSwap(Event* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.param_, &other->_impl_.param_, arena);
+        swap(_impl_.event_id_, other->_impl_.event_id_);
+}
+
+::google::protobuf::Metadata Event::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_custom_5fclient_2eproto_getter, &descriptor_table_custom_5fclient_2eproto_once,
+      file_level_metadata_custom_5fclient_2eproto[9]);
+}
+// ===================================================================
+
+class PenaltyInfo::_Internal {
+ public:
+};
+
+PenaltyInfo::PenaltyInfo(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:custom_client.PenaltyInfo)
+}
+PenaltyInfo::PenaltyInfo(
+    ::google::protobuf::Arena* arena, const PenaltyInfo& from)
+    : PenaltyInfo(arena) {
+  MergeFrom(from);
+}
+inline PROTOBUF_NDEBUG_INLINE PenaltyInfo::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : _cached_size_{0} {}
+
+inline void PenaltyInfo::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, penalty_type_),
+           0,
+           offsetof(Impl_, total_penalty_num_) -
+               offsetof(Impl_, penalty_type_) +
+               sizeof(Impl_::total_penalty_num_));
+}
+PenaltyInfo::~PenaltyInfo() {
+  // @@protoc_insertion_point(destructor:custom_client.PenaltyInfo)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void PenaltyInfo::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.~Impl_();
+}
+
+PROTOBUF_NOINLINE void PenaltyInfo::Clear() {
+// @@protoc_insertion_point(message_clear_start:custom_client.PenaltyInfo)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&_impl_.penalty_type_, 0, static_cast<::size_t>(
+      reinterpret_cast<char*>(&_impl_.total_penalty_num_) -
+      reinterpret_cast<char*>(&_impl_.penalty_type_)) + sizeof(_impl_.total_penalty_num_));
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+const char* PenaltyInfo::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
+}
+
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 3, 0, 0, 2> PenaltyInfo::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    3, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967288,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    3,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_PenaltyInfo_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // uint32 penalty_type = 1;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(PenaltyInfo, _impl_.penalty_type_), 63>(),
+     {8, 63, 0, PROTOBUF_FIELD_OFFSET(PenaltyInfo, _impl_.penalty_type_)}},
+    // uint32 penalty_effect_sec = 2;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(PenaltyInfo, _impl_.penalty_effect_sec_), 63>(),
+     {16, 63, 0, PROTOBUF_FIELD_OFFSET(PenaltyInfo, _impl_.penalty_effect_sec_)}},
+    // uint32 total_penalty_num = 3;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(PenaltyInfo, _impl_.total_penalty_num_), 63>(),
+     {24, 63, 0, PROTOBUF_FIELD_OFFSET(PenaltyInfo, _impl_.total_penalty_num_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // uint32 penalty_type = 1;
+    {PROTOBUF_FIELD_OFFSET(PenaltyInfo, _impl_.penalty_type_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // uint32 penalty_effect_sec = 2;
+    {PROTOBUF_FIELD_OFFSET(PenaltyInfo, _impl_.penalty_effect_sec_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // uint32 total_penalty_num = 3;
+    {PROTOBUF_FIELD_OFFSET(PenaltyInfo, _impl_.total_penalty_num_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
+
+::uint8_t* PenaltyInfo::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:custom_client.PenaltyInfo)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // uint32 penalty_type = 1;
+  if (this->_internal_penalty_type() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        1, this->_internal_penalty_type(), target);
+  }
+
+  // uint32 penalty_effect_sec = 2;
+  if (this->_internal_penalty_effect_sec() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        2, this->_internal_penalty_effect_sec(), target);
+  }
+
+  // uint32 total_penalty_num = 3;
+  if (this->_internal_total_penalty_num() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        3, this->_internal_total_penalty_num(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:custom_client.PenaltyInfo)
+  return target;
+}
+
+::size_t PenaltyInfo::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:custom_client.PenaltyInfo)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 penalty_type = 1;
+  if (this->_internal_penalty_type() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_penalty_type());
+  }
+
+  // uint32 penalty_effect_sec = 2;
+  if (this->_internal_penalty_effect_sec() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_penalty_effect_sec());
+  }
+
+  // uint32 total_penalty_num = 3;
+  if (this->_internal_total_penalty_num() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_total_penalty_num());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::google::protobuf::Message::ClassData PenaltyInfo::_class_data_ = {
+    PenaltyInfo::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
+};
+const ::google::protobuf::Message::ClassData* PenaltyInfo::GetClassData() const {
+  return &_class_data_;
+}
+
+void PenaltyInfo::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<PenaltyInfo*>(&to_msg);
+  auto& from = static_cast<const PenaltyInfo&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:custom_client.PenaltyInfo)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_penalty_type() != 0) {
+    _this->_internal_set_penalty_type(from._internal_penalty_type());
+  }
+  if (from._internal_penalty_effect_sec() != 0) {
+    _this->_internal_set_penalty_effect_sec(from._internal_penalty_effect_sec());
+  }
+  if (from._internal_total_penalty_num() != 0) {
+    _this->_internal_set_total_penalty_num(from._internal_total_penalty_num());
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void PenaltyInfo::CopyFrom(const PenaltyInfo& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:custom_client.PenaltyInfo)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+PROTOBUF_NOINLINE bool PenaltyInfo::IsInitialized() const {
+  return true;
+}
+
+::_pbi::CachedSize* PenaltyInfo::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void PenaltyInfo::InternalSwap(PenaltyInfo* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(PenaltyInfo, _impl_.total_penalty_num_)
+      + sizeof(PenaltyInfo::_impl_.total_penalty_num_)
+      - PROTOBUF_FIELD_OFFSET(PenaltyInfo, _impl_.penalty_type_)>(
+          reinterpret_cast<char*>(&_impl_.penalty_type_),
+          reinterpret_cast<char*>(&other->_impl_.penalty_type_));
+}
+
+::google::protobuf::Metadata PenaltyInfo::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_custom_5fclient_2eproto_getter, &descriptor_table_custom_5fclient_2eproto_once,
+      file_level_metadata_custom_5fclient_2eproto[10]);
+}
+// ===================================================================
+
+class Buff::_Internal {
+ public:
+  using HasBits = decltype(std::declval<Buff>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(Buff, _impl_._has_bits_);
+  static void set_has_robot_id(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_buff_type(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static void set_has_buff_level(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static void set_has_buff_max_time(HasBits* has_bits) {
+    (*has_bits)[0] |= 8u;
+  }
+  static void set_has_buff_left_time(HasBits* has_bits) {
+    (*has_bits)[0] |= 16u;
+  }
+};
+
+Buff::Buff(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:custom_client.Buff)
+}
+Buff::Buff(
+    ::google::protobuf::Arena* arena, const Buff& from)
+    : Buff(arena) {
+  MergeFrom(from);
+}
+inline PROTOBUF_NDEBUG_INLINE Buff::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : _cached_size_{0} {}
+
+inline void Buff::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, robot_id_),
+           0,
+           offsetof(Impl_, buff_left_time_) -
+               offsetof(Impl_, robot_id_) +
+               sizeof(Impl_::buff_left_time_));
+}
+Buff::~Buff() {
+  // @@protoc_insertion_point(destructor:custom_client.Buff)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void Buff::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.~Impl_();
+}
+
+PROTOBUF_NOINLINE void Buff::Clear() {
+// @@protoc_insertion_point(message_clear_start:custom_client.Buff)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000001fu) {
+    ::memset(&_impl_.robot_id_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.buff_left_time_) -
+        reinterpret_cast<char*>(&_impl_.robot_id_)) + sizeof(_impl_.buff_left_time_));
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+const char* Buff::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
+}
+
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<3, 5, 0, 0, 2> Buff::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(Buff, _impl_._has_bits_),
+    0, // no _extensions_
+    5, 56,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967264,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    5,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_Buff_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // optional uint32 robot_id = 1;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Buff, _impl_.robot_id_), 0>(),
+     {8, 0, 0, PROTOBUF_FIELD_OFFSET(Buff, _impl_.robot_id_)}},
+    // optional uint32 buff_type = 2;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Buff, _impl_.buff_type_), 1>(),
+     {16, 1, 0, PROTOBUF_FIELD_OFFSET(Buff, _impl_.buff_type_)}},
+    // optional int32 buff_level = 3;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Buff, _impl_.buff_level_), 2>(),
+     {24, 2, 0, PROTOBUF_FIELD_OFFSET(Buff, _impl_.buff_level_)}},
+    // optional uint32 buff_max_time = 4;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Buff, _impl_.buff_max_time_), 3>(),
+     {32, 3, 0, PROTOBUF_FIELD_OFFSET(Buff, _impl_.buff_max_time_)}},
+    // optional uint32 buff_left_time = 5;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Buff, _impl_.buff_left_time_), 4>(),
+     {40, 4, 0, PROTOBUF_FIELD_OFFSET(Buff, _impl_.buff_left_time_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // optional uint32 robot_id = 1;
+    {PROTOBUF_FIELD_OFFSET(Buff, _impl_.robot_id_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
+    // optional uint32 buff_type = 2;
+    {PROTOBUF_FIELD_OFFSET(Buff, _impl_.buff_type_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
+    // optional int32 buff_level = 3;
+    {PROTOBUF_FIELD_OFFSET(Buff, _impl_.buff_level_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+    // optional uint32 buff_max_time = 4;
+    {PROTOBUF_FIELD_OFFSET(Buff, _impl_.buff_max_time_), _Internal::kHasBitsOffset + 3, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
+    // optional uint32 buff_left_time = 5;
+    {PROTOBUF_FIELD_OFFSET(Buff, _impl_.buff_left_time_), _Internal::kHasBitsOffset + 4, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
+
+::uint8_t* Buff::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:custom_client.Buff)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  // optional uint32 robot_id = 1;
+  if (cached_has_bits & 0x00000001u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        1, this->_internal_robot_id(), target);
+  }
+
+  // optional uint32 buff_type = 2;
+  if (cached_has_bits & 0x00000002u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        2, this->_internal_buff_type(), target);
+  }
+
+  // optional int32 buff_level = 3;
+  if (cached_has_bits & 0x00000004u) {
+    target = ::google::protobuf::internal::WireFormatLite::
+        WriteInt32ToArrayWithField<3>(
+            stream, this->_internal_buff_level(), target);
+  }
+
+  // optional uint32 buff_max_time = 4;
+  if (cached_has_bits & 0x00000008u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        4, this->_internal_buff_max_time(), target);
+  }
+
+  // optional uint32 buff_left_time = 5;
+  if (cached_has_bits & 0x00000010u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        5, this->_internal_buff_left_time(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:custom_client.Buff)
+  return target;
+}
+
+::size_t Buff::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:custom_client.Buff)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000001fu) {
+    // optional uint32 robot_id = 1;
+    if (cached_has_bits & 0x00000001u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+          this->_internal_robot_id());
+    }
+
+    // optional uint32 buff_type = 2;
+    if (cached_has_bits & 0x00000002u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+          this->_internal_buff_type());
+    }
+
+    // optional int32 buff_level = 3;
+    if (cached_has_bits & 0x00000004u) {
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+          this->_internal_buff_level());
+    }
+
+    // optional uint32 buff_max_time = 4;
+    if (cached_has_bits & 0x00000008u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+          this->_internal_buff_max_time());
+    }
+
+    // optional uint32 buff_left_time = 5;
+    if (cached_has_bits & 0x00000010u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+          this->_internal_buff_left_time());
+    }
+
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::google::protobuf::Message::ClassData Buff::_class_data_ = {
+    Buff::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
+};
+const ::google::protobuf::Message::ClassData* Buff::GetClassData() const {
+  return &_class_data_;
+}
+
+void Buff::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<Buff*>(&to_msg);
+  auto& from = static_cast<const Buff&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:custom_client.Buff)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000001fu) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_impl_.robot_id_ = from._impl_.robot_id_;
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.buff_type_ = from._impl_.buff_type_;
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_impl_.buff_level_ = from._impl_.buff_level_;
+    }
+    if (cached_has_bits & 0x00000008u) {
+      _this->_impl_.buff_max_time_ = from._impl_.buff_max_time_;
+    }
+    if (cached_has_bits & 0x00000010u) {
+      _this->_impl_.buff_left_time_ = from._impl_.buff_left_time_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Buff::CopyFrom(const Buff& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:custom_client.Buff)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+PROTOBUF_NOINLINE bool Buff::IsInitialized() const {
+  return true;
+}
+
+::_pbi::CachedSize* Buff::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void Buff::InternalSwap(Buff* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Buff, _impl_.buff_left_time_)
+      + sizeof(Buff::_impl_.buff_left_time_)
+      - PROTOBUF_FIELD_OFFSET(Buff, _impl_.robot_id_)>(
+          reinterpret_cast<char*>(&_impl_.robot_id_),
+          reinterpret_cast<char*>(&other->_impl_.robot_id_));
+}
+
+::google::protobuf::Metadata Buff::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_custom_5fclient_2eproto_getter, &descriptor_table_custom_5fclient_2eproto_once,
+      file_level_metadata_custom_5fclient_2eproto[11]);
 }
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace custom_client

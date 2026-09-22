@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "todo_preset.schema.json",
+  "title": "todo_presets 操作手习惯预设",
+  "description": "操作手/选手习惯预设格式骨架。数值与字段 TODO 按需求细化。",
+  "type": "object",
+  "required": ["id", "name"],
+  "properties": {
+    "id": { "type": "string", "description": "预设唯一标识，建议与文件名一致" },
+    "name": { "type": "string", "description": "展示名称" },
+    "description": { "type": "string" },
+    "control": {
+      "type": "object",
+      "properties": {
+        "mouse": { "$ref": "#/definitions/mouse" },
+        "joystick": { "$ref": "#/definitions/joystick" },
+        "keyboard": { "type": "object", "description": "键位映射，TODO" }
+      }
+    },
+    "custom_control": {
+      "type": "object",
+      "properties": {
+        "mapping": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/mappingEntry" }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "mouse": {
+      "type": "object",
+      "properties": {
+        "sensitivity": { "type": "number" },
+        "invert_y": { "type": "boolean" }
+      }
+    },
+    "joystick": {
+      "type": "object",
+      "properties": {
+        "deadzone": { "type": "number" },
+        "response_curve": { "type": "string", "enum": ["linear", "exponential"] }
+      }
+    },
+    "mappingEntry": {
+      "type": "object",
+      "properties": {
+        "source": { "type": "string" },
+        "action": { "type": "string" },
+        "scale": { "type": "number" },
+        "invert": { "type": "boolean" }
+      }
+    }
+  }
+}

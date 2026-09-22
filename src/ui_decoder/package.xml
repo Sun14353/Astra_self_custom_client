@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>ui_decoder</name>
+  <version>0.1.0</version>
+  <description>
+    ui_decoder - Qt5 H.264 解码与瞄准 UI。
+    从 EGA_Client/RM26_Client 迁移的准星 (CrosshairWidget)、热量环 (HeatRingWidget)
+    与视频背景控件 (VideoBackgroundWidget)，配合 FFmpeg H264Decoder 订阅
+    doorlock_sniper/VideoPacket 码流并实时显示。新增 QML HUD 覆盖层
+    (仿照 EGA_Client TopInfoBar/状态面板)，通过 MQTT 订阅协议中自定义客户端
+    下行 topic (GameStatus/RobotDynamicStatus/...) 并实时展示。
+  </description>
+  <maintainer email="dev@example.com">dev</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>doorlock_sniper</depend>
+  <depend>std_msgs</depend>
+
+  <!-- Qt5 (Widgets + QML/Quick/QuickWidgets) -->
+  <depend>qtbase5-dev</depend>
+  <depend>libqt5widgets5</depend>
+  <depend>qtdeclarative5-dev</depend>
+
+  <!-- FFmpeg 解码 -->
+  <depend>libavcodec-dev</depend>
+  <depend>libavutil-dev</depend>
+  <depend>libswscale-dev</depend>
+
+  <!-- MQTT (Paho C++)：赛场信息下行 topic 订阅 -->
+  <depend>libpaho-mqttpp-dev</depend>
+  <depend>libpaho-mqtt3a-dev</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

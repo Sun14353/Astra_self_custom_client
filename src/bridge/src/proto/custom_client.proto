@@ -60,3 +60,108 @@ message GenericCmd {
     repeated string args = 3;   // 指令参数
     bytes  raw     = 4;         // 透传数据(可选)
 }
+
+// ============================================================
+// 赛场信息 (match field info) 下行消息
+// 用于模拟器 / 裁判系统向客户端发布比赛全局与机器人状态。
+// Topic 名称 = 消息类型名, 字段编号与 RoboMaster 2026 官方协议保持一致,
+// 因此序列化结果可被官方客户端直接解析。
+// ============================================================
+
+// Topic: GameStatus -- 比赛全局状态
+message GameStatus {
+    optional uint32 current_round = 1;
+    optional uint32 total_rounds = 2;
+    optional uint32 red_score = 3;
+    optional uint32 blue_score = 4;
+    optional uint32 current_stage = 5;
+    optional int32 stage_countdown_sec = 6;
+    optional int32 stage_elapsed_sec = 7;
+    optional bool is_paused = 8;
+    optional uint32 game_result = 9;
+    optional uint32 end_reason = 10;
+}
+
+// Topic: GlobalUnitStatus -- 全局单位状态 (基地/前哨站/机器人血量)
+message GlobalUnitStatus {
+    uint32 base_health = 1;
+    uint32 base_status = 2;
+    uint32 base_shield = 3;
+    uint32 outpost_health = 4;
+    uint32 outpost_status = 5;
+    uint32 enemy_base_health = 6;
+    uint32 enemy_base_status = 7;
+    uint32 enemy_base_shield = 8;
+    uint32 enemy_outpost_health = 9;
+    uint32 enemy_outpost_status = 10;
+    repeated uint32 robot_health = 11;
+    repeated int32 robot_bullets = 12;
+    uint32 total_damage_ally = 13;
+    uint32 total_damage_enemy = 14;
+}
+
+// Topic: RobotStaticStatus -- 机器人静态属性
+message RobotStaticStatus {
+    uint32 connection_state = 1;
+    uint32 field_state = 2;
+    uint32 alive_state = 3;
+    uint32 robot_id = 4;
+    uint32 robot_type = 5;
+    uint32 performance_system_shooter = 6;
+    uint32 performance_system_chassis = 7;
+    uint32 level = 8;
+    uint32 max_health = 9;
+    uint32 max_heat = 10;
+    float heat_cooldown_rate = 11;
+    uint32 max_power = 12;
+    uint32 max_buffer_energy = 13;
+    uint32 max_chassis_energy = 14;
+}
+
+// Topic: RobotDynamicStatus -- 机器人动态状态 (血量/热量/弹药)
+message RobotDynamicStatus {
+    uint32 current_health = 1;
+    float current_heat = 2;
+    float last_projectile_fire_rate = 3;
+    uint32 current_chassis_energy = 4;
+    uint32 current_buffer_energy = 5;
+    uint32 current_experience = 6;
+    uint32 experience_for_upgrade = 7;
+    uint32 total_projectiles_fired = 8;
+    uint32 remaining_ammo = 9;
+    bool is_out_of_combat = 10;
+    uint32 out_of_combat_countdown = 11;
+    bool can_remote_heal = 12;
+    bool can_remote_ammo = 13;
+}
+
+// Topic: RobotPosition -- 机器人位置
+message RobotPosition {
+    float x = 1;
+    float y = 2;
+    float z = 3;
+    float yaw = 4;
+    uint32 robot_id = 5;
+}
+
+// Topic: Event -- 事件通知
+message Event {
+    int32 event_id = 1;
+    string param = 2;
+}
+
+// Topic: PenaltyInfo -- 判罚信息
+message PenaltyInfo {
+    uint32 penalty_type = 1;
+    uint32 penalty_effect_sec = 2;
+    uint32 total_penalty_num = 3;
+}
+
+// Topic: Buff -- 增益效果
+message Buff {
+    optional uint32 robot_id = 1;
+    optional uint32 buff_type = 2;
+    optional int32 buff_level = 3;
+    optional uint32 buff_max_time = 4;
+    optional uint32 buff_left_time = 5;
+}

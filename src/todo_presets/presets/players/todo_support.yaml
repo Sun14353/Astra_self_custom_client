@@ -1,0 +1,20 @@
+# ============================================================
+# 操作手习惯预设：支援型
+# 说明：折中灵敏度，兼顾观察与支援习惯。
+# ============================================================
+id: "todo_support"
+name: "支援手"
+description: "折中灵敏度，兼顾战场观察与支援的习惯。"
+
+control:
+  mouse:
+    sensitivity: 0.9        # TODO: 折中灵敏度占位
+    invert_y: true          # TODO: 占位，按选手习惯调整
+  joystick:
+    deadzone: 0.05
+    response_curve: "linear"
+  keyboard:
+    mapping: {}             # TODO
+
+custom_control:
+  mapping: []               # TODO
