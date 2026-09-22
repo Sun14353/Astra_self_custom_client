@@ -1,0 +1,13 @@
+# ============================================================
+# todo_control 节点参数骨架
+# TODO: 实际参数按需求补充（预设路径、控制频率、设备索引等）
+# ============================================================
+todo_control_node:
+  ros__parameters:
+    # 默认操作手预设（对应 todo_presets/presets/players/todo_*.yaml|json）
+    preset_file: ""            # TODO: 例如 "todo_sniper"
+    # 是否启用自定义控制
+    enable: true
+    # 控制指令输出频率 (Hz)
+    tick_rate_hz: 50
+    # TODO: 输入设备相关参数（手柄/键鼠/摇杆通道等）

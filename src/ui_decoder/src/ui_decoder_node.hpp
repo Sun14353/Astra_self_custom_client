@@ -17,6 +17,8 @@ class QImage;
 class QString;
 class QTimer;
 class QWidget;
+class QQuickWidget;
+class MatchDataProvider;
 
 namespace ui_decoder {
 class H264Decoder;
@@ -44,6 +46,8 @@ private:
   ui_decoder::VideoBackgroundWidget *m_video = nullptr;
   ui_decoder::CrosshairWidget *m_crosshair = nullptr;
   ui_decoder::HeatRingWidget *m_heatRing = nullptr;
+  QQuickWidget *m_hud = nullptr;
+  MatchDataProvider *m_matchData = nullptr;
   QWidget *m_window = nullptr;
 
   QTimer *m_fpsTimer = nullptr;
@@ -63,6 +67,9 @@ private:
   int m_heatMax = 240;
   int m_heatStep = 1;
   bool m_demoHeat = false;
+
+  // 收到真实赛场热量数据后关闭演示热量
+  bool m_haveRealHeat = false;
 };
 
 #endif // UIDECODER_NODE_HPP

@@ -31,6 +31,12 @@ public:
    */
   void addOverlay(QWidget *w, int dx = 0, int dy = 0);
 
+  /**
+   * @brief 将一个子控件作为铺满整个视频画面的叠加层（例如 QML HUD）。
+   * @param w 子控件（父对象将改为本控件，并随本控件 resize 自动铺满）
+   */
+  void setFullScreenOverlay(QWidget *w);
+
 public slots:
   void setFrame(const QImage &frame);
   void setFps(double fps);
@@ -60,6 +66,7 @@ private:
   int m_signalLostTimeoutMs;
   qint64 m_lastFrameMs;
   QList<OverlayEntry> m_overlays;
+  QWidget *m_fullScreenOverlay = nullptr;
 };
 
 } // namespace ui_decoder

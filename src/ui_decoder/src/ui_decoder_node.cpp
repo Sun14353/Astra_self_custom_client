@@ -1,5 +1,6 @@
 #include "ui_decoder_node.hpp"
 
+#include "MatchDataProvider.h"
 #include "network/H264Decoder.h"
 #include "widgets/CrosshairWidget.h"
 #include "widgets/HeatRingWidget.h"
@@ -8,7 +9,10 @@
 #include <QApplication>
 #include <QColor>
 #include <QImage>
+#include <QQmlContext>
+#include <QQuickWidget>
 #include <QTimer>
+#include <QUrl>
 #include <QVBoxLayout>
 #include <QWidget>
 
@@ -37,6 +41,36 @@ UiDecoderNode::UiDecoderNode(const rclcpp::NodeOptions &options)
   m_heatRing = new ui_decoder::HeatRingWidget(m_video);
   m_video->addOverlay(m_heatRing, 0, 0);
   m_video->addOverlay(m_crosshair, 0, 0);
+
+  // QML HUD 覆盖层（仿照 EGA_Client 的 TopInfoBar / 状态面板），
+  // 透明背景叠放在视频最上层，数据由 MatchDataProvider (MQTT) 提供。
+  m_hud = new QQuickWidget(m_video);
+  m_hud->setAttribute(Qt::WA_TranslucentBackground);
+  m_hud->setAttribute(Qt::WA_AlwaysStackOnTop);
+  m_hud->setStyleSheet(QStringLiteral("background: transparent;"));
+  m_hud->setResizeMode(QQuickWidget::SizeRootObjectToView);
+  m_hud->setClearColor(Qt::transparent);
+
+  m_matchData = new MatchDataProvider(m_hud);
+  m_hud->rootContext()->setContextProperty("matchData", m_matchData);
+  m_hud->setSource(QUrl(QStringLiteral("qrc:/MatchHud.qml")));
+  m_video->setFullScreenOverlay(m_hud);
+
+  // 真实赛场热量/上限到达后驱动热量环，并关闭演示动画。
+  QObject::connect(m_matchData, &MatchDataProvider::robotDynamicChanged, m_video, [this]() {
+    if (m_matchData->maxHeat() > 0) {
+      m_haveRealHeat = true;
+      m_heatRing->setHeat(static_cast<int>(m_matchData->currentHeat()),
+                          m_matchData->maxHeat());
+    }
+  });
+  QObject::connect(m_matchData, &MatchDataProvider::robotStaticChanged, m_video, [this]() {
+    if (m_matchData->maxHeat() > 0) {
+      m_haveRealHeat = true;
+      m_heatRing->setHeat(static_cast<int>(m_matchData->currentHeat()),
+                          m_matchData->maxHeat());
+    }
+  });
 
   // 解码器（父对象为窗口，随窗口析构）
   m_decoder = new ui_decoder::H264Decoder(m_window);
@@ -76,11 +110,14 @@ UiDecoderNode::UiDecoderNode(const rclcpp::NodeOptions &options)
   });
   m_fpsTimer->start();
 
-  // 演示热量源
+  // 演示热量源（收到真实赛场热量数据后自动让位）
   if (m_demoHeat) {
     m_heatTimer = new QTimer(m_window);
     m_heatTimer->setInterval(60);
     QObject::connect(m_heatTimer, &QTimer::timeout, m_video, [this]() {
+      if (m_haveRealHeat) {
+        return;
+      }
       m_heatCurrent += m_heatStep;
       if (m_heatCurrent >= m_heatMax) {
         m_heatCurrent = m_heatMax;
@@ -111,7 +148,13 @@ UiDecoderNode::UiDecoderNode(const rclcpp::NodeOptions &options)
 }
 
 UiDecoderNode::~UiDecoderNode() {
-  // QWidget/QObject 子树由 Qt 自动回收；ROS 2 订阅由基类析构处理。
+  // 删除顶层窗口以释放整棵 Qt 对象树（含 QQuickWidget / MatchDataProvider），
+  // 确保 MatchDataProvider 析构时停止后台 MQTT 接收线程。
+  if (m_matchData) {
+    m_matchData->stop();
+  }
+  delete m_window;
+  m_window = nullptr;
 }
 
 void UiDecoderNode::show() {
@@ -167,6 +210,20 @@ void UiDecoderNode::configureFromParams() {
   const int w = clampInt(this->declare_parameter("window_width", 800), 320, 4000);
   const int h = clampInt(this->declare_parameter("window_height", 800), 320, 4000);
   m_window->resize(w, h);
+
+  // 赛场信息下行 MQTT（协议中自定义客户端 topic）
+  const bool enableMatch = this->declare_parameter("enable_match_client", true);
+  if (enableMatch && m_matchData) {
+    const std::string brokerIp =
+        this->declare_parameter("mqtt_broker_ip", "192.168.12.1");
+    const int brokerPort = this->declare_parameter("mqtt_broker_port", 3333);
+    const int robotId = this->declare_parameter("robot_id", 7);
+    m_matchData->start(QString::fromStdString(brokerIp), brokerPort,
+                       static_cast<quint32>(robotId));
+    RCLCPP_INFO(this->get_logger(),
+                "match data client starting broker=%s:%d robot_id=%d",
+                brokerIp.c_str(), brokerPort, robotId);
+  }
 }
 
 void UiDecoderNode::onPacket(

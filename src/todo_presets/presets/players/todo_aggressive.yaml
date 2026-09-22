@@ -1,0 +1,20 @@
+# ============================================================
+# 操作手习惯预设：进攻型
+# 说明：高灵敏度、快速响应，适合冲锋/进攻习惯。
+# ============================================================
+id: "todo_aggressive"
+name: "进攻手"
+description: "高灵敏度快速转向习惯，适合进攻位选手。"
+
+control:
+  mouse:
+    sensitivity: 1.8        # TODO: 高灵敏度占位
+    invert_y: false
+  joystick:
+    deadzone: 0.08
+    response_curve: "exponential"
+  keyboard:
+    mapping: {}             # TODO
+
+custom_control:
+  mapping: []               # TODO

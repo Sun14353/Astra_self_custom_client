@@ -38,6 +38,16 @@ void VideoBackgroundWidget::addOverlay(QWidget *w, int dx, int dy) {
   w->raise();
 }
 
+void VideoBackgroundWidget::setFullScreenOverlay(QWidget *w) {
+  if (!w)
+    return;
+  w->setParent(this);
+  m_fullScreenOverlay = w;
+  w->setGeometry(rect());
+  w->show();
+  w->raise();
+}
+
 void VideoBackgroundWidget::repositionOverlays() {
   const QPoint center(width() / 2, height() / 2);
   for (const OverlayEntry &entry : m_overlays) {
@@ -101,6 +111,10 @@ void VideoBackgroundWidget::resizeEvent(QResizeEvent *event) {
     m_scaledFrame = QImage();
   }
   repositionOverlays();
+  if (m_fullScreenOverlay) {
+    m_fullScreenOverlay->setGeometry(rect());
+    m_fullScreenOverlay->raise();
+  }
 }
 
 void VideoBackgroundWidget::paintEvent(QPaintEvent *event) {

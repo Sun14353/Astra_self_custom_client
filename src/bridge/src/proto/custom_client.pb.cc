@@ -38,9 +38,7 @@ inline constexpr RobotStaticStatus::Impl_::Impl_(
         max_power_{0u},
         max_buffer_energy_{0u},
         max_chassis_energy_{0u},
-        _cached_size_{0} {}
-
-template <typename>
+        
 PROTOBUF_CONSTEXPR RobotStaticStatus::RobotStaticStatus(::_pbi::ConstantInitialized)
     : _impl_(::_pbi::ConstantInitialized()) {}
 struct RobotStaticStatusDefaultTypeInternal {

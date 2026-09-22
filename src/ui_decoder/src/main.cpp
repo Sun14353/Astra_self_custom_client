@@ -9,6 +9,7 @@
 #include "ui_decoder_node.hpp"
 
 #include <QApplication>
+#include <QSurfaceFormat>
 #include <QTimer>
 
 #include <memory>
@@ -16,6 +17,15 @@
 int main(int argc, char **argv) {
   // rclcpp::init 会消费 ROS 相关参数，剩余参数再交给 QApplication。
   rclcpp::init(argc, argv);
+
+  // 关键：QQuickWidget 透明叠加层需要 alpha 通道，必须在 QApplication
+  // 创建之前设置默认 SurfaceFormat，否则上下文已初始化导致设置无效。
+  QSurfaceFormat format;
+  format.setAlphaBufferSize(8);
+  QSurfaceFormat::setDefaultFormat(format);
+
+  // 初始化 QML 资源（HUD 覆盖层）。
+  Q_INIT_RESOURCE(qml);
 
   // QApplication 必须先于任何 QWidget 创建。
   QApplication app(argc, argv);

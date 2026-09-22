@@ -1,0 +1,11 @@
+{
+  "id": "todo_sniper_json",
+  "name": "狙击手 (JSON)",
+  "description": "JSON 格式示例，与 YAML 预设字段等价。",
+  "control": {
+    "mouse": { "sensitivity": 0.4, "invert_y": false },
+    "joystick": { "deadzone": 0.02, "response_curve": "linear" },
+    "keyboard": { "mapping": {} }
+  },
+  "custom_control": { "mapping": [] }
+}

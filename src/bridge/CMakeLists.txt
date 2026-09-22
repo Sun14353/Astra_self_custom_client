@@ -110,7 +110,13 @@ endif()
 add_executable(match_simulator src/match_simulator.cpp)
 target_link_libraries(match_simulator PRIVATE bridge_core)
 
+# rpath: 与 bridge_client 一致，运行时找用户自装的 protobuf/abseil 库
+# (match_simulator 实际引用了 MyMqttClient + proto，需 libprotobuf/libpaho)。
 if(NOT WIN32)
+  set_target_properties(match_simulator PROPERTIES
+    BUILD_RPATH "${USER_PROTOBUF_PREFIX}/lib"
+    INSTALL_RPATH "${USER_PROTOBUF_PREFIX}/lib"
+  )
   target_link_options(match_simulator PRIVATE "-Wl,--disable-new-dtags")
 endif()
 
